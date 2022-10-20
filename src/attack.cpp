@@ -18,7 +18,7 @@
         
         // deleta os ponteiros na heap primeiro.
         for(Effect* e : _effects)
-            delete e;
+            delete[] e;
 
         // como o vector está com ponteiros nulos, esvazia o vetor _effects.
         while(!_effects.empty())
@@ -45,4 +45,17 @@
 
         return _effects[id];
 
+    }
+
+    int Attack::doAction(int life, int defense, int extradamage, std::vector<Effect*>& effect){
+        
+        //clona todos os efeitos do ataque e os coloca em um vetor.
+        for(int i=0; i<this->sizeofEffects() ;i++)
+            effect.push_back( (this->getEffect(i)) -> cloneEffect());
+        
+        int damage = _damage + extradamage - defense;
+
+        if(damage < 0) damage = 0;
+
+        return (life -= damage);
     }

@@ -2,17 +2,19 @@
 #include "lifeeffect.hpp"
 #include <iostream>
 
-    LifeEffect::LifeEffect(int value = 0,
-                std::string name = "",
-                std::string description = ""):
-                Effect(value,name,description){}
+    LifeEffect::LifeEffect( int value = 0,
+                            int durability = 1,
+                            std::string name = "",
+                            std::string description = ""):
+                            Effect(value, durability, name, description){}
 
     Effect* LifeEffect::cloneEffect() {
          
         LifeEffect* effect;
-        effect = new LifeEffect(this->getValue(),
-                            this->getName(),
-                            this->getDescription());
+        effect = new LifeEffect(  _value,
+                                    _durability,
+                                    _name,
+                                    _description);
 
         return effect;
     }

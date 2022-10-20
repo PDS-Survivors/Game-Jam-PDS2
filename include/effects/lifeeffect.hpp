@@ -8,7 +8,10 @@
 
         public:
 
-            LifeEffect( int value, std::string name, std::string  description);
+            LifeEffect( int value = 0,
+                            int durability = 1,
+                            std::string name = "",
+                            std::string description = "");
             
             // clona o efeito para a entidade colocar esse clone
             // em sua lista de efeitos.

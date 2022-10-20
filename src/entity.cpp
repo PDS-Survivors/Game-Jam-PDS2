@@ -65,9 +65,25 @@
         for(it; it!=_effect.end() ; it++)
             if(*it == effect) break;
 
-        delete effect;
+        //primeiro ele deleta o efeito e depois remove o efeito vazio da lista.
+        delete[] effect;
         _effect.erase(it);
 
+    }
+
+    void Entity::applyEffect(char type, int& target){
+
+        for(Effect* e : _effect){
+
+            if(e->getType() == type){
+
+                target += e->getValue();
+
+                if(e->checkDurability())
+                    delEffect(e);
+
+            }
+        }
     }
 
 

@@ -10,7 +10,7 @@
 
     class Attack{
 
-        private:
+        protected:
 
             int _damage;
             std::string _name;
@@ -41,5 +41,8 @@
             //seleciona qual efeito do ataque será utilizado.
             Effect* getEffect(int id = 0);
             
+            //realiza todo o calculo de danos.
+            virtual int doAction(int life, int defense, int extradamage, std::vector<Effect*>& effect);
+
     };
 #endif

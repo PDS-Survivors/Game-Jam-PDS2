@@ -38,6 +38,13 @@
             
             void delEffect(Effect* effect);
 
+            //aplica todos os efeitos de determinado tipo de efeito.
+            void applyEffect(char type, int& target);
+
+            //função utilizada internamente para defesa. retorna o valor
+            //que a entidade vai usar para defender, que não necessariamente é o valor da defesa;
+            int doHarvest();
+
             virtual Attack* getHit(int id);
 
             virtual int doHit(Entity& enemy, Attack* hit);

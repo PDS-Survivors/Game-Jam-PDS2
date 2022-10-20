@@ -2,17 +2,19 @@
 #include "damageeffect.hpp"
 #include <iostream>
 
-    DamageEffect::DamageEffect(int value = 0,
-                std::string name = "",
-                std::string description = ""):
-                Effect(value,name,description){}
+    DamageEffect::DamageEffect( int value = 0,
+                            int durability = 1,
+                            std::string name = "",
+                            std::string description = ""):
+                            Effect(value, durability, name, description){}
 
     Effect* DamageEffect::cloneEffect() {
          
         DamageEffect* effect;
-        effect = new DamageEffect(this->getValue(),
-                            this->getName(),
-                            this->getDescription());
+        effect = new DamageEffect(  _value,
+                                    _durability,
+                                    _name,
+                                    _description);
 
         return effect;
     }

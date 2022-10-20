@@ -19,19 +19,37 @@
     //a gente pode ler a ação do jogador durante a batalha.
     int Npc::doHit(Entity& enemy, Attack* hit){
 
-        int life = enemy.getLife();
+        int newLife = _life;
 
-        int damage = hit->getDamage();
-
-        int defense = enemy.getDefense();
-
-        int newLife = life + defense - damage;
-
-        //Esse loop procura nos efeitos do ataque algum LifeEffect para alterar o valor 
-        //da vida do enemy.
-        for(int i=0;i<hit->sizeofEffects() ;i++)
-            if(hit->getEffect(i)->getType() == 'l')
-                newLife -= hit->getEffect(i)->getValue();
+        int defense = _defense;
         
-        return enemy.setLife(newLife);
+        int extradamage = 0;
+
+
+        std::vector<Effect*> effect;
+
+        //busca os efeitos de defesa para alterar defense
+        enemy.applyEffect('d', defense);
+
+        //busca os efeitos de dano para incrementar o dano extra.
+        this->applyEffect('h', extradamage);
+
+        //aqui o ataque faz todo o cálculo da nova vida.
+        newLife = hit->doAction(newLife, defense, extradamage, effect);
+
+        //adicionando os efeitos vindos do ataque na lista de efeitos da entidade
+        //e depois deletando esses esse vetor temporário.
+        for(Effect* e : effect){
+            _effect.push_back(e);
+            delete[] e;
+        }
+        
+        while(!effect.empty())
+            effect.pop_back();
+
+        //busca efeitos de vida para altera-la apenas após o golpe de fato acontecer.
+        this->applyEffect('l', newLife);
+
+        //altera finalmente a vida da entidade.
+        return setLife(newLife);
     }
