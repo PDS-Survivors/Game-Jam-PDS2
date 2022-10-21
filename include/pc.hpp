@@ -25,8 +25,5 @@ class Pc: public Entity{
 
         Attack* getHit(int id) override;
 
-        int doHit(Entity& enemy, Attack* hit) override;
-
-
 };
 #endif

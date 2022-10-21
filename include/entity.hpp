@@ -12,6 +12,7 @@
 
         std::string _name;
         int _life;
+        int _total_life;
         int _defense;
         std::list<Effect*> _effect;
 
@@ -25,6 +26,9 @@
             ~Entity();
             
             int getLife();
+
+            //função pra resetar a vida da entidade a quatidade máxima.
+            int rebootLife();
 
             int setLife(int life);
 
@@ -46,9 +50,9 @@
             int doHarvest();
 
             virtual Attack* getHit(int id);
-
-            virtual int doHit(Entity& enemy, Attack* hit);
-
+            
+            //executa um ataque através da função de ataque do hit.
+            int doHit(Entity& enemy, Attack* hit);
 
     };
 
