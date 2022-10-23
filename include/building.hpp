@@ -14,7 +14,7 @@ class Building {
     int _number;
 
     public:
-
+    Building(std::string desc, std::string name, int number);
 
     std::string get_desc();
 
