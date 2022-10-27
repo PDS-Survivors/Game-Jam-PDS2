@@ -13,17 +13,17 @@
 
     Pc::~Pc(){
 
-        std::list<Effect*>::iterator ite = _effect.begin();
+        std::list<Effect*>::iterator ite;
 
-        for(ite ;ite != _effect.end(); ite++){
-            delete *ite;
+        for(ite = _effect.begin();ite != _effect.end(); ite++){
+            delete[] *ite;
             _effect.erase(ite);
         }
 
-        std::list<Attack*>::iterator ita = _hit.begin();
+        std::list<Attack*>::iterator ita;
 
-        for(ita ;ita != _hit.end(); ita++){
-            delete *ita;
+        for(ita  = _hit.begin();ita != _hit.end(); ita++){
+            delete[] *ita;
             _hit.erase(ita);
         }
 
@@ -37,4 +37,30 @@
 
         return *it;
 
+    }
+
+    Attack* Pc::chooseAttack(){
+
+        int choice;
+        Attack* attack;
+
+        while(std::cin>>choice){
+
+            if(choice == int(_hit.size())){
+                attack = nullptr;
+                break;
+            }
+
+            if(choice >= 0 and choice < int(_hit.size())){
+                attack = this->getHit(choice);
+                
+                if(this->getStamina() >= attack->getStamina()) break;
+
+                else std::cout<<"você não tem energia suficiente. tente novamente!"<<std::endl;
+            }
+
+            else std::cout<<"ataque inválido. tente novamente!"<<std::endl;
+        }
+
+        return attack;
     }

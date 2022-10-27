@@ -2,10 +2,10 @@
 
 #include <iostream>
 
-    Effect::Effect( int value = 0,
-                    int durability = 1,
-                    std::string name = "",
-                    std::string description = ""):
+    Effect::Effect( int value,
+                    int durability,
+                    std::string name,
+                    std::string description):
                     _value(value), _durability(durability),
                     _name(name), _description(description){}
 
@@ -26,17 +26,6 @@
         return (_durability == 0);
     }
 
-    Effect* Effect::cloneEffect() {
-         
-        Effect* effect;
-        effect = new Effect(_value,
-                            _durability,
-                            _name,
-                            _description);
-
-        return effect;
-    }
     
-    char Effect::getType(){
-        return 'e';
-    }
+    
+    

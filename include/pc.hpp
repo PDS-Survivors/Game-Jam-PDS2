@@ -24,6 +24,8 @@ class Pc: public Entity{
         ~Pc();
 
         Attack* getHit(int id) override;
-
+        
+        Attack* chooseAttack() override;
+        
 };
 #endif

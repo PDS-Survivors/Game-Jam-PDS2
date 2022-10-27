@@ -2,10 +2,10 @@
 #include "defenseeffect.hpp"
 #include <iostream>
 
-    DefenseEffect::DefenseEffect( int value = 0,
-                            int durability = 1,
-                            std::string name = "",
-                            std::string description = ""):
+    DefenseEffect::DefenseEffect( int value,
+                            int durability,
+                            std::string name,
+                            std::string description):
                             Effect(value, durability, name, description){}
 
     Effect* DefenseEffect::cloneEffect() {
@@ -19,6 +19,6 @@
         return effect;
     }
     
-    char Effect::getType(){
+    char DefenseEffect::getType(){
         return 'd';
     }

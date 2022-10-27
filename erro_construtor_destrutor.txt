@@ -1,0 +1,20 @@
+g++ -I include/effects/ -Wall -o build/effect.o -c src/effects/effect.cpp
+g++ -I include/effects/ -Wall -o build/lifeeffect.o -c src/effects/lifeeffect.cpp
+g++ -I include/effects/ -Wall -o build/damageeffect.o -c src/effects/damageeffect.cpp
+g++ -I include/effects/ -Wall -o build/lifeeffect.o -c src/effects/defenseeffect.cpp
+g++ -I include/ -Wall -o build/attack.o -c src/attack.cpp
+g++ -I include/ -Wall -o build/entity.o -c src/entity.cpp
+g++ -I include/ -Wall -o build/pc.o -c src/pc.cpp
+g++ -I include/ -Wall -o build/npc.o -c src/npc.cpp
+g++ -I include/ -Wall -o build/teste1.o build/*.o src/Testes_de_verificacao/Teste_de_verificacao_1.cpp 
+/usr/bin/ld: build/entity.o: in function `Entity::Entity(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, int, int, std::__cxx11::list<Effect*, std::allocator<Effect*> >&)':
+entity.cpp:(.text+0x22): undefined reference to `vtable for Entity'
+/usr/bin/ld: build/entity.o: in function `Entity::~Entity()':
+entity.cpp:(.text+0xc9): undefined reference to `vtable for Entity'
+/usr/bin/ld: build/npc.o:(.data.rel.ro._ZTV3Npc[_ZTV3Npc]+0x18): undefined reference to `Entity::chooseAttack()'
+/usr/bin/ld: build/npc.o:(.data.rel.ro._ZTI3Npc[_ZTI3Npc]+0x10): undefined reference to `typeinfo for Entity'
+/usr/bin/ld: build/pc.o:(.data.rel.ro._ZTI2Pc[_ZTI2Pc]+0x10): undefined reference to `typeinfo for Entity'
+/usr/bin/ld: /tmp/ccCgo6Dm.o: in function `main':
+Teste_de_verificacao_1.cpp:(.text+0x270): undefined reference to `LifeEffect::LifeEffect(int, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >)'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:34: teste1] Error 1

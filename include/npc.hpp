@@ -23,6 +23,7 @@ class Npc: public Entity{
 
         Attack* getHit(int id) override;
 
+        Attack* chooseAttack(int value);
 
 };
 #endif

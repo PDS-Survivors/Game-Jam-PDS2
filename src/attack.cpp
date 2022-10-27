@@ -4,11 +4,13 @@
 #include <vector> 
 
     Attack::Attack( int damage,
+                    int stamina,
                     std::string name,
                     std::string description,
                     std::vector<Effect*>& effects
                   ):
                   _damage(damage),
+                  _stamina(stamina),
                   _name(name),
                   _description(description),
                   _effects(effects)
@@ -36,6 +38,10 @@
 
     int Attack::getDamage(){
         return _damage;
+    }
+
+    int Attack::getStamina(){
+        return _stamina;
     }
 
     int Attack::sizeofEffects(){
