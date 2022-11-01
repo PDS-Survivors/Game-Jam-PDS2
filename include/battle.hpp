@@ -3,21 +3,15 @@
 
 #include <string>
 #include <list>
-#include "entity.hpp"
-#include "npc.hpp"
-#include "pc.hpp"
-#include "attack.hpp"
+#include <npc.hpp>
+#include <pc.hpp>
 
 class Battle {
     private:
         Npc* _adversary;
-        int _lifePc;
-        int _lifeNpc;
-        bool _isOver;
         bool _result;
         int _totalDamagePc;
         int _totalDamageNpc;
-        std::list<Entity> _active;
 
     public:
         /**
@@ -88,6 +82,10 @@ class Battle {
          * @return std::string 
          */
         std::string statistcs ();
+
+        void fight (Pc*, Npc*);
+        
+        Attack* readCommand();
 };
 
 #endif
