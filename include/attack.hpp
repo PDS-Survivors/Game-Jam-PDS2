@@ -28,6 +28,12 @@
                     std::string description,
                     std::vector<Effect*>& effects 
                   );
+
+            Attack( int damage,
+                    int stamina,
+                    std::string name,
+                    std::string description
+                  );  
                   
             ~Attack();
 
@@ -48,5 +54,8 @@
             //realiza todo o calculo de danos.
             virtual int doAction(int life, int defense, int extradamage, std::vector<Effect*>& effect);
 
+            void operator += (Effect* const effect);
+
+            void addEffect(Effect* effect);
     };
 #endif

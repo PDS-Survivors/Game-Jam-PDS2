@@ -21,10 +21,9 @@
 
             Entity( std::string name,
                     int life,
-                    int defense,
-                    std::list<Effect*>& effect);
+                    int defense);
             
-            ~Entity();
+             virtual ~Entity() = 0;
             
             int getLife();
 
@@ -64,7 +63,7 @@
 
             //escolhe qual ataque será usado, se o ataque é válido para o atual nível de estamina.
             //é uma função mais complexa que o getHit justamente por ter o controle de estamina.
-            virtual Attack* chooseAttack();
+            virtual Attack* chooseAttack() = 0;
             
     };
 

@@ -5,17 +5,14 @@
 
     Pc::Pc( std::string name,
             int life,
-            int defense,
-            std::list<Effect*>& effect,
-            std::list<Attack*>& hit  ):
-            Entity(name,life,defense,effect),
-            _hit(hit){}
+            int defense ):
+            Entity(name,life,defense){ _stamina = 5; }
 
     Pc::~Pc(){
 
         std::list<Effect*>::iterator ite;
 
-        for(ite = _effect.begin();ite != _effect.end(); ite++){
+        for(ite  = _effect.begin();ite != _effect.end(); ite++){
             delete[] *ite;
             _effect.erase(ite);
         }
@@ -45,7 +42,7 @@
         Attack* attack;
 
         while(std::cin>>choice){
-
+            
             if(choice == int(_hit.size())){
                 attack = nullptr;
                 break;
@@ -64,3 +61,17 @@
 
         return attack;
     }
+
+    void Pc::addHit(Attack* attack){
+        _hit.push_back(attack);
+        
+    }
+
+    void Pc::showHit(){
+        
+        for(Attack* hit: _hit)
+            std::cout<<hit->getName()<<std::endl;
+        
+    }
+    
+    

@@ -16,7 +16,7 @@ damageeffect:
 	$(CC) -I include/effects/ -Wall -o build/damageeffect.o -c src/effects/damageeffect.cpp
 
 defenseeffect: 
-	$(CC) -I include/effects/ -Wall -o build/lifeeffect.o -c src/effects/defenseeffect.cpp
+	$(CC) -I include/effects/ -Wall -o build/defenseeeffect.o -c src/effects/defenseeffect.cpp
 
 attack: effect lifeeffect damageeffect defenseeffect
 	$(CC) $(CFLAGS) -o build/attack.o -c src/attack.cpp
@@ -33,6 +33,10 @@ npc: pc
 teste1: npc 
 	$(CC) $(CFLAGS) -o build/teste1.o build/*.o src/Testes_de_verificacao/Teste_de_verificacao_1.cpp 
 
+run:
+	./build/teste1.o
 
 clean:
 	$(RM) -r $(BUILD)/* $(TARGET)
+
+reboot: clean all run

@@ -8,6 +8,8 @@
                             std::string description):
                             Effect(value, durability, name, description){}
 
+    LifeEffect::~LifeEffect(){}
+    
     Effect* LifeEffect::cloneEffect() {
          
         LifeEffect* effect;

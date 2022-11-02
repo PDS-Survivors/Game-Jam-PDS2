@@ -13,6 +13,8 @@
                         std::string name,
                         std::string description);
             
+            ~LifeEffect();
+            
             // clona o efeito para a entidade colocar esse clone
             // em sua lista de efeitos.
             Effect* cloneEffect() override;

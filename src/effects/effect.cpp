@@ -9,6 +9,8 @@
                     _value(value), _durability(durability),
                     _name(name), _description(description){}
 
+    Effect::~Effect(){}
+    
     int Effect::getValue(){
         _durability--;
         return _value;

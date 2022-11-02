@@ -16,6 +16,16 @@
                   _effects(effects)
                   {}
 
+    Attack::Attack( int damage,
+                    int stamina,
+                    std::string name,
+                    std::string description 
+                  ):
+                  _damage(damage),
+                  _stamina(stamina),
+                  _name(name),
+                  _description(description){}
+
     Attack::~Attack(){
         
         // deleta os ponteiros na heap primeiro.
@@ -55,13 +65,26 @@
 
     int Attack::doAction(int life, int defense, int extradamage, std::vector<Effect*>& effect){
         
-        //clona todos os efeitos do ataque e os coloca em um vetor.
-        for(int i=0; i<this->sizeofEffects() ;i++)
-            effect.push_back( (this->getEffect(i)) -> cloneEffect());
         
+        if(this->sizeofEffects() != 0){
+
+            //clona todos os efeitos do ataque e os coloca em um vetor.
+            for(int i=0; i<this->sizeofEffects() ;i++)
+                effect.push_back(_effects[i]->cloneEffect());
+                
+        }
+
         int damage = _damage + extradamage - defense;
 
         if(damage < 0) damage = 0;
 
         return (life -= damage);
+    }
+
+    void Attack::operator+= (Effect* const effect){
+        _effects.push_back(effect);
+    }
+
+    void Attack::addEffect(Effect* effect){
+        _effects.push_back(effect);
     }

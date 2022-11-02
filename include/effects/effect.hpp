@@ -18,6 +18,7 @@
 
             Effect( int value, int durability, std::string name, std::string  description);
 
+            ~Effect();
             //além de retornar o valor do efeito, reduz a durabilidade.
             int getValue();
             

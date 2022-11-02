@@ -12,18 +12,24 @@ class Npc: public Entity{
     private:
 
         std::vector<Attack*> _hit;
+        std::string _description;
 
     public:
 
         Npc( std::string name,
             int life,
             int defense,
-            std::list<Effect*>& effect,
-            std::vector<Attack*>& hit  );
+            std::string description);
+
+        virtual ~Npc() override;
+
+        void addAttack(Attack* attack);
 
         Attack* getHit(int id) override;
 
-        Attack* chooseAttack(int value);
+        virtual Attack* chooseAttack();
+        
+        std::string getDescription();
 
-};
+};  
 #endif
