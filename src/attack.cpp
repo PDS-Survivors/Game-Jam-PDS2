@@ -26,6 +26,47 @@
                   _name(name),
                   _description(description){}
 
+    Attack::Attack(std::string file){
+
+        std::vector<int> values;
+        std::vector<std::string> words;
+        std::vector<std::string> files;
+
+        read::readfile(file, values, words, files);
+        
+        _damage = values[0];
+        _stamina = values[1];
+        _name = words[0];
+        _description = words[1];
+        
+        for(std::string fl : files){
+
+            std::string::iterator it = fl.end();
+            Effect* effect;
+
+            for(int i=0;i<5;i++) it--;
+
+            switch(*it){
+                
+                case 'l':
+                    effect = new LifeEffect(fl);
+                    break;
+
+                case 'd':
+                    effect = new DefenseEffect(fl);
+                    break;
+
+                case 'h':
+                    effect = new DamageEffect(fl);
+                    break;
+
+                default: break;
+            }
+
+            this->addEffect(effect);
+        }
+    }
+
     Attack::~Attack(){
         
         // deleta os ponteiros na heap primeiro.

@@ -13,6 +13,8 @@
                         std::string name,
                         std::string description);
             
+            LifeEffect(std::string file);
+            
             ~LifeEffect();
             
             // clona o efeito para a entidade colocar esse clone

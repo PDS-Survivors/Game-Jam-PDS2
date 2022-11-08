@@ -2,6 +2,7 @@
 #define EFFECT_H
 
 #include <iostream>
+#include "reader.hpp"
 
     class Effect{
 
@@ -17,6 +18,8 @@
         public:
 
             Effect( int value, int durability, std::string name, std::string  description);
+
+            Effect(std::string file);
 
             ~Effect();
             //além de retornar o valor do efeito, reduz a durabilidade.

@@ -34,7 +34,9 @@
                     std::string name,
                     std::string description
                   );  
-                  
+
+            Attack( std::string file);
+              
             ~Attack();
 
             std::string getDescription();

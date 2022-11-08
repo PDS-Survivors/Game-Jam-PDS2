@@ -1,0 +1,6 @@
+sgrave violento_
+sataque que da dano mas ate que cura_
+i53_
+i3_
+flib/heal.txt_
+flib/morehith.txt_

@@ -4,9 +4,12 @@ BUILD := build/
 SRC := src/
 TARGET := main.out
 
-all: teste1
+all: teste2
 
-effect: 
+reader:
+	$(CC) -I include/effects/ -Wall -o build/reader.o -c src/reader.cpp
+
+effect: reader
 	$(CC) -I include/effects/ -Wall -o build/effect.o -c src/effects/effect.cpp
 
 lifeeffect: 
@@ -33,8 +36,10 @@ npc: pc
 teste1: npc 
 	$(CC) $(CFLAGS) -o build/teste1.o build/*.o src/Testes_de_verificacao/Teste_de_verificacao_1.cpp 
 
+teste2: npc
+	$(CC) $(CFLAGS) -o build/teste2.o build/*.o src/Testes_de_verificacao/Teste_de_verificacao_2.cpp
 run:
-	./build/teste1.o
+	./build/teste2.o
 
 clean:
 	$(RM) -r $(BUILD)/* $(TARGET)

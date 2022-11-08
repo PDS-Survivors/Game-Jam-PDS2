@@ -8,6 +8,8 @@
                             std::string description):
                             Effect(value, durability, name, description){}
 
+    DefenseEffect::DefenseEffect(std::string file): Effect(file){}
+    
     Effect* DefenseEffect::cloneEffect() {
          
         DefenseEffect* effect;
