@@ -35,6 +35,8 @@
 
             int getStamina();
 
+            void setStamina(int stamina);
+
             int setLife(int life);
 
             int getDefense();
