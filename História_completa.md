@@ -109,21 +109,24 @@
 **Mago** Não é mágica, é matemática! (Exatas/TI)
 - Vida inicial: 50/100
 - Defesa: 60/100
-- Ataque Fixo:
+- Ataque Fixo: Vetores
+    - 25 de dano;
 - Dois ataques normais da área de exatas/TI de nível calouro escolhidos aleatoriamente;
 - Um ataque especial da área de exatas/TI de nível calouro escolhido aleatoriamente;
 
-**Mestre de armas** (Humanas/Linguagens)
+**Mestre de armas** Levantar a voz não vence uma língua afiada (Humanas/Linguagens)
 - Vida inicial: 40/100
 - Defesa: 70/100
-- Ataque Fixo:
+- Ataque Fixo: Vontade dos deuses
+    - 20 de dano;
 - Dois ataques normais da área de humanas/linguagens de nível calouro escolhidos aleatoriamente;
 - Um ataque especial da área de humanas/linguagens de nível calouro escolhido aleatoriamente;
 
 **Druida** Altos contatos com a natureza (Biológicas)
 - Vida inicial: 60/100
 - Defesa: 40/100
-- Ataque Fixo:
+- Ataque Fixo: Bisturi infectada
+    - 30 de dano;
 - Dois ataques normais da área de biológicas de nível calouro escolhidos aleatoriamente;
 - Um ataque especial da área de biológicas de nível calouro escolhido aleatoriamente;
 
@@ -138,27 +141,33 @@
             - 10 de dano
             - Subtrai 25 da defesa de npc
             - Adiciona 15 na defesa de pc
-        - Ataque 3:
-        - Ataque 4:
-        - Ataque E1: Invocação de redes neurais (?)
+        - Ataque 3: Mentalização de matrizes n-dimensionais
+            - 30 de dano
+            - 
+        - Ataque 4: Conversão binária
+            - 20 de dano
+            - 
+        - Ataque E1: Invocação de redes neurais
             - 75 de dano
             - Subtrai 40 da defesa de pc    
             - Subtrai 10 da vida de pc
-        - Ataque E2:
+        - Ataque E2: Enxame de nano-robôs teleguiados
+            - 70 de dano
+            - 
     - Veterano:
         - Ataque 1: 
         - Ataque 2: 
-        - Ataque 3:
-        - Ataque 4:
-        - Ataque E1: 
-        - Ataque E2:
+        - Ataque 3: 
+        - Ataque 4: Feitiço de anulação do somatório das forças
+        - Ataque E1: Manipulação dos campos eletromagnéricos
+        - Ataque E2: Explosões de sódio e água
     - Professor:
         - Ataque 1: 
         - Ataque 2: 
         - Ataque 3:
         - Ataque 4:
         - Ataque E1: 
-        - Ataque E2:
+        - Ataque E2: Considerando o atrito do ar
 - Humanas/Linguagens
     - Calouro:
         - Ataque 1: ataque de flechas psicanalíticas de Freud
@@ -170,16 +179,28 @@
             - Adiciona 20 na vida de pc
         - Ataque 3:
         - Ataque 4:
-        - Ataque E1: espadas ideológicas polarizantes
+        - Ataque E1: 
             - 60 de dano
             - Subtrai 40 da defesa de npc
             - Subtrai 35 da defesa de pc
             - Subtrai 5 da vida de pc
         - Ataque E2:
     - Veterano:
+        - Ataque 1:
+        - Ataque 2:
+        - Ataque 3:
+        - Ataque 4:
+        - Ataque E1:
+        - Ataque E2:
     - Professor:
+        - Ataque 1:
+        - Ataque 2:
+        - Ataque 3:
+        - Ataque 4:
+        - Ataque E1:
+        - Ataque E2:
 - Biológicas
-    - Calouro:
+    - Calouro: 
         - Ataque 1: 
             - 45 de dano
             - Subtrai 5 da defesa de npc
@@ -188,14 +209,26 @@
             - Subtrai 15 da defesa de npc
             - Adiciona 20 na vida de pc
         - Ataque 3:
-        - Ataque 4:
-        - Ataque E1: 
+        - Ataque 4: 
+        - Ataque E1: Enxame de abelhas assassinas
             - 75 de dano
             - Subtrai 40 da defesa de pc
             - Subtrai 10 da vida de pc
         - Ataque E2:
     - Veterano:
+        - Ataque 1:
+        - Ataque 2:
+        - Ataque 3:
+        - Ataque 4:
+        - Ataque E1: Técnica do RNA recombinante
+        - Ataque E2:
     - Professor:
+        - Ataque 1:
+        - Ataque 2:
+        - Ataque 3:
+        - Ataque 4:
+        - Ataque E1:
+        - Ataque E2:
 
 #23 - Descrição completa (história do pc +atributos)
 **Mago**
