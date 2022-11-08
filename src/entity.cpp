@@ -26,6 +26,10 @@
         return _stamina += value;
     }
 
+    void Entity::setStamina(int stamina){
+        _stamina += stamina;
+    }
+
     int Entity::getStamina(){
         return _stamina;
     }
