@@ -3,6 +3,7 @@
 #include <iostream>
 #include <list>
 
+    Entity::Entity() {}
 
     Entity::Entity( std::string name,
                     int life,

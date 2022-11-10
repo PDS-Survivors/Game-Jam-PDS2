@@ -3,6 +3,8 @@
 #include <iostream>
 #include <list>
 
+    Pc::Pc() {}
+    
     Pc::Pc( std::string name,
             int life,
             int defense ):

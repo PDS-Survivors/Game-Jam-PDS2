@@ -14,7 +14,9 @@ class Pc: public Entity{
         std::list<Attack*> _hit;
 
     public:
-
+    
+        Pc ();
+        
         Pc( std::string name,
             int life,
             int defense );

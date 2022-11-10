@@ -18,7 +18,9 @@
         std::list<Effect*> _effect;
 
         public:
-
+            
+            Entity ();
+            
             Entity( std::string name,
                     int life,
                     int defense);

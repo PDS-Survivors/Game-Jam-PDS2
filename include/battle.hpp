@@ -15,11 +15,14 @@ class Battle {
         bool _result;
         int _totalDamagePc;
         int _totalDamageNpc;
+        int* _numBattle;
+        int* _totalLoses;
+        int _predio;
         std::string _resultTxt;
 
     public:
 
-        Battle(Pc* player, Npc* adversary);
+        Battle(Pc player, Npc* adversary, int* numBattle, int* totalLoses, int predio);
 
         ~Battle ();
 
@@ -36,8 +39,6 @@ class Battle {
         std::string statistcs ();
 
         void fight ();
-        
-        Attack* readCommand();
 
         std::string readNpc();
 
