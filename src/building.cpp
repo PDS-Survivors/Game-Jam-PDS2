@@ -7,6 +7,7 @@ Building::Building(std::string desc, std::string name, int number){
     Building::_desc = desc;
     Building::_name = name;
     Building::_number = number;
+    Building::_nBattle = 0;
 }
 
 std::string Building::get_desc(){
@@ -28,8 +29,9 @@ void Building::start_battle(){
 }
 
 void Building::add_battle(){
-    //std::stack<Battle*> _battles;
-    //_battles.push();
+    //_battles.push(Battle::Battle());
+    //_battles.push(Battle::Battle());
+    //_battles.push(Battle::Battle());
 }
     
 void Building::remove_battle(){
