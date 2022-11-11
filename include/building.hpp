@@ -9,11 +9,11 @@
 class Building {
 
     private:
-    std::stack<Battle*> _battles;
+    std::stack<Battle> _battles;
     std::string _desc;
     std::string _name;
     int _number;
-    int _nBattle;
+    int _numBattle;
 
     public:
     /**
@@ -23,6 +23,8 @@ class Building {
      * @param number Number of the building
     */
     Building(std::string desc, std::string name, int number);
+
+    ~Building();
 
     /**
      * @brief Return the descripition of the building 
@@ -38,6 +40,16 @@ class Building {
      * @brief Return the number of the building
     */
     int get_number();
+
+    /**
+     * @brief Return the nuber of the battle
+    */
+    int get_numBattle();
+
+    /**
+     * @brief Set the nuber of the battle
+    */
+    void set_numBattle(int num);
 
     /**
      * @brief Starts a battle
