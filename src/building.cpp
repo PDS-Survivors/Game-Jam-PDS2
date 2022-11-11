@@ -41,24 +41,15 @@ void Building::start_battle(){
 }
 
 void Building::add_battle(){ 
-    Pc player3;
+    Pc player;
     Npc* adversary3;
-    int* numBattle3;
-    int* totalLoses3;
-    _battles.push(Battle(player3,adversary3,numBattle3,totalLoses3,_number));
+    _battles.push(Battle(player,adversary3,3,_number));
 
-    Pc player2;
     Npc* adversary2;
-    int* numBattle2;
-    int* totalLoses2;
-    _battles.push(Battle(player2,adversary2,numBattle2,totalLoses2,_number));
+    _battles.push(Battle(player,adversary2,2,_number));
 
-    Pc player1;
     Npc* adversary1;
-    int* numBattle1;
-    int* totalLoses1;
-    _battles.push(Battle(player1,adversary1,numBattle1,totalLoses1,_number));
-
+    _battles.push(Battle(player,adversary1,1,_number));
 }
     
 void Building::remove_battle(){
