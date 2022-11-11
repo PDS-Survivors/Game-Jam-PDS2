@@ -2,11 +2,13 @@
 #include "damageeffect.hpp"
 #include <iostream>
 
-    DamageEffect::DamageEffect( int value = 0,
-                            int durability = 1,
-                            std::string name = "",
-                            std::string description = ""):
+    DamageEffect::DamageEffect( int value,
+                            int durability,
+                            std::string name,
+                            std::string description):
                             Effect(value, durability, name, description){}
+
+    DamageEffect::DamageEffect(std::string file): Effect(file){}
 
     Effect* DamageEffect::cloneEffect() {
          
@@ -19,6 +21,6 @@
         return effect;
     }
     
-    char Effect::getType(){
+    char DamageEffect::getType(){
         return 'h';
     }

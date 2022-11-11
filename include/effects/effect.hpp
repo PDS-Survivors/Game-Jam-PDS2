@@ -2,6 +2,7 @@
 #define EFFECT_H
 
 #include <iostream>
+#include "reader.hpp"
 
     class Effect{
 
@@ -9,8 +10,8 @@
 
             //durability se refere a quantas vezes o efeito pode ser aplicado em
             //uma entidade.
-            int _durability;
             int _value;
+            int _durability;
             std::string _name;
             std::string _description;
 
@@ -18,6 +19,9 @@
 
             Effect( int value, int durability, std::string name, std::string  description);
 
+            Effect(std::string file);
+
+            ~Effect();
             //além de retornar o valor do efeito, reduz a durabilidade.
             int getValue();
             
@@ -32,11 +36,11 @@
                 
             // clona o efeito para a entidade colocar esse clone
             // em sua lista de efeitos.
-            virtual Effect* cloneEffect();
+            virtual Effect* cloneEffect() = 0;
 
             //polimorfismo principal da classe: retorna o tipo para a entidade 
             //reconhecer onde aplicar o efeito.
-            virtual char getType();
+            virtual char getType() = 0;
             
     };
 #endif

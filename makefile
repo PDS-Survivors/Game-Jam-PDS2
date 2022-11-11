@@ -4,20 +4,44 @@ BUILD := build/
 SRC := src/
 TARGET := main.out
 
-all: main
+all: teste2
+
+reader:
+	$(CC) -I include/effects/ -Wall -o build/reader.o -c src/reader.cpp
+
+effect: reader
+	$(CC) -I include/effects/ -Wall -o build/effect.o -c src/effects/effect.cpp
+
+lifeeffect: 
+	$(CC) -I include/effects/ -Wall -o build/lifeeffect.o -c src/effects/lifeeffect.cpp
+
+damageeffect: 
+	$(CC) -I include/effects/ -Wall -o build/damageeffect.o -c src/effects/damageeffect.cpp
+
+defenseeffect: 
+	$(CC) -I include/effects/ -Wall -o build/defenseeeffect.o -c src/effects/defenseeffect.cpp
+
+attack: effect lifeeffect damageeffect defenseeffect
+	$(CC) $(CFLAGS) -o build/attack.o -c src/attack.cpp
 
 entity: attack
-	$(CC) $(CFLAGS) -o build/entity.o src/entity.cpp
+	$(CC) $(CFLAGS) -o build/entity.o -c src/entity.cpp
 
-attack: effect
-	$(CC) $(CFLAGS) -o build/attack.o src/attack.cpp
+pc: entity
+	$(CC) $(CFLAGS) -o build/pc.o -c src/pc.cpp
 
-effect: 
-	$(CC) $(CFLAGS) -o build/effect.o src/effect.cpp
+npc: pc
+	$(CC) $(CFLAGS) -o build/npc.o -c src/npc.cpp
 
-main:
-	$(CC) $(CFLAGS) -o build/main.o src/main.cpp
+teste1: npc 
+	$(CC) $(CFLAGS) -o build/teste1.o build/*.o src/Testes_de_verificacao/Teste_de_verificacao_1.cpp 
 
-	
+teste2: npc
+	$(CC) $(CFLAGS) -o build/teste2.o build/*.o src/Testes_de_verificacao/Teste_de_verificacao_2.cpp
+run:
+	./build/teste2.o
+
 clean:
 	$(RM) -r $(BUILD)/* $(TARGET)
+
+reboot: clean all run

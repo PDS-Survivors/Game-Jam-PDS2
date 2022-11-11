@@ -3,16 +3,17 @@
 
 #include <iostream>
 #include <vector>
-#include "effect.hpp"
-#include "lifeeffect.hpp"
-#include "damageeffect.hpp"
-#include "defenseeffect.hpp"
+#include "effects/effect.hpp"
+#include "effects/lifeeffect.hpp"
+#include "effects/damageeffect.hpp"
+#include "effects/defenseeffect.hpp"
 
     class Attack{
 
         protected:
 
             int _damage;
+            int _stamina;
             std::string _name;
             std::string _description;
             std::vector<Effect*> _effects;
@@ -22,16 +23,27 @@
         public:
 
             Attack( int damage,
+                    int stamina,
                     std::string name,
                     std::string description,
                     std::vector<Effect*>& effects 
                   );
-                  
+
+            Attack( int damage,
+                    int stamina,
+                    std::string name,
+                    std::string description
+                  );  
+
+            Attack( std::string file);
+              
             ~Attack();
 
             std::string getDescription();
 
             std::string getName();
+
+            int getStamina();
 
             int getDamage();
             
@@ -44,5 +56,8 @@
             //realiza todo o calculo de danos.
             virtual int doAction(int life, int defense, int extradamage, std::vector<Effect*>& effect);
 
+            void operator += (Effect* const effect);
+
+            void addEffect(Effect* effect);
     };
 #endif

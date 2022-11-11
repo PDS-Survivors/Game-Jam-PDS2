@@ -8,10 +8,12 @@
 
         public:
 
-            DefenseEffect( int value = 0,
-                            int durability = 1,
-                            std::string name = "",
-                            std::string description = "");
+            DefenseEffect( int value,
+                            int durability,
+                            std::string name,
+                            std::string description);
+            
+            DefenseEffect(std::string file);
             
             // clona o efeito para a entidade colocar esse clone
             // em sua lista de efeitos.

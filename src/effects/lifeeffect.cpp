@@ -1,13 +1,18 @@
 #include "effect.hpp"
 #include "lifeeffect.hpp"
 #include <iostream>
+#include <vector>
 
-    LifeEffect::LifeEffect( int value = 0,
-                            int durability = 1,
-                            std::string name = "",
-                            std::string description = ""):
+    LifeEffect::LifeEffect( int value,
+                            int durability,
+                            std::string name,
+                            std::string description):
                             Effect(value, durability, name, description){}
 
+    LifeEffect::LifeEffect(std::string file): Effect(file){}
+
+    LifeEffect::~LifeEffect(){}
+    
     Effect* LifeEffect::cloneEffect() {
          
         LifeEffect* effect;
@@ -19,6 +24,6 @@
         return effect;
     }
     
-    char Effect::getType(){
+    char LifeEffect::getType(){
         return 'l';
     }

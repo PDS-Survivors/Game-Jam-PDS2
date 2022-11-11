@@ -14,16 +14,22 @@ class Pc: public Entity{
         std::list<Attack*> _hit;
 
     public:
-
+    
+        Pc ();
+        
         Pc( std::string name,
             int life,
-            int defense,
-            std::list<Effect*>& effect,
-            std::list<Attack*>& hit  );
+            int defense );
 
-        ~Pc();
+        virtual ~Pc() override;
 
         Attack* getHit(int id) override;
+        
+        Attack* chooseAttack() override;
+        
+        void addHit(Attack* attack);
+
+        void showHit();
 
 };
 #endif
