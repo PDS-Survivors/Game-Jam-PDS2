@@ -38,3 +38,7 @@
     Attack* Npc::chooseAttack(){
         return this->getHit(0);
     }
+
+    std::string Npc::getDescription(){
+        return _description;
+    }

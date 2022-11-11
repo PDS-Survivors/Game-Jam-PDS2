@@ -2,9 +2,8 @@
 #define BATTLE_HPP
 
 #include <string>
-#include <list>
-#include <npc.hpp>
-#include <pc.hpp>
+#include "npc.hpp"
+#include "pc.hpp"
 
 class Battle {
 
@@ -15,14 +14,14 @@ class Battle {
         bool _result;
         int _totalDamagePc;
         int _totalDamageNpc;
-        int* _numBattle;
-        int* _totalLoses;
+        int _numBattle;
+        static int _totalLoses;
         int _predio;
         std::string _resultTxt;
 
     public:
 
-        Battle(Pc player, Npc* adversary, int* numBattle, int* totalLoses, int predio);
+        Battle(Pc player, Npc* adversary, int numBattle, int predio);
 
         ~Battle ();
 
@@ -32,17 +31,25 @@ class Battle {
 
         int getDamageNpc ();
 
+        static int getTotalLoses ();
+
+        void setResult (bool result);
+
         void setDamagePc (int damage);
         
         void setDamageNpc (int damage);
+
+        void setTotalLoses (int lose);
         
         std::string statistcs ();
 
         void fight ();
 
-        std::string readNpc();
+        std::string beginTxt();
 
-        std::string readResultTxt ();
+        std::string resultTxt ();
+
+        void imprimeVida ();
 };
 
 #endif

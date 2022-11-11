@@ -4,7 +4,7 @@ BUILD := build/
 SRC := src/
 TARGET := main.out
 
-all: teste2
+all: teste3
 
 reader:
 	$(CC) -I include/effects/ -Wall -o build/reader.o -c src/reader.cpp
@@ -33,13 +33,20 @@ pc: entity
 npc: pc
 	$(CC) $(CFLAGS) -o build/npc.o -c src/npc.cpp
 
+battle: npc
+	$(CC) $(CFLAGS) -o build/battle.o -c src/battle.cpp
+
 teste1: npc 
 	$(CC) $(CFLAGS) -o build/teste1.o build/*.o src/Testes_de_verificacao/Teste_de_verificacao_1.cpp 
 
 teste2: npc
 	$(CC) $(CFLAGS) -o build/teste2.o build/*.o src/Testes_de_verificacao/Teste_de_verificacao_2.cpp
+
+teste3: battle
+	$(CC) $(CFLAGS) -o build/teste3.o build/*.o src/Testes_de_verificacao/Teste_de_verificacao_3.cpp
+
 run:
-	./build/teste2.o
+	./build/teste3.o
 
 clean:
 	$(RM) -r $(BUILD)/* $(TARGET)
