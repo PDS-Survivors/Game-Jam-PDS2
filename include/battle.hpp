@@ -21,7 +21,7 @@ class Battle {
 
     public:
 
-        Battle(Pc player, Npc* adversary, int numBattle, int predio);
+        Battle(Pc* player, Npc* adversary, int numBattle, int predio);
 
         ~Battle ();
 
@@ -41,15 +41,17 @@ class Battle {
 
         void setTotalLoses (int lose);
         
-        std::string statistcs ();
-
-        void fight ();
-
         std::string beginTxt();
+
+        void imprimeVida ();
+
+        bool defineResult ();
 
         std::string resultTxt ();
 
-        void imprimeVida ();
+        std::string statistcs ();
+
+        void fight (); 
 };
 
 #endif
