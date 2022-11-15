@@ -10,22 +10,17 @@
 //Colocar em match
 int Battle::_totalLoses = 0;
 
-Battle::Battle (Pc &player, std::string file){
+//Construtor com leitura de arquivo para Npc
+Battle::Battle (Pc &player, std::string file, int numBattle, int predio){
     _player = player;
-
-    std::vector<int> numbers;
-    std::vector<std::string> words;
-    std::vector<std::string> files;
-
-    read::readfile (file, numbers, words, files);
-    
-    _numBattle = numbers[0];
-    _predio = numbers[1];
-
-    _adversary = new Npc (words[0], numbers[2], numbers[3], files[0]);
-
+    _adversary = new Npc (file);
+    _numBattle = numBattle;
+    _predio = predio;
+    _totalDamagePc = 0;
+    _totalDamageNpc = 0;
 }
 
+//Construtor sem leitura de arquivo para Npc
 Battle::Battle (Pc* player, Npc* adversary, int numBattle, int predio) {
     _player = *player;
     _adversary = adversary;
