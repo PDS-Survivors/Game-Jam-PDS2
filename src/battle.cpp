@@ -2,11 +2,29 @@
 #include "pc.hpp"
 #include "npc.hpp"
 #include "attack.hpp"
+#include "effects/reader.hpp"
 
 #include <string>
 #include <iostream>
 
+//Colocar em match
 int Battle::_totalLoses = 0;
+
+Battle::Battle (Pc &player, std::string file){
+    _player = player;
+
+    std::vector<int> numbers;
+    std::vector<std::string> words;
+    std::vector<std::string> files;
+
+    read::readfile (file, numbers, words, files);
+    
+    _numBattle = numbers[0];
+    _predio = numbers[1];
+
+    _adversary = new Npc (words[0], numbers[2], numbers[3], files[0]);
+
+}
 
 Battle::Battle (Pc* player, Npc* adversary, int numBattle, int predio) {
     _player = *player;
@@ -18,7 +36,7 @@ Battle::Battle (Pc* player, Npc* adversary, int numBattle, int predio) {
 }
 
 Battle::~Battle () {
-    _adversary->~Npc();
+    delete _adversary;
 }
 
 bool Battle::getResult () {
@@ -104,7 +122,7 @@ std::string Battle::resultTxt() {
     else if ((_result == 0) && (_numBattle == 3)){
         txt += "VOCÊ PASSOU DE SEMESTRE!\n\n";
         txt += "Agora o predio_nome não pode mais te atrapalhar\n";
-        txt += "Descanse enquanto pode, pois vai ficar pior\n";
+        txt += "Descanse enquanto pode, pois vai ficar pior ^-^\n";
     }
     else if ((_result == 1) && (_totalLoses != 3)){
         txt += "VOCÊ FOI REPROVAD@!\n\nEssa foi apenas uma derrota, não desista!\n";
@@ -120,16 +138,14 @@ std::string Battle::resultTxt() {
     return txt;
 }
 
+
+
 std::string Battle::statistcs () {
     std::string stat {};
-    int vidaOpc = _player.getLife() + _totalDamagePc;
-    int vidaFpc = _player.getLife();
-    int vidaOnpc = _adversary->getLife() + _totalDamageNpc;
-    int vidaFnpc = _adversary->getLife();
 
     stat += "======== Estatisticas de Batalha ========\n";
     stat += "== Resultado: ";
-    if ((_player.getLife() >= 0) || (_adversary->getLife() >= 0))
+    if ((_player.getLife() >= 0) && (_adversary->getLife() >= 0))
         stat += "nao definido o-o";
     else if (_player.getLife() <= 0)
         stat += "derrota T-T";
@@ -137,19 +153,15 @@ std::string Battle::statistcs () {
         stat += "vitoria :D";
     stat += "\n\n";
     stat += "== Player: "; stat += _player.getName();
-    stat += "\nVida inicial: "; stat += char(vidaFpc%10 + 48);
-    stat += char(vidaFpc - ((vidaFpc%10)*10) + 48);
-    stat += "\nVida atual: "; stat += char (vidaOpc%10 + 48);
-    stat += char(vidaOpc - ((vidaOpc%10)*10) + 48); 
-    stat += "\nDefesa: "; stat += char (_player.getDefense() + 48);
-    stat += "\nStamina: "; stat += char (_player.getStamina() + 48);
+    stat += "\nVida inicial: "; stat += std::to_string(_player.getLife() + _totalDamagePc);
+    stat += "\nVida atual: "; stat += std::to_string(_player.getLife());
+    stat += "\nDefesa: "; stat += std::to_string(_player.getDefense());
+    stat += "\nStamina: "; stat += std::to_string(_player.getStamina());
     stat += "\n== Adversário: "; stat += _adversary->getName(); 
-    stat += "\nVida inicial: "; stat += char (vidaFnpc%10 + 48);
-    stat += char(vidaFnpc - ((vidaFnpc%10)*10) + 48);
-    stat += "\nVida atual: "; stat += char (vidaOnpc%10 + 48);
-    stat += char(vidaOnpc - ((vidaOnpc%10)*10) + 48);
-    stat += "\nDefesa: "; stat += char (_adversary->getDefense() + 48);
-    stat += "\nStamina: "; stat += char (_adversary->getStamina() + 48);
+    stat += "\nVida inicial: "; stat += std::to_string(_adversary->getLife() + _totalDamageNpc);
+    stat += "\nVida atual: "; stat += std::to_string(_adversary->getLife());
+    stat += "\nDefesa: "; stat += std::to_string(_adversary->getDefense());
+    stat += "\nStamina: "; stat += std::to_string(_adversary->getStamina());
     stat += "\n\n";
 
     return stat;
@@ -167,9 +179,8 @@ void Battle::fight () {
         while ((_player.getLife() >= 0) && (_adversary->getLife() >= 0)){
             test = true;
 
-            //Enquanto a stamina for maior ou igual a 5, pode-se atacar
+            //Vez do Npc atacar
             while (_adversary->getStamina() >= 5){
-                _adversary->setStamina(-5);
                 int lpc = _player.getLife();
                 int lnpc = _adversary->getLife();
 
@@ -177,11 +188,20 @@ void Battle::fight () {
                 std::cout << _adversary->getName() << " ira atacar ^o^\n";
                 Attack* att;       
                 att = _adversary->chooseAttack(); 
-                _adversary->doHit(&_player, att);
+                if (att != nullptr) {
+                    _adversary->doHit(&_player, att);
+                }
 
-                this->setDamagePc (lpc - _player.getLife());
-                this->setDamageNpc (lnpc - _adversary->getLife());
+                this->setDamagePc(lpc - _player.getLife());
+                this->setDamageNpc(lnpc - _adversary->getLife());
+
+                _adversary->setStamina (-5);
+                if (this->defineResult() == true) break;
             }
+                
+            _adversary->setStamina(-5);
+            if (this->defineResult() == true) break;
+            
             
             this-> imprimeVida();
             if (this->defineResult() == true) break;
@@ -194,20 +214,27 @@ void Battle::fight () {
                 std::cin >> get_char;
                 switch (get_char){
                     case 'a' :  std::cout << this->statistcs(); break;
-                    case 'b' :  { _player.setStamina(-5);
+                    case 'b' :  { 
                                 int lpc = _player.getLife();
                                 int lnpc = _adversary->getLife();
 
                                 Attack* att;
-                                att = _adversary->chooseAttack();
-                                _player.doHit(_adversary, att);
+                                att = _player.chooseAttack();
+                                if (att != nullptr) {
+                                    _player.doHit(_adversary, att);
+                                }
 
-                                this->setDamagePc (lpc - _player.getLife());
-                                this->setDamageNpc (lnpc - _adversary->getLife());
-                                } break;
+                                this->setDamagePc(lpc - _player.getLife());
+                                this->setDamageNpc(lnpc - _adversary->getLife());
+
+                                _player.setStamina(-5);
+
+                                } 
+                                break;
                     case 'c' : test = false; break;
-                    default :  break;
+                    default : std::cout << "Digite 'a', 'b' ou 'c' para continuar"; break;
                 }
+                if (this->defineResult() == true) break;
             }
 
             this->imprimeVida ();
@@ -217,12 +244,12 @@ void Battle::fight () {
             _adversary->rebootStamina();
         }
     }
-    else{
+    else {
         //O player tem defesa menor, logo ataca primeiro
         while ((_player.getLife() >= 0) && (_adversary->getLife() >= 0)){
+            test = true;
 
             while ((_player.getStamina() >= 5) && (test == true)){
-                test = true;
 
                 //Escolha da ação: atacar, não atacar, mostrar estatísticas
                 std::cout << "Sua vez de brilhar!\n";
@@ -230,27 +257,32 @@ void Battle::fight () {
                 std::cin >> get_char;
                 switch (get_char){
                     case 'a' :  std::cout << this->statistcs(); break;
-                    case 'b' :  { _player.setStamina(-5);
+                    case 'b' :  {
                                 int lpc = _player.getLife();
                                 int lnpc = _adversary->getLife();
 
                                 Attack* att;
-                                att = _adversary->chooseAttack();
-                                _player.doHit(_adversary, att);
+                                att = _player.chooseAttack();
+                                if (att != nullptr) {
+                                    _player.doHit(_adversary, att);
+                                }
 
-                                _totalDamagePc = (lpc - _player.getLife());
-                                _totalDamageNpc = (lnpc - _adversary->getLife());
-                                } break;
+                                this->setDamagePc(lpc - _player.getLife());
+                                this->setDamageNpc(lnpc - _adversary->getLife());
+
+                                 _player.setStamina(-5);
+                                } 
+                                break;
                     case 'c' : test = false; break;
-                    default :  break;
+                    default : std::cout << "Digite 'a', 'b' ou 'c' para continuar"; break;
                 }
+                if (this->defineResult() == true) break;
             }
             
             this->imprimeVida();
             if (this->defineResult() == true) break;
-
+            
             while (_adversary->getStamina() >= 5){
-                _adversary->setStamina(-5);
                 int lpc = _player.getLife();
                 int lnpc = _adversary->getLife();
 
@@ -258,10 +290,15 @@ void Battle::fight () {
                 std::cout << _adversary->getName() << " ira atacar ^o^\n";
                 Attack* att;       
                 att = _adversary->chooseAttack(); 
-                _adversary->doHit(&_player, att);
+                if (att != nullptr) {
+                    _adversary->doHit(&_player, att);
+                }
 
-                _totalDamagePc = (lpc - _player.getLife());
-                _totalDamageNpc = (lnpc - _adversary->getLife());
+                this->setDamagePc(lpc - _player.getLife());
+                this->setDamageNpc(lnpc - _adversary->getLife());
+
+                _adversary->setStamina (-5);
+                if (this->defineResult() == true) break;
             }
 
             this->imprimeVida ();

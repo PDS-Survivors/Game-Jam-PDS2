@@ -25,19 +25,19 @@ int main () {
 
     ataque1 = new Attack (35, 3, "ataque do hamster", "roe a perna do seu inimigo");
     ataque2 = new Attack (10, 5, "estilingue", "atira uma manga verde");
-    ataque3 = new Attack (25, 4, "feitiço de tropeçar", "tropeça a cada 5 metros");
+    ataque3 = new Attack (50, 4, "feitiço de tropeçar", "tropeça a cada 5 metros");
     ataque4 = new Attack (15, 5, "nanorobôs ladrões de serotonina", "infelizes para sempre");
 
     ataque1->addEffect(lifeEffect);
     ataque2->addEffect(damageEffect);
 
     Pc* player;
-    player = new Pc ("Elfo", 80, 0);
+    player = new Pc ("Elfo", 80, 30);
     player->addHit(ataque1);
     player->addHit(ataque2);
 
     Npc* adversary;
-    adversary = new Npc ("Fantasma do quinto periodo", 60, 0, "Descricao interessante :D");
+    adversary = new Npc ("Fantasma do quinto periodo", 60, 50, "Descricao interessante :D");
     adversary->addAttack(ataque3);
     adversary->addAttack(ataque4);
 
@@ -75,7 +75,7 @@ int main () {
     std::cout << "Dano total em NPC: " << battle->getDamageNpc() << std::endl;
     std::cout << "Batalhas perdidas: " << battle->getTotalLoses() << std::endl;
 
-    battle->~Battle();
+    //Obs:Segmentation fault no destrutor de battle
 
     return 0;
 }
