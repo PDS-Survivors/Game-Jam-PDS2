@@ -9,6 +9,25 @@
               std::string description):
               Entity(name,life,defense), _description(description){}
 
+    Npc::Npc(std::string file){
+
+        std::vector<std::string> words;
+        std::vector<std::string> files;
+        std::vector<int> values;
+
+        read::readfile(file, values, words, files);
+
+        _name = words[0];
+        _description = words[1];
+        _life = values[0];
+        _defense = values[1];
+        _stamina = values[2];
+
+        for(std::string fl : files)
+            _hit.push_back( new Attack(fl) );
+        
+
+    }
     Npc::~Npc(){
 
         std::list<Effect*>::iterator ite;

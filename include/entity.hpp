@@ -19,13 +19,13 @@
 
         public:
             
-            Entity ();
-            
             Entity( std::string name,
                     int life,
                     int defense);
             
-             virtual ~Entity() = 0;
+            Entity();
+            
+            virtual ~Entity() = 0;
             
             int getLife();
 

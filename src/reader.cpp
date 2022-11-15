@@ -68,10 +68,6 @@
                 case 'i':
                     values.push_back(readint(it, line));
                     break;
-                        
-                case 'c':
-
-                    break;
 
                 case 's':
                     words.push_back(readstring(it, line));

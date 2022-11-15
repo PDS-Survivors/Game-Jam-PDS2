@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-    namespace read{
+namespace read{
 
     int readint(std::string::iterator it, std::string& line);
 
@@ -16,6 +16,6 @@
                    std::vector<std::string>& words,
                    std::vector<std::string>& files );
 
-    }
+}
 
 #endif

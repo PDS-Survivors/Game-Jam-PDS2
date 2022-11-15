@@ -21,6 +21,8 @@ class Npc: public Entity{
             int defense,
             std::string description);
 
+        Npc(std::string file);
+        
         virtual ~Npc() override;
 
         void addAttack(Attack* attack);

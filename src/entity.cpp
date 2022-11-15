@@ -3,7 +3,7 @@
 #include <iostream>
 #include <list>
 
-    Entity::Entity() {}
+   
 
     Entity::Entity( std::string name,
                     int life,
@@ -13,6 +13,8 @@
                     _total_life(life),
                     _defense(defense){}
 
+    Entity::Entity(){}
+    
     Entity::~Entity(){}
 
     int Entity::getLife(){
