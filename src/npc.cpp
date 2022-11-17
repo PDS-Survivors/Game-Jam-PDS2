@@ -24,7 +24,7 @@
         _description = words[1];
         _life = values[0];
         _defense = values[1];
-        _stamina = values[2];
+        _stamina = 5;
 
         //percorre a lista de arquivos e cria eles (no caso de Npc, os arquivos serão todos ataques
         // que por sua vez criarão efeitos).
@@ -65,4 +65,8 @@
 
     std::string Npc::getDescription(){
         return _description;
+    }
+
+    void Npc::increaseTurner(){
+        _turner++;
     }

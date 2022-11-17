@@ -9,10 +9,11 @@
 
 class Npc: public Entity{
 
-    private:
+    protected:
 
         std::vector<Attack*> _hit;
         std::string _description;
+        int _turner = 0;
 
     public:
 
@@ -33,5 +34,8 @@ class Npc: public Entity{
         
         std::string getDescription();
 
+        virtual void rebootTurner() = 0;
+
+        void increaseTurner();
 };  
 #endif
