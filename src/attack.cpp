@@ -128,4 +128,13 @@
 
     void Attack::addEffect(Effect* effect){
         _effects.push_back(effect);
+    }   
+
+    bool Attack::isDefense(){
+        return false;
+    }
+
+    int Attack::Harvest(std::vector<Effect*>& effect){
+
+        return 0;
     }

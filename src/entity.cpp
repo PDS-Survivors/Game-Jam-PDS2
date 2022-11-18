@@ -116,6 +116,24 @@
         if(hit->getStamina() > this->getStamina())
             return -1;
 
+        if(hit->isDefense()){
+
+            std::vector<Effect*> effect;
+
+            hit->Harvest(effect);
+
+
+        //adicionando os efeitos vindos da defesa na lista de efeitos da entidade atacante
+        //e depois deletando esse vetor temporário.
+        for(Effect* e : effect)
+            this->addEffect(e);
+
+        while(!effect.empty())
+            effect.pop_back();
+
+        return 0;
+        }
+        
         int newLife = enemy->getLife();
 
         int defense = enemy->getDefense();

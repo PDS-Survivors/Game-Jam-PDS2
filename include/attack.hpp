@@ -56,9 +56,14 @@
             //realiza todo o calculo de danos.
             int doAction(int life, int defense, int extradamage, std::vector<Effect*>& effect);
 
-                
+
             void operator += (Effect* const effect);
 
             void addEffect(Effect* effect);
+
+            virtual bool isDefense();
+
+            virtual int Harvest(std::vector<Effect*>& effect);
+
     };
 #endif
