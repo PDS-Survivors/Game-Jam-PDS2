@@ -30,7 +30,7 @@ entity: attack
 pc: entity
 	$(CC) $(CFLAGS) -o build/pc.o -c src/pc.cpp
 
-npc: pc
+npc: pc 
 	$(CC) $(CFLAGS) -o build/npc.o -c src/npc.cpp
 
 battle: npc
