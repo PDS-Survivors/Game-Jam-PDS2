@@ -22,6 +22,7 @@
         //as posições no arquivo importam já que, por exemplo, a primeira string lida será o nome.
         _name = words[0];
         _description = words[1];
+        _behavior = words[2];
         _life = values[0];
         _defense = values[1];
         _stamina = 5;
@@ -67,6 +68,14 @@
         return _description;
     }
 
-    void Npc::increaseTurner(){
-        _turner++;
+    int Npc::sizeofHit(){
+        return _hit.size();
+    }
+
+    std::string Npc::getBehavior(){
+        return _behavior;
+    }
+    
+    void Npc::doTurn(Entity* player){
+        behavior::doBehavior(this, player);
     }

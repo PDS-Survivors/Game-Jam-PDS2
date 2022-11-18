@@ -3,9 +3,11 @@
 
 #include <iostream>
 #include <vector>
+#include <map>
 
 #include "entity.hpp"
 #include "attack.hpp"
+#include "behavior.hpp"
 
 class Npc: public Entity{
 
@@ -13,7 +15,8 @@ class Npc: public Entity{
 
         std::vector<Attack*> _hit;
         std::string _description;
-        int _turner = 0;
+        std::string _behavior;
+
 
     public:
 
@@ -34,8 +37,13 @@ class Npc: public Entity{
         
         std::string getDescription();
 
-        virtual void rebootTurner() = 0;
+        int sizeofHit();
 
-        void increaseTurner();
+        std::string getBehavior();
+    
+        void doTurn(Entity* player);
+        
+
+        
 };  
 #endif

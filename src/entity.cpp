@@ -40,7 +40,9 @@
     //a função de ataque já faz os cálculos para determinar o quanto de dano o personagem sofreu
     //este set serve apenas para a entity receber a vida alterada.
     int Entity::setLife(int life){
-        
+
+        if(life < 0) life = 0;
+
         return _life = life;
     }
 
@@ -111,6 +113,9 @@
 
     int Entity::doHit(Entity* enemy, Attack* hit){
 
+        if(hit->getStamina() > this->getStamina())
+            return -1;
+
         int newLife = enemy->getLife();
 
         int defense = enemy->getDefense();
@@ -127,9 +132,14 @@
         //criando um vetor de effect para passar os efeitos do ataque para o atacado.
         std::vector<Effect*> effect;
 
+        
         //aqui o ataque faz todo o cálculo da nova vida.
         newLife = hit->doAction(newLife, defense, extradamage, effect);
+        //gasta a stamina da entidade
+        this->setStamina(-1 * hit->getStamina());
         
+        
+
         //adicionando os efeitos vindos do ataque na lista de efeitos da entidade
         //e depois deletando esses esse vetor temporário.
         for(Effect* e : effect){

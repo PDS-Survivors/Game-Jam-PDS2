@@ -54,8 +54,9 @@
             Effect* getEffect(int id = 0);
             
             //realiza todo o calculo de danos.
-            virtual int doAction(int life, int defense, int extradamage, std::vector<Effect*>& effect);
+            int doAction(int life, int defense, int extradamage, std::vector<Effect*>& effect);
 
+                
             void operator += (Effect* const effect);
 
             void addEffect(Effect* effect);
