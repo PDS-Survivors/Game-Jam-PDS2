@@ -4,10 +4,11 @@
 #include <stack>
 #include "battle.hpp"
 
-Building::Building(std::string desc, std::string name, int number){
+Building::Building(std::string desc, std::string name, int number, int totalb){
     _desc = desc;
     _name = name;
     _number = number;
+    _totalBattles =totalb;
     _numBattle = 0;
 }
 
@@ -17,7 +18,6 @@ Building::~Building(){
 
 std::string Building::get_desc(){
     return _desc;
-
 }
 
 std::string Building::get_name(){
@@ -41,15 +41,15 @@ void Building::start_battle(){
 }
 
 void Building::add_battle(){ 
-    Pc player;
-    Npc* adversary3;
-    _battles.push(Battle(player,adversary3,3,_number));
+    Pc* player;
+    Npc* adversary[_totalBattles];
+    for(int i=0;i<_totalBattles;i++){
+         /* adversary[i] = NPC lido do arquivo*/
+    }
 
-    Npc* adversary2;
-    _battles.push(Battle(player,adversary2,2,_number));
-
-    Npc* adversary1;
-    _battles.push(Battle(player,adversary1,1,_number));
+    for(int i=_totalBattles;i>0;i--){
+        _battles.push(Battle(player,adversary[i-1],i,_number));
+    }
 }
     
 void Building::remove_battle(){

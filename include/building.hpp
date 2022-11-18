@@ -14,6 +14,7 @@ class Building {
     std::string _name;
     int _number;
     int _numBattle;
+    int _totalBattles;
 
     public:
     /**
@@ -21,8 +22,9 @@ class Building {
      * @param desc Complete descripition of the building
      * @param name Name of the building
      * @param number Number of the building
+     * @param totalb Number of battles in the building
     */
-    Building(std::string desc, std::string name, int number);
+    Building(std::string desc, std::string name, int number, int totalb);
 
     ~Building();
 
