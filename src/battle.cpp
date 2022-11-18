@@ -215,6 +215,9 @@ void Battle::fight () {
 
                                 Attack* att;
                                 att = _player.chooseAttack();
+                                
+                                
+
                                 if (att != nullptr) {
                                     _player.doHit(_adversary, att);
                                 }
@@ -258,6 +261,7 @@ void Battle::fight () {
 
                                 Attack* att;
                                 att = _player.chooseAttack();
+                                //
                                 if (att != nullptr) {
                                     _player.doHit(_adversary, att);
                                 }
