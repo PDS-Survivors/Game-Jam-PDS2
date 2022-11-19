@@ -20,6 +20,7 @@
         read::readfile(file, values, words, files);
 
         _value = values[0];
+        _durability = values[1];
         _name = words[0];
         _description = words[1];
 

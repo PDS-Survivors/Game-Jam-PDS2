@@ -1,5 +1,6 @@
 #include "npc.hpp"
 
+#include "../namespaces/behavior.hpp"
 #include <iostream>
 #include <string>
 #include <vector>
