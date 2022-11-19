@@ -147,8 +147,8 @@ std::string Battle::statistcs () {
     std::string stat {};
 
     stat += "======== Estatisticas de Batalha ========\n";
-    stat += "== Turno: "; stat += this->getTurno();
-    stat += "== Resultado: ";
+    stat += "== Turno: "; stat += std::to_string(this->getTurno());
+    stat += "\n== Resultado: ";
     if ((_player.getLife() >= 0) && (_adversary->getLife() >= 0))
         stat += "nao definido o-o";
     else if (_player.getLife() <= 0)
@@ -199,7 +199,6 @@ void Battle::figthPc () {
                         this->setDamagePc(lpc - _player.getLife());
                         this->setDamageNpc(lnpc - _adversary->getLife());
 
-                        _player.setStamina(-5);
                         } 
                         break;
             case 'c' : test = false; break;
@@ -225,22 +224,19 @@ void Battle::fightNpc () {
         _adversary->setStamina (-5);
         if (this->defineResult() == true) break;
     }
+
 }
 
 //Roda a batalha entre Pc e Npc
 void Battle::fight () {
-    while (_player.getLife() >= 0 && _adversary->getLife() >= 0) {
+    this->imprimeVida();
 
-        this->imprimeVida();
-
-        //O npc tem defesa menor, logo ataca primeiro
-        if (_player.getDefense() >= _adversary->getDefense()) {
+    //O npc tem defesa menor, logo ataca primeiro
+    if (_player.getDefense() >= _adversary->getDefense()) {
+         while ((_player.getLife() >= 0) && (_adversary->getLife() >= 0)) {
             
             this->fightNpc();      
-            
-            _adversary->setStamina(-5);
-            if (this->defineResult() == true) break;    
-                
+                    
             this->imprimeVida();
             if (this->defineResult() == true) break;
 
@@ -254,9 +250,11 @@ void Battle::fight () {
 
             this->setTurno();
         }
+    }
 
-        //O player tem defesa menor, logo ataca primeiro
-        else {
+    //O player tem defesa menor, logo ataca primeiro
+    else {
+        while ((_player.getLife() >= 0) && (_adversary->getLife() >= 0)) {
 
             this->figthPc();
                 

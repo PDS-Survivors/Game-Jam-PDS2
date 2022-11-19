@@ -23,10 +23,10 @@ int main () {
     Attack* ataque3;
     Attack* ataque4;
 
-    ataque1 = new Attack (35, 3, "ataque do hamster", "roe a perna do seu inimigo");
+    ataque1 = new Attack (65, 3, "ataque do hamster", "roe a perna do seu inimigo");
     ataque2 = new Attack (10, 5, "estilingue", "atira uma manga verde");
-    ataque3 = new Attack (50, 4, "feitiço de tropeçar", "tropeça a cada 5 metros");
-    ataque4 = new Attack (15, 5, "nanorobôs ladrões de serotonina", "infelizes para sempre");
+    ataque3 = new Attack (90, 4, "feitiço de tropeçar", "tropeça a cada 5 metros");
+    ataque4 = new Attack (85, 5, "nanorobôs ladrões de serotonina", "infelizes para sempre");
 
     ataque1->addEffect(lifeEffect);
     ataque2->addEffect(damageEffect);
