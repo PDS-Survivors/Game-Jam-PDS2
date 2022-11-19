@@ -9,7 +9,7 @@ EFFFG := -I include/effects/ -Wall
 ATTFG := -I include/attacks/ -Wall
 ENTFG := -I include/entities/ -Wall
 
-all: teste3
+all: battle
 
 reader:
 	$(CC) $(NMSFG) -o build/reader.o -c src/namespaces/reader.cpp
@@ -48,18 +48,21 @@ battle: npc behavior
 	$(CC) $(CFLAGS) -o build/battle.o -c src/battle.cpp
 
 teste1: npc 
-	$(CC) $(CFLAGS) -o build/teste1.o build/*.o src/Testes_de_verificacao/Teste_de_verificacao_1.cpp 
+	$(CC) $(CFLAGS) -o build/teste1.o build/*.o src/Testes_de_verificacao/Teste_de_verificacao_1.cpp
+	./build/teste1.o
 
 teste2: npc
 	$(CC) $(CFLAGS) -o build/teste2.o build/*.o src/Testes_de_verificacao/Teste_de_verificacao_2.cpp
+	./build/teste2.o
 
 teste3: battle
 	$(CC) $(CFLAGS) -o build/teste3.o build/*.o src/Testes_de_verificacao/Teste_de_verificacao_3.cpp
-
+	./build/teste3.o
+	
 run:
 	./build/teste3.o
 
 clean:
 	$(RM) -r $(BUILD)/* $(TARGET)
 
-reboot: clean all run
+reboot: clean all 
