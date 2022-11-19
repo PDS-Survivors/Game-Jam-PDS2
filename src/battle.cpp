@@ -21,11 +21,7 @@ Battle::Battle (Pc *player, std::string file){
 
     read::readfile (file, values, words, files);
 
-<<<<<<< HEAD
     _adversary = new Npc(files[0]);
-=======
-    *_adversary = files[0];
->>>>>>> 2128476 (Update battle)
     _numBattle = values[0];
     _predio = values[1];
     _resultTxt = words[0];
