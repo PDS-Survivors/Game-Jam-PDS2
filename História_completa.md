@@ -250,15 +250,47 @@
     - Pinscher raiovoso:
         Alguns alunos de mestrado que estavam estudando o vírus da raiva foram fazer uma pesquisa de campo para coletar morcegos de diferentes espécies contaminados. Eles colocaram os morcegos capturados em gaiolas de metal e levaram eles para o laborário onde ocorreia a pesquisa. Tudo estava ocorrendo estranhamente bem e, em um ato de discuito, os jovens cientistas deixaram a gaiola no chão. Um pinscher curioso se aproximou demais da gaiola e acabou levando uma mordida no nariz. O cachorro fugiu assustado e as únicas pessoas que o viram desde então acabaram sendo mordidas e contraindo raiva.
     - Bernado, o berne
-    - Centauro invertido
+
+    - Centauro invertido:
+        Nos confins da veterinária, haviam alguns estudantes que queriam que a veterinaria tambem tivesse 
+        um ser mitologico, como a EFFTO tem o Hercules e a Engenharia tem o grifo. Por isso, eles juntaram peças de
+        animais e um voluntário para fazer um centauro, só que eles esqueceram a ordem para montar um centauro e
+        acabaram so fazendo um ser com cabeça de cavalo e perna de humano (por isso centauro invertido). Da uma surra 
+        nele pra ver se consegue fazer ele ser um humano de volta.
+
 3. Música
     - Sanfona furada
-    - Homem capivara do bosque da música
+    - Homem capivara do bosque da música:
+        Hmm... Que barulho eh esse?... Eh um homem?... Eh uma capivara?... 
+        Estudantes relatam sons estranhos nas proximidades da escola de musica. Enquanto as autoridades dizem
+        para nao se preocupar porque deve ser apenas um cachorro doente, os estudantes mais antigos falam de
+        uma lenda mais antiga: o homem capivara do bosque da musica. Segundo a lenda ele ja estava aqui quando
+        o bosque da musica era so um bosque, mas ele ficou preso na UFMG por que sempre perde o horario do interno.
+        Agora ele anda pela escola de musica roubando paçoca dos estudantes que passam por ali de noite. Voce deve
+        derrotar ele para que nenhum estudante tenha que voltar pra casa sem a paçoca que ele pegou no RU.
+
 4. Fafich
     - Vampiros sugadores de esperança
-    - Getúlio Mineiro
+    - Getúlio Mineiro:
+        Após uma aula muito eloquente sobre a Revoluçao de 30 e o Estado Novo, um estudante de historia se inspirou 
+        muito em Getulio Vargas e agora clama ser o Getulio Vargas de Minas Gerais, prometendo instaurar na UFMG o Estado
+        Mais Novo, onde o curso de historia dominaria toda a universidade. Ele nao eh um perigo real, mas eh muito chato,
+        entao so da uma pisa nele para ele parar com isso logo!
+
     - Amuleto amaldiçoado de Ark'heo'lujia
+        Em uma visita a um sitio arqueologico nas montanhas do Peru, as professoras Mara Croft e Indiara Jones descobriram
+        um amuleto misterioso com um simbolo de caveira entalhado nele (pouco suspeito nao?). Elas trouxeram pra UFMG para 
+        exibir artefatos da comunidade indigena perdida de Ark'heo'lujia para seus alunos, porem as professoras nao imaginavam
+        que o amuleto estava amaldiçoado! desde que ele chegou, os estudantes da Fafich nao recebem suas bolsas de IC e as luzes
+        estao meio estranhas, entao destroi esse amuleto pra ver se consegue quebrar a maldiçao (ou o corte de verba).
+        
     - Teodósio, o macaco-humano
+        Ha muito tempo atras, estudantes de psicologia faziam testes com um orangotango chamado Bubbaloo, porem o departamento 
+        de psicologia cancelou a pesquisa, por nao entregar nenhum resultado aparente. A sala que era a pesquisa foi 
+        transformada em um deposito de livros velhos de filosofia e historia, entao com o passar dos anos centenas de livros
+        foram jogados la, mas todos se esqueceram da existencia do Bubbaloo. Com o passar dos anos, Bubbaloo aprendeu a ler os
+        livros que estavam la e entendeu de verdade o que eh ser um ser humano, entao agora se denomina de Teodosio, o humano
+        e guardiao da verdade e sabedoria humana. Derrota ele porque um orangutango se comportando como humano me da muuuito medo!
 5. EBA
     - Pintura inacabada
     - Manequeen
@@ -269,7 +301,14 @@
     - Superbactéria 
     - Cobaia Superior “Doutor Splointer”
 7. ICEX
-    - Cálculo Maléfico 
+    - Cálculo Maléfico;
+        Por causa dos altos indices de reprovaçao e trancamento das matérias de calculo,
+        os professores do departamento de matematica se reuniram para formular uma nova materia
+        chamada calculo 0,5, para preparar os estudantes para calculo 1. Parece que eles fizeram
+        alguma besteira porque a matéria ganhou vida e jurou destruir todo os professores do Icex.
+        Voce deve impedir ele e salvar os professores para que eles possam registrar as suas notas
+        no sistema.
+
     - Líquido Estranho do Laboratório de Química (LELAQ)
     - Newton do mal
 8. Engenharia
