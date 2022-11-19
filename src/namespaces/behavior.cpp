@@ -8,9 +8,13 @@
 
 
 
-    int rollDice(int start, int lim){
+    int behavior::rollDice(int start, int lim){
 
         srand((unsigned) time(NULL));
+        
+        int itv = time(NULL) + 1;
+
+        while(time(NULL) != itv){}
         
         return rand() % lim + start;
     }
@@ -148,10 +152,10 @@
     void behavior::pacientbhv(Entity* enemy, Entity* player){
 
         int turn = rollDice(1, 5);
-
+        
         if(turn == 3)
             enemy->doHit(player, enemy->getHit(rollDice(0,2)));
-
+            
     }
 
     void behavior::doBehavior(Entity* enemy, Entity* player){

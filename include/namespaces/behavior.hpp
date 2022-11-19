@@ -9,7 +9,7 @@
 
     namespace behavior{
         
-        int rollDyce(int start, int lim);
+        int rollDice(int start, int lim);
 
         void berserkerbhv(Entity* enemy, Entity* player);
 

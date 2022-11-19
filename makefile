@@ -47,18 +47,18 @@ npc: pc
 battle: npc behavior
 	$(CC) $(CFLAGS) -o build/battle.o -c src/battle.cpp
 
-teste1: npc 
+teste1: battle 
 	$(CC) $(CFLAGS) -o build/teste1.o build/*.o src/Testes_de_verificacao/Teste_de_verificacao_1.cpp
 	./build/teste1.o
 
-teste2: npc
+teste2: battle
 	$(CC) $(CFLAGS) -o build/teste2.o build/*.o src/Testes_de_verificacao/Teste_de_verificacao_2.cpp
 	./build/teste2.o
 
 teste3: battle
 	$(CC) $(CFLAGS) -o build/teste3.o build/*.o src/Testes_de_verificacao/Teste_de_verificacao_3.cpp
 	./build/teste3.o
-	
+
 run:
 	./build/teste3.o
 

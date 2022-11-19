@@ -9,23 +9,19 @@
 
 int main(){
 
-    DamageEffect* efeito1;
-    efeito1 = new DamageEffect("lib/filetest.txt");
-    
-    std::cout<<efeito1->getName()<<std::endl;
-    std::cout<<efeito1->getDescription()<<std::endl;
-    std::cout<<efeito1->getValue()<<std::endl;
-    
-    Attack* ataque1;
-    ataque1 = new Attack("lib/hittest.txt");
+    Npc* enemy1 = new Npc("lib/npcs/mortovivo.txt");
 
-    std::cout<<ataque1->getName()<<" ";
-    std::cout<<ataque1->getDescription()<<" ";
-    std::cout<<ataque1->getDamage()<<" ";
-    std::cout<<std::endl;
+    Npc* enemy2 = new Npc("lib/npcs/mortovivo.txt");
     
-    std::cout<<ataque1->getEffect(0)->getName()<<std::endl;
-    std::cout<<ataque1->getEffect(0)->getValue()<<std::endl;
+    std::cout<<enemy2->getLife()<<std::endl;
     
+    for(int i=0; i<20;i++){
+    enemy1->doTurn(enemy2);
+
+    std::cout<<enemy2->getLife()<<std::endl;
+
+    enemy1->rebootStamina();
+    }
+
     return 0;
 }

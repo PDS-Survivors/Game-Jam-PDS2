@@ -1,7 +1,7 @@
 smorto-vivo_
-spacient_
 seh definitivamente um zumbi, mas os estudantes de biologia nao nos deixam usar essa palavra pois ele teoricamente esta vivo_
+spacient_
 i07_
-i01_
+i2_
 flib/attacks/bafodeformol.txt_
 flib/attacks/apocalipsemortovivo.txt_
