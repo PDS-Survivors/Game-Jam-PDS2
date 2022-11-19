@@ -1,8 +1,8 @@
 #include "battle.hpp"
-#include "pc.hpp"
-#include "npc.hpp"
-#include "entity.hpp"
-#include "attack.hpp"
+#include "entities/pc.hpp"
+#include "entities/npc.hpp"
+#include "entities/entity.hpp"
+#include "attacks/attack.hpp"
 
 #include <string>
 #include <iostream>

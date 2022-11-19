@@ -3,8 +3,8 @@
 
 #include <iostream>
 #include <list>
-#include "attack.hpp"
-#include "effects/effect.hpp"
+#include "../attacks/attack.hpp"
+#include "../effects/effect.hpp"
 
     class Entity{
 
@@ -25,7 +25,7 @@
             
             Entity();
             
-            virtual ~Entity() = 0;
+            virtual ~Entity();
             
             int getLife();
 
@@ -65,10 +65,13 @@
 
             virtual Attack* getHit(int id) = 0;
 
+            virtual int sizeofHit();
+            
             //escolhe qual ataque será usado, se o ataque é válido para o atual nível de estamina.
             //é uma função mais complexa que o getHit justamente por ter o controle de estamina.
             virtual Attack* chooseAttack() = 0;
             
+            virtual std::string getBehavior();
     };
 
 #endif

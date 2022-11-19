@@ -3,10 +3,10 @@
 
 #include <iostream>
 #include <vector>
-#include "effects/effect.hpp"
-#include "effects/lifeeffect.hpp"
-#include "effects/damageeffect.hpp"
-#include "effects/defenseeffect.hpp"
+#include "../effects/effect.hpp"
+#include "../effects/lifeeffect.hpp"
+#include "../effects/damageeffect.hpp"
+#include "../effects/defenseeffect.hpp"
 
     class Attack{
 

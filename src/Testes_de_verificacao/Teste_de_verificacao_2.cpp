@@ -3,9 +3,9 @@
 #include <list>
 #include <fstream>
 
-#include "pc.hpp"
-#include "npc.hpp" 
-#include "effects/reader.hpp"
+#include "entities/pc.hpp"
+#include "entities/npc.hpp" 
+#include "namespaces/reader.hpp"
 
 int main(){
 

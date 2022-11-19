@@ -36,6 +36,7 @@
     int Entity::getStamina(){
         return _stamina;
     }
+
     //função pra mudar a vida de uma entidade.
     //a função de ataque já faz os cálculos para determinar o quanto de dano o personagem sofreu
     //este set serve apenas para a entity receber a vida alterada.
@@ -175,6 +176,14 @@
 
         //altera finalmente a vida da entidade atacada.
         return enemy->setLife(newLife);
+    }
+
+    int Entity::sizeofHit(){
+        return 0;
+    }
+
+    std::string Entity::getBehavior(){
+        return "";
     }
 
 

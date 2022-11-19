@@ -2,8 +2,8 @@
 #define BATTLE_HPP
 
 #include <string>
-#include "npc.hpp"
-#include "pc.hpp"
+#include "entities/npc.hpp"
+#include "entities/pc.hpp"
 
 class Battle {
 

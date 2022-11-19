@@ -75,5 +75,9 @@
             std::cout<<hit->getName()<<std::endl;
         
     }
+
+    int Pc::sizeofHit(){
+        return _hit.size();
+    }
     
     

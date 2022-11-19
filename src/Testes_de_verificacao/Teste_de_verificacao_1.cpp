@@ -1,6 +1,6 @@
 
-#include "pc.hpp"
-#include "npc.hpp"
+#include "entities/pc.hpp"
+#include "entities/npc.hpp"
 #include "effects/effect.hpp"
 #include "effects/lifeeffect.hpp"
 #include "effects/damageeffect.hpp"

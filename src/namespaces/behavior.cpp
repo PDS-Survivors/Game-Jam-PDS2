@@ -3,8 +3,10 @@
 #include <iostream>
 #include <cstdlib>
 #include <time.h>
+#include "../attacks/attack.hpp"
+#include "../entities/entity.hpp"
 
-using namespace behavior;
+
 
     int rollDice(int start, int lim){
 
@@ -13,7 +15,7 @@ using namespace behavior;
         return rand() % lim + start;
     }
 
-    void berserkerbhv(Npc* enemy, Entity* player){
+    void behavior::berserkerbhv(Entity* enemy, Entity* player){
 
         int turn = rollDice(1, 3);
 
@@ -47,7 +49,7 @@ using namespace behavior;
 
     }
 
-    void speedybhv(Npc* enemy, Entity* player){
+    void behavior::speedybhv(Entity* enemy, Entity* player){
         
         int turn = rollDice(1, 2);
 
@@ -74,7 +76,7 @@ using namespace behavior;
 
     }
 
-    void tankbhv(Npc* enemy, Entity* player){
+    void behavior::tankbhv(Entity* enemy, Entity* player){
 
         int turn = rollDice(1, 5);
 
@@ -118,7 +120,7 @@ using namespace behavior;
     
     }
 
-    void hybridbhv(Npc* enemy, Entity* player){
+    void behavior::hybridbhv(Entity* enemy, Entity* player){
         
         int turn = rollDice(1, 2);
 
@@ -143,16 +145,16 @@ using namespace behavior;
 
     }
 
-    void pacientbhv(Npc* enemy, Entity* player){
+    void behavior::pacientbhv(Entity* enemy, Entity* player){
 
         int turn = rollDice(1, 5);
 
-        if(turn = 3)
+        if(turn == 3)
             enemy->doHit(player, enemy->getHit(rollDice(0,2)));
 
     }
 
-    void doBehavior(Npc* enemy, Entity* player){
+    void behavior::doBehavior(Entity* enemy, Entity* player){
         
         switch((enemy->getBehavior())[0]){
             

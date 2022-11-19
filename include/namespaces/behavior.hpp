@@ -4,8 +4,8 @@
 #include <iostream>
 #include <cstdlib>
 #include <time.h>
-#include "attack.hpp"
-#include "npc.hpp"
+#include "../attacks/attack.hpp"
+#include "../entities/entity.hpp"
 
     namespace behavior{
         

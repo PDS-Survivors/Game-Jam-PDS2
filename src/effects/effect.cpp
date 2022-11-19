@@ -1,5 +1,5 @@
 #include "effect.hpp"
-#include "reader.hpp"
+#include "../namespaces/reader.hpp"
 #include <iostream>
 #include <vector>
 

@@ -4,34 +4,45 @@ BUILD := build/
 SRC := src/
 TARGET := main.out
 
+NMSFG := -I include/namespaces/ -Wall
+EFFFG := -I include/effects/ -Wall
+ATTFG := -I include/attacks/ -Wall
+ENTFG := -I include/entities/ -Wall
+
 all: teste3
 
 reader:
-	$(CC) -I include/effects/ -Wall -o build/reader.o -c src/reader.cpp
+	$(CC) $(NMSFG) -o build/reader.o -c src/namespaces/reader.cpp
+
+behavior: 
+	$(CC) $(NMSFG) -o build/behavior.o -c src/namespaces/behavior.cpp
 
 effect: reader
-	$(CC) -I include/effects/ -Wall -o build/effect.o -c src/effects/effect.cpp
+	$(CC) $(EFFFG) -o build/effect.o -c src/effects/effect.cpp
 
 lifeeffect: 
-	$(CC) -I include/effects/ -Wall -o build/lifeeffect.o -c src/effects/lifeeffect.cpp
+	$(CC) $(EFFFG) -o build/lifeeffect.o -c src/effects/lifeeffect.cpp
 
 damageeffect: 
-	$(CC) -I include/effects/ -Wall -o build/damageeffect.o -c src/effects/damageeffect.cpp
+	$(CC) $(EFFFG) -o build/damageeffect.o -c src/effects/damageeffect.cpp
 
 defenseeffect: 
-	$(CC) -I include/effects/ -Wall -o build/defenseeeffect.o -c src/effects/defenseeffect.cpp
+	$(CC) $(EFFFG) -o build/defenseeeffect.o -c src/effects/defenseeffect.cpp
 
 attack: effect lifeeffect damageeffect defenseeffect
-	$(CC) $(CFLAGS) -o build/attack.o -c src/attack.cpp
+	$(CC) $(ATTFG) -o build/attack.o -c src/attacks/attack.cpp
 
-entity: attack
-	$(CC) $(CFLAGS) -o build/entity.o -c src/entity.cpp
+defense: attack
+	$(CC) $(ATTFG) -o build/defense.o -c src/attacks/defense.cpp
+
+entity: defense
+	$(CC) $(ENTFG) -o build/entity.o -c src/entities/entity.cpp
 
 pc: entity
-	$(CC) $(CFLAGS) -o build/pc.o -c src/pc.cpp
+	$(CC) $(ENTFG) -o build/pc.o -c src/entities/pc.cpp
 
-npc: pc
-	$(CC) $(CFLAGS) -o build/npc.o -c src/npc.cpp
+npc: pc behavior
+	$(CC) $(ENTFG) -o build/npc.o -c src/entities/npc.cpp
 
 battle: npc
 	$(CC) $(CFLAGS) -o build/battle.o -c src/battle.cpp

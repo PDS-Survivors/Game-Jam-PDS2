@@ -6,8 +6,8 @@
 #include <map>
 
 #include "entity.hpp"
-#include "attack.hpp"
-#include "behavior.hpp"
+#include "../attacks/attack.hpp"
+#include "../namespaces/behavior.hpp"
 
 class Npc: public Entity{
 
@@ -37,9 +37,9 @@ class Npc: public Entity{
         
         std::string getDescription();
 
-        int sizeofHit();
+        virtual int sizeofHit() override;
 
-        std::string getBehavior();
+        virtual std::string getBehavior();
     
         void doTurn(Entity* player);
         

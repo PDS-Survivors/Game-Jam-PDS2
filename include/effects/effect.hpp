@@ -2,7 +2,7 @@
 #define EFFECT_H
 
 #include <iostream>
-#include "reader.hpp"
+#include "../namespaces/reader.hpp"
 
     class Effect{
 

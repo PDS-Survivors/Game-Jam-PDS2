@@ -5,7 +5,7 @@
 #include <list>
 
 #include "entity.hpp"
-#include "attack.hpp"
+#include "../attacks/attack.hpp"
 
 class Pc: public Entity{
 
@@ -26,6 +26,8 @@ class Pc: public Entity{
         Attack* getHit(int id) override;
         
         Attack* chooseAttack() override;
+
+        virtual int sizeofHit() override;
         
         void addHit(Attack* attack);
 

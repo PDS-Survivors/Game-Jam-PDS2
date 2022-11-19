@@ -1,8 +1,8 @@
 #include "battle.hpp"
-#include "pc.hpp"
-#include "npc.hpp"
-#include "attack.hpp"
-#include "effects/reader.hpp"
+#include "entities/pc.hpp"
+#include "entities/npc.hpp"
+#include "attacks/attack.hpp"
+#include "namespaces/reader.hpp"
 
 #include <string>
 #include <iostream>
