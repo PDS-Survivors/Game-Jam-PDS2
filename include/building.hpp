@@ -1,10 +1,12 @@
 #ifndef BUILDING_HPP
 #define BUILDING_HPP
 
+#include "battle.hpp"
+
 #include <iostream>
 #include <vector>
 #include <stack>
-#include "battle.hpp"
+#include <string>
 
 class Building {
 
@@ -61,7 +63,7 @@ class Building {
     /**
      * @brief Adds a battle on the stack
     */
-    void add_battle();
+    void add_battles();
 
     /**
      * @brief Removes a battle from the stack
