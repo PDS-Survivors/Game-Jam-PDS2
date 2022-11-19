@@ -117,7 +117,7 @@
 **Mestre de armas** Levantar a voz não vence uma língua afiada (Humanas/Linguagens)
 - Vida inicial: 40/100
 - Defesa: 70/100
-- Ataque Fixo: Vontade dos deuses
+- Ataque Fixo: Bater com um livro
     - 20 de dano;
 - Dois ataques normais da área de humanas/linguagens de nível calouro escolhidos aleatoriamente;
 - Um ataque especial da área de humanas/linguagens de nível calouro escolhido aleatoriamente;
@@ -244,10 +244,11 @@
 #31 - Ordem, descrição e NPCs inclusos
 1. EEFETO
     - Professor Maromba
-    - Dançarina
+    - Dançaria perpétua
     - Hércules
 2. Veterinária
-    - Pinscher raiovoso
+    - Pinscher raiovoso:
+        Alguns alunos de mestrado que estavam estudando o vírus da raiva foram fazer uma pesquisa de campo para coletar morcegos de diferentes espécies contaminados. Eles colocaram os morcegos capturados em gaiolas de metal e levaram eles para o laborário onde ocorreia a pesquisa. Tudo estava ocorrendo estranhamente bem e, em um ato de discuito, os jovens cientistas deixaram a gaiola no chão. Um pinscher curioso se aproximou demais da gaiola e acabou levando uma mordida no nariz. O cachorro fugiu assustado e as únicas pessoas que o viram desde então acabaram sendo mordidas e contraindo raiva.
     - Bernado, o berne
     - Centauro invertido
 3. Música
@@ -285,7 +286,7 @@
 
 ##4 - NPC
 #41 - Pasta de ataques
-**Obs**: os ataques de npc não precisam de nome e serão escolhidos aleatoriamente
+**Obs**: os ataques de npc não precisam de descriçaõ e serão escolhidos aleatoriamente
 - Exatas/TI
     - Calouro:
     - Veterano:
