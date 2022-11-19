@@ -71,9 +71,16 @@
 
     void Pc::showHit(){
         
-        for(Attack* hit: _hit)
+        int i=0;
+
+        for(Attack* hit: _hit){
+            std::cout<<"( "<<i<<" ) -> ";
             std::cout<<hit->getName()<<std::endl;
-        
+            i++;
+        }
+
+       std::cout<<"( "<<i<<" ) -> ";
+       std::cout<<"nao fazer nada..."<<std::endl;
     }
 
     int Pc::sizeofHit(){
