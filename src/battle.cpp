@@ -126,7 +126,7 @@ bool Battle::defineResult () {
 std::string Battle::resultTxt () {
     std::string txt {};
 
-    if (result == 0) {
+    if (_result == 0) {
         txt = _resultTxt;
     }
     else if ((_result == 1) && (_totalLoses != 3)){

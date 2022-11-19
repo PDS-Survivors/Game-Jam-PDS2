@@ -54,7 +54,7 @@ class Battle {
 
         bool defineResult ();
 
-        std::string resultTxt (std::string txt);
+        std::string resultTxt ();
 
         std::string statistcs ();
 
