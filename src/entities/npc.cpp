@@ -9,7 +9,7 @@
               int life,
               int defense,
               std::string description):
-              Entity(name,life,defense), _description(description){}
+              Entity(name,life,defense), _description(description){_stamina = 5;}
 
     Npc::Npc(std::string file){
         
