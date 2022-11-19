@@ -1,0 +1,7 @@
+digraph "Battle"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Battle\n||+ Battle()\l+ Battle()\l+ ~Battle()\l+ getResult()\l+ getDamagePc()\l+ getDamageNpc()\l+ getTurno()\l+ setResult()\l+ setDamagePc()\l+ setDamageNpc()\l+ setTotalLoses()\l+ setTurno()\l+ beginTxt()\l+ imprimeVida()\l+ defineResult()\l+ resultTxt()\l+ statistcs()\l+ fight()\l+ figthPc()\l+ fightNpc()\l+ getTotalLoses()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+}

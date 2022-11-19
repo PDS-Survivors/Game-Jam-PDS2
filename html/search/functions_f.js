@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['set_5fnumbattle_255',['set_numBattle',['../classBuilding.html#a61b7a6a4f4c090ba8aac9ebb9da8e892',1,'Building']]],
+  ['setdamagenpc_256',['setDamageNpc',['../classBattle.html#a13fc624e4789b405ce247afd0c51782c',1,'Battle']]],
+  ['setdamagepc_257',['setDamagePc',['../classBattle.html#a16f45c1af28dacd2b3b1bf6f9545d8d8',1,'Battle']]],
+  ['setlife_258',['setLife',['../classEntity.html#a9a36d8aaf58222ee3671d6b7efaaf438',1,'Entity']]],
+  ['setresult_259',['setResult',['../classBattle.html#aa1869c76476e5a97c22491828c404098',1,'Battle']]],
+  ['setstamina_260',['setStamina',['../classEntity.html#ab7a68dae5749b60a8bc5d76f8624924a',1,'Entity']]],
+  ['settotalloses_261',['setTotalLoses',['../classBattle.html#a0bf8d6e83a627d3423e6a290fefbfb12',1,'Battle']]],
+  ['setturno_262',['setTurno',['../classBattle.html#aea1ee981223922e0065751bffb8bb315',1,'Battle']]],
+  ['show_263',['show',['../Teste__de__verificacao__1_8cpp.html#a7c0db2c5301e2fb0853c7359e4c7ae4e',1,'Teste_de_verificacao_1.cpp']]],
+  ['showattack_264',['showAttack',['../Teste__de__verificacao__1_8cpp.html#ab2e98e669ace0db51c491bdedb99b879',1,'Teste_de_verificacao_1.cpp']]],
+  ['showhit_265',['showHit',['../classPc.html#a5127f27f75b9aa2e3b058e342185ee05',1,'Pc']]],
+  ['sizeofeffect_266',['sizeofEffect',['../classEntity.html#ad1b7bb74322f9876ea4cbf5775cfb8b5',1,'Entity']]],
+  ['sizeofeffects_267',['sizeofEffects',['../classAttack.html#a7bb845917c0971b48e0cf8727912f883',1,'Attack']]],
+  ['sizeofhit_268',['sizeofHit',['../classNpc.html#a90f3998f4c84cc7d741422a6ac2b58a2',1,'Npc::sizeofHit()'],['../classPc.html#a74381c1fba881878dea814be33d678a9',1,'Pc::sizeofHit()'],['../classEntity.html#a3c2b08c3542a18b81acbeb568981c373',1,'Entity::sizeofHit()']]],
+  ['speedybhv_269',['speedybhv',['../namespacebehavior.html#a0a64fd51434290dfecfeadfe21a1833f',1,'behavior']]],
+  ['start_5fbattle_270',['start_battle',['../classBuilding.html#a3e3af710d61fce25b133a955eae8fcb5',1,'Building']]],
+  ['statistcs_271',['statistcs',['../classBattle.html#a2502371e3ca2c410bd2ad42a500bfbe0',1,'Battle']]]
+];

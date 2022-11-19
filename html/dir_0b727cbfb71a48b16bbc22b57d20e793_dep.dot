@@ -1,0 +1,11 @@
+digraph "include/attacks" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_d44c64559bbebec7f509842c48db8b23 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="include" fontname="Helvetica", fontsize="10", URL="dir_d44c64559bbebec7f509842c48db8b23.html"]
+  dir_9dae7bde56e7aa2178fbf4748a4d9c95 [shape=box label="effects" URL="dir_9dae7bde56e7aa2178fbf4748a4d9c95.html"];
+  dir_0b727cbfb71a48b16bbc22b57d20e793 [shape=box, label="attacks", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_0b727cbfb71a48b16bbc22b57d20e793.html"];
+  }
+  dir_0b727cbfb71a48b16bbc22b57d20e793->dir_9dae7bde56e7aa2178fbf4748a4d9c95 [headlabel="4", labeldistance=1.5 headhref="dir_000001_000002.html"];
+}

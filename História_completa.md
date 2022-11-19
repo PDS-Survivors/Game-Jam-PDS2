@@ -265,7 +265,7 @@
     - Comédia e Tragédia
 6. ICB
     - Meio-Vivo:
-        Durante uma aula de anatomia, um estudante que não estava 
+        Durante uma aula de anatomia, um estudante negacionista que estava passando mal e mesmo assim se recusava a usar máscara espirrou sobre o cadáver que estava estudando. A professora que lecionava a matéria ficou furiosa e parou a aula para dar um sermão nesse aluno, porém o estrago já havia sido feito. O espirro continha uma bactéria mutante, que infectou o cadáver e passou a controlar esse. Muito solitário esse novo ser meio-vivo passou a infectar outros cadáveres, até que não restasse mais nenhum completamente morto. Ah rumores de que o objetivo deles é montar um império transformando todos os vivos e mortos em meio-vivos.
     - Superbactéria 
     - Cobaia Superior “Doutor Splointer”
 7. ICEX
@@ -274,7 +274,8 @@
     - Newton do mal
 8. Engenharia
     - Bob, o destrutor
-    - Elevador Purgatório
+    - Elevador Purgatório:
+        Estudantes de engenharia ambiciosos fizeram um projeto inovador de deixar os elevadores mais inteligentes e proporam essa ideia para o colegiado. Ele recusou, porque além de inexperientes o projeto continha enormes falhas de segurança. Revoltados, os estudantes invadiram a faculdade durante uma noite e implementaram a sua ideia, ela era brilhante!. Mas com o passar do tempo, o elevador começou a acumular quantidades cada vez maiores de dados de modo que ele compare várias imformações sobre quem entra para decidir seu destino, mas humanos são criaturas complexas, então o elevador apenas mantém elas no limbo indefinitamente.
     - Hugger, o robô do juízo final
 10. Letras
     - Dicionário Português - Português   

@@ -1,0 +1,19 @@
+digraph "Entity"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{Entity\n||+ Entity()\l+ Entity()\l+ ~Entity()\l+ getLife()\l+ rebootLife()\l+ rebootStamina()\l+ getStamina()\l+ setStamina()\l+ setLife()\l+ getDefense()\l+ getName()\l+ getEffect()\l+ sizeofEffect()\l+ addEffect()\l+ delEffect()\l+ applyEffect()\l+ doHarvest()\l+ doHit()\l+ getHit()\l+ sizeofHit()\l+ chooseAttack()\l+ getBehavior()\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" #_defense\n#_life\n#_stamina\n#_total_life" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{int\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" #_name" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{std::string\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
+  Node4 [label="{std::basic_string\<\l Char \>\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node5 -> Node1 [color="grey25",fontsize="10",style="solid",label=" #_effect" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node5 [label="{std::list\< Effect * \>\n||}",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node6 -> Node5 [color="grey25",fontsize="10",style="solid",label=" +elements" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node6 [label="{Effect\n||+ Effect()\l+ Effect()\l+ ~Effect()\l+ getValue()\l+ getName()\l+ getDescription()\l+ checkDurability()\l+ cloneEffect()\l+ getType()\l}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classEffect.html",tooltip=" "];
+  Node2 -> Node6 [color="grey25",fontsize="10",style="solid",label=" #_durability\n#_value" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 -> Node6 [color="grey25",fontsize="10",style="solid",label=" #_description\n#_name" ,arrowhead="odiamond",fontname="Helvetica"];
+}

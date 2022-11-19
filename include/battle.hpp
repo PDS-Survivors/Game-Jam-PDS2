@@ -21,7 +21,7 @@ class Battle {
         std::string _resultTxt;
 
     public:
-
+    
         Battle (Pc* player, std::string file);
 
         Battle (Pc* player, Npc* adversary, int numBattle, int predio);
