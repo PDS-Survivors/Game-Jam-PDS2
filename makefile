@@ -44,7 +44,7 @@ pc: entity
 npc: pc
 	$(CC) $(ENTFG) -o build/npc.o -c src/entities/npc.cpp
 
-battle: npc
+battle: npc behavior
 	$(CC) $(CFLAGS) -o build/battle.o -c src/battle.cpp
 
 teste1: npc 

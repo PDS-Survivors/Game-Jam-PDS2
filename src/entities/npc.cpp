@@ -1,6 +1,7 @@
 #include "npc.hpp"
 
 #include <iostream>
+#include <string>
 #include <vector>
 
     Npc::Npc( std::string name,
@@ -29,9 +30,9 @@
 
         //percorre a lista de arquivos e cria eles (no caso de Npc, os arquivos serão todos ataques
         // que por sua vez criarão efeitos).
-        for(std::string fl : files)
+        for(std::string fl : files) {
             _hit.push_back( new Attack(fl) );
-        
+        }
 
     }
     Npc::~Npc(){

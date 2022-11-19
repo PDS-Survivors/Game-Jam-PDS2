@@ -264,7 +264,8 @@
     - Manequeen
     - Comédia e Tragédia
 6. ICB
-    - Meio-Vivo
+    - Meio-Vivo:
+        Durante uma aula de anatomia, um estudante que não estava 
     - Superbactéria 
     - Cobaia Superior “Doutor Splointer”
 7. ICEX
@@ -302,7 +303,6 @@
     
 #42 - Descrição, frases para batalha, atributos e tipo de ataque
 
-6.a) Meio-Vivo: Estudantes de infectologia não armazenaram corretamente as cepas que estavam estudando. Elas foram transportadas pelo vento até uma sala no andar de baixo, onde se tinha aula de anatomia. O resultado foi o surgimento de zumbis que querem estabelecer uma monarquia no ICB. O primeiro ato deles vai ser destruir o museu daquele prédio e libertar as amostras alí preservadas.
 
 ##5 - EVENTOS
 #51 - Descrição e atributo dos positivos
