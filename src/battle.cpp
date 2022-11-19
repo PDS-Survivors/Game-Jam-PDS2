@@ -21,7 +21,7 @@ Battle::Battle (Pc *player, std::string file){
 
     read::readfile (file, values, words, files);
 
-    *_adversary = files[1];
+    _adversary = new Npc(files[0]);
     _numBattle = values[0];
     _predio = values[1];
     _resultTxt = words[0];
