@@ -243,19 +243,21 @@
 ##3 - PRÉDIOS
 #31 - Ordem, descrição e NPCs inclusos
 1. EEFETO
-    - Professor Maromba 
+    - Professor Maromba
+    - Dançarina
     - Hércules
 2. Veterinária
     - Pinscher raiovoso
-    - Bernado, o berne (em tamanho humano)
-    - Ratazana radioativa
+    - Bernado, o berne
+    - Centauro invertido
 3. Música
     - Sanfona furada
     - Homem capivara do bosque da música
 4. Fafich
     - Vampiros sugadores de esperança
-    - 
-    - 
+    - Getúlio Mineiro
+    - Amuleto amaldiçoado de Ark'heo'lujia
+    - Teodósio, o macaco-humano
 5. EBA
     - Pintura inacabada
     - Manequeen
@@ -269,9 +271,9 @@
     - Líquido Estranho do Laboratório de Química (LELAQ)
     - Newton do mal
 8. Engenharia
-    - Hugger (robô assassino)
+    - Bob, o destrutor
     - Elevador Purgatório
-    - 
+    - Hugger, o robô do juízo final
 10. Letras
     - Dicionário Português - Português   
     - Duo do Duolingo
