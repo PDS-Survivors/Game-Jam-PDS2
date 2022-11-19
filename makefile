@@ -42,7 +42,7 @@ pc: entity
 	$(CC) $(ENTFG) -o build/pc.o -c src/entities/pc.cpp
 
 npc: pc
-	$(CC) $(CFLAGS) -o build/npc.o -c src/npc.cpp
+	$(CC) $(ENTFG) -o build/npc.o -c src/entities/npc.cpp
 
 battle: npc
 	$(CC) $(CFLAGS) -o build/battle.o -c src/battle.cpp

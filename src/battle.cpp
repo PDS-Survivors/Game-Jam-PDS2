@@ -1,8 +1,8 @@
 #include "battle.hpp"
-#include "pc.hpp"
-#include "npc.hpp"
-#include "attack.hpp"
-#include "effects/reader.hpp"
+#include "entities/pc.hpp"
+#include "entities/npc.hpp"
+#include "attacks/attack.hpp"
+#include "namespaces/reader.hpp"
 
 #include <string>
 #include <iostream>
@@ -23,7 +23,7 @@ Battle::Battle (Pc *player, std::string file){
 
     *_adversary = files[1];
     _numBattle = values[0];
-    _predio = valeus[1];
+    _predio = values[1];
     _resultTxt = words[0];
 
     _totalDamagePc = 0;
