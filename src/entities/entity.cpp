@@ -117,6 +117,7 @@
         if(hit->getStamina() > this->getStamina())
             return -1;
 
+
         if(hit->isDefense()){
 
             std::vector<Effect*> effect;
@@ -186,6 +187,7 @@
         return "";
     }
 
+    void Entity::showAction(Attack* hit){}
 
 
     

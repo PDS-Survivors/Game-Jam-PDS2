@@ -39,8 +39,10 @@ class Npc: public Entity{
 
         virtual int sizeofHit() override;
 
-        virtual std::string getBehavior();
-    
+        virtual std::string getBehavior() override;
+
+        virtual void showAction(Attack* hit) override;
+
         void doTurn(Entity* player);
         
 
