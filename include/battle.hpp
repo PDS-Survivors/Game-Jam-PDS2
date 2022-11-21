@@ -16,7 +16,8 @@ class Battle {
         int _totalDamageNpc;
         int _numBattle;
         int _predio;
-        int _turno;
+        int _round;
+        int _size;
         std::string _beginTxt;
         std::string _resultTxt;
         static int _totalLoses;

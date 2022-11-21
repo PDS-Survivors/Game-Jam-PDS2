@@ -31,7 +31,9 @@ Battle::Battle (Pc *player, std::string file, std::string beginTxtAdress){
 
     _totalDamagePc = 0;
     _totalDamageNpc = 0;
-    _turno = 0;
+    _round = 0;
+
+    _size = int((_player.getName()).size())+int((_adversary->getName()).size());
 }
 
 //Construtor sem leitura de arquivo para Npc
@@ -42,7 +44,10 @@ Battle::Battle (Pc* player, Npc* adversary, int numBattle, int predio) {
     _predio = predio;
     _totalDamagePc = 0;
     _totalDamageNpc = 0;
-    _turno = 0;
+    _round = 0;
+    _beginTxt = "Descrição interessante :D (teste)\n";
+    _resultTxt = "Hmm obrigada por vencer?\n";
+    _size = int((_player.getName()).size())+int((_adversary->getName()).size());
 }
 
 Battle::~Battle () {
@@ -81,12 +86,14 @@ void Battle::beginTxt () {
 //Obs:tirar essa função quando implementar a interface
 void Battle::imprimeVida () {
 
-    std::cout << "== Barras de vida ==========================================\n";
+    std::cout << "== Barras de vida ";
+    for (int i = 0; i < (11 + _size); i++) { std::cout << "="; }
+    std::cout << "\n";
     read::wait(2);
 
     std::cout << "[ ";
     for (int i = 0; i < 25; i++){
-        if (_player.getLife() - (4*i) >= 0) { std::cout << "§"; }
+        if (_player.getLife() - (4*i) > 0) { std::cout << "§"; }
         else { std::cout << " "; }
     }
     std::cout << " ] " << _player.getName() << std::endl;
@@ -94,14 +101,16 @@ void Battle::imprimeVida () {
 
     std::cout << "[ ";
     for (int i = 0; i < 25; i++){
-        if (_adversary->getLife() - (4*i) >= 0) { std::cout << "§"; }
+        if (_adversary->getLife() - (4*i) > 0) { std::cout << "§"; }
         else { std::cout << " "; }
     }
     std::cout << " ] " << _adversary->getName() << std::endl;
     read::wait(1);
 
-    std::cout << "============================================================\n\n";
-    read::wait(4);
+    for (int i = 0; i < (29 + _size); i++) { std::cout << "="; }
+    std::cout << "\n\n";
+
+    read::wait(2);
 }
 
 //Retorna se o resuktado foi definido ou nn
@@ -124,7 +133,8 @@ bool Battle::defineResult () {
 //Lê o texto de vitória ou derrota ao fim da batalha
 void Battle::resultTxt () {
 
-    std::cout << "================================\n";
+    for (int i = 0; i < (29 + _size); i++) { std::cout << "="; }
+    std::cout << "\n";
 
     if (_result == 0) {
         std::cout << _resultTxt;
@@ -140,22 +150,26 @@ void Battle::resultTxt () {
         std::cout << "Obrigada por tentar, mas nao volte tão cedo por favor!\n";
     }
 
-    std::cout << "\n================================\n";
+    for (int i = 0; i < (29 + _size); i++) { std::cout << "="; }
+    std::cout << "\n\n";
 
     read::wait (6);
 }
 
 void Battle::statistcs () {
 
-    std::cout << "======== Estatisticas de Batalha ========\n";
+    std::cout << "== Estatisticas de Batalha ";
+    for (int i = 0; i < (2 + _size); i++) { std::cout << "="; }
+    std::cout << "\n\n";
+    
     read::wait(2);
 
-    std::cout << "== Turno: " << std::to_string(_turno) << "\n\n";
+    std::cout << "== Round: " << std::to_string(_round) << "\n\n";
     read::wait(2);
 
     std::cout << "== Resultado: ";
-    if (!this->defineResult()) { std::cout << "nao definido o-o\n\n"; }
-    else if (_result) { std::cout << "derrota T-T\n\n"; }
+    if (!this->defineResult()) { std::cout << "nao definido *-*\n\n"; }
+    else if (_result) { std::cout << "derrota T_T\n\n"; }
     else { std::cout << "vitoria :D\n\n"; }
     read::wait(2);
     
@@ -181,7 +195,10 @@ void Battle::statistcs () {
     std::cout << "\nStamina: " << std::to_string(_adversary->getStamina());
     read::wait(1);
 
-    std::cout << "\n=========================================\n\n";
+    std::cout << std::endl;
+    for (int i = 0; i < (29 + _size); i++) { std::cout << "="; };
+    std::cout << "\n\n";
+
     read::wait(4);
 }
 
@@ -189,14 +206,18 @@ void Battle::figthPc () {
     bool test = true;
     char get_char;
 
-    while ((_player.getStamina() >= 5) && (test)){
+    std::cout << "Sua vez de brilhar! *.*\n\n";
+    read::wait(2);
+
+    while (test){
 
         //Escolha da ação: atacar, não atacar, mostrar estatísticas
-        std::cout << "Sua vez de brilhar! *.*\n";
-        read::wait(2);
         std::cout << "(a) Ver estatisticas     (b) Atacar!    (c) Esperar, apenas.\n";
+        read::wait(1);
+
+        std::cout << "== Stamina atual: " << _player.getStamina() << "\n\n";
         std::cin.ignore();
-        std::cin.get(get_char);
+        get_char = std::cin.get();
 
         switch (get_char) {
             case 'a' :  this->statistcs(); break;
@@ -211,11 +232,15 @@ void Battle::figthPc () {
 
                         if (att != nullptr) {
                             _player.doHit(_adversary, att);
+
+                            _player.showAction(att);
+                            std::cout << std::endl;
+
+                            this->imprimeVida();
                         }
 
                         _totalDamagePc += (lpc - _player.getLife());
                         _totalDamageNpc += (lnpc - _adversary->getLife());
-
                         } 
                         break;
             case 'c' : test = false; break;
@@ -224,35 +249,43 @@ void Battle::figthPc () {
         }
 
         if (this->defineResult()) break;
+
+        if (test) {
+            std::cout << "O que você fará em seguida?\n\n";
+            
+            read::wait(2);
+        }
     }
+
+    std::cout << "Fim do seu turno!\n\n";
+    read::wait(1);
 }
 
 void Battle::fightNpc () {
+
+    int lpc = _player.getLife();
+    int lnpc = _adversary->getLife();
+
+    //Escolha do ataque 
+    std::cout << _adversary->getName() << " ira atacar ^o^\n\n"; 
+    read::wait(2);
+
+    _adversary->doTurn(&_player);
+
+    _totalDamagePc += (lpc - _player.getLife());
+    _totalDamageNpc += (lnpc - _adversary->getLife());
+
+    this->imprimeVida();
+
+    std::cout << "Fim de turno!\n\n";
     
-    while (_adversary->getStamina() >= 5){
-
-        int lpc = _player.getLife();
-        int lnpc = _adversary->getLife();
-
-        //Escolha do ataque 
-        std::cout << _adversary->getName() << " ira atacar ^o^\n\n"; 
-        read::wait(2);
-           
-        _adversary->doTurn(&_player);
-
-        _totalDamagePc += (lpc - _player.getLife());
-        _totalDamageNpc += (lnpc - _adversary->getLife());
-
-        _adversary->setStamina (-5);
-
-        if (this->defineResult()) break;
-    }
+    read::wait(2);
 }
 
 //Roda a batalha entre Pc e Npc
 void Battle::fight () {
 
-    std::cout << "======== FIGHT " << _numBattle << ": " << _player.getName() << " X ";
+    std::cout << "======= FIGHT " << _numBattle << ": " << _player.getName() << " X ";
     std::cout << _adversary->getName() << " ========\n\n";
     read::wait(6);
 
@@ -261,21 +294,22 @@ void Battle::fight () {
     //O npc tem defesa menor, logo ataca primeiro
     if (_player.getDefense() >= _adversary->getDefense()) {
          while (!this->defineResult()) {
+
+            _round += 1;
+
+            std::cout << "== ROUND " << _round << "\n\n";
+            read::wait(2);
             
             this->fightNpc();      
                     
-            this->imprimeVida();
             if (this->defineResult()) break;
 
             this->figthPc();
 
-            this->imprimeVida();
             if (this->defineResult()) break;
 
             _player.rebootStamina();
             _adversary->rebootStamina();
-
-            _turno += 1;
         }
     }
 
@@ -283,25 +317,30 @@ void Battle::fight () {
     else {
         while (!this->defineResult()) {
 
+            _round += 1;
+
+            std::cout << "== ROUND " << _round << "\n\n";
+            read::wait(2);
+
             this->figthPc();
                 
-            this->imprimeVida();
             if (this->defineResult()) break;
                 
             this->fightNpc();    
 
-            this->imprimeVida ();
             if (this->defineResult()) break;
 
             _player.rebootStamina();
             _adversary->rebootStamina();
-
-            _turno += 1;
         }
     }
 
-    std::cout << "========================= ";
-    if (_result) { std::cout << "APROVAD@ =";}
+    std::cout << "== ";
+    if (!_result) { std::cout << "APROVAD@ =";}
     else { std::cout << "REPROVAD@ ";}
-    std::cout << "=========================\n\n";
+
+    for (int i = 0; i < (16 + _size); i++) { std::cout << "=";}
+    std::cout << "\n\n";
+
+    read::wait(2);
 }
