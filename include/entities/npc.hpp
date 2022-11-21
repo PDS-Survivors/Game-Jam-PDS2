@@ -23,7 +23,8 @@ class Npc: public Entity{
         Npc( std::string name,
             int life,
             int defense,
-            std::string description);
+            std::string description,
+            std::string behavior1);
 
         Npc(std::string file);
         

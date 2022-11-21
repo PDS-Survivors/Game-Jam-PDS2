@@ -15,14 +15,15 @@ class Battle {
         int _totalDamagePc;
         int _totalDamageNpc;
         int _numBattle;
-        static int _totalLoses;
         int _predio;
         int _turno;
+        std::string _beginTxt;
         std::string _resultTxt;
+        static int _totalLoses;
 
     public:
     
-        Battle (Pc* player, std::string file);
+        Battle (Pc* player, std::string file, std::string beginTxtAdress);
 
         Battle (Pc* player, Npc* adversary, int numBattle, int predio);
 
@@ -30,33 +31,25 @@ class Battle {
 
         bool getResult ();
 
+        static int getTotalLoses ();
+
         int getDamagePc ();
 
         int getDamageNpc ();
 
-        static int getTotalLoses ();
-
-        int getTurno ();
-
         void setResult (bool result);
 
-        void setDamagePc (int damage);
-        
-        void setDamageNpc (int damage);
-
         void setTotalLoses (int lose);
-
-        void setTurno ();
         
-        std::string beginTxt();
+        void beginTxt();
 
         void imprimeVida ();
 
         bool defineResult ();
 
-        std::string resultTxt ();
+        void resultTxt ();
 
-        std::string statistcs ();
+        void statistcs ();
 
         void fight (); 
 

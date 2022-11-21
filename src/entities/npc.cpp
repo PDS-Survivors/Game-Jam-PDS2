@@ -8,8 +8,10 @@
     Npc::Npc( std::string name,
               int life,
               int defense,
-              std::string description):
-              Entity(name,life,defense), _description(description){_stamina = 5;}
+              std::string description,
+              std::string behavior1):
+              Entity(name,life,defense), _description(description), _behavior(behavior1)
+              {_stamina = 5;}
 
     Npc::Npc(std::string file){
         
