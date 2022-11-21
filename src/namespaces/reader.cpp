@@ -3,8 +3,15 @@
 #include <string>
 #include <vector>
 #include <list>
-#include <reader.hpp>
+#include <time.h>
+#include "../namespaces/reader.hpp"
 
+
+    void read::wait(int seg){
+
+        int itv = time(NULL) + seg;
+        while(time(NULL) != itv){}
+    }
 
     int read::readint(std::string::iterator it, std::string& line){
 
@@ -83,6 +90,39 @@
             }
 
             
+        }
+    }
+
+    void read::readtxt(std::string location){
+
+        std::cout<<"             ================================"<<std::endl;
+
+        std::fstream file;
+        file.open(location, std::ios::in);
+
+        if(file.is_open()){
+
+            std::string line;
+
+            while(getline(file, line)){
+
+                if(line[0] == '#'){
+
+                    wait(4);
+
+                    std::cout<<std::endl<<std::endl;
+                    std::cout<<"Pressione enter para continuar..."<<std::endl;
+                    
+                    char c = getchar();
+
+                    while(c != char(10)){
+                        std::cin>>c;
+                        c = getchar();
+                    }
+                }
+
+                else std::cout<<line<<std::endl;
+            }
         }
     }
     
