@@ -118,6 +118,9 @@
             return -1;
 
 
+        read::wait(1);
+        showAction(hit);
+        
         if(hit->isDefense()){
 
             std::vector<Effect*> effect;
