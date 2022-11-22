@@ -74,9 +74,11 @@
         int i=0;
 
         for(Attack* hit: _hit){
-            std::cout<<"( "<<i<<" ) -> ";
-            std::cout<<hit->getName()<<std::endl;
-            i++;
+            if(hit->getStamina() <= this->getStamina()){
+                std::cout<<"( "<<i<<" ) -> ";
+                std::cout<<hit->getName()<<std::endl;
+                i++;
+            }
         }
 
        std::cout<<"( "<<i<<" ) -> ";
@@ -87,4 +89,11 @@
         return _hit.size();
     }
     
-    
+    void Pc::showAction(Attack* hit){
+        std::cout<<std::endl;
+        std::cout<<"voce usou "<<hit->getName();
+        std::cout<<"!"<<std::endl;
+        std::cout<<std::endl;
+        
+        read::wait(1);
+    }

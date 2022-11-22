@@ -72,6 +72,8 @@
             virtual Attack* chooseAttack() = 0;
             
             virtual std::string getBehavior();
+
+            virtual void showAction(Attack* hit);
     };
 
 #endif

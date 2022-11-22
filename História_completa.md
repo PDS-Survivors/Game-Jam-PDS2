@@ -132,103 +132,83 @@
 
 #22 - Pasta de ataques
 **OBS**: Todos os personagens terão um ataque fixo específico que não poderá ser alterado em nenhum momento do jogo.
-- Exatas/TI
-    - Calouro:
-        - Ataque 1: raio de derivadas infinitas
-            - 35 de dano
-            - Subtrai 15 da defesa de npc
-        - Ataque 2: feitiço de mudança de coordenadas
-            - 10 de dano
-            - Subtrai 25 da defesa de npc
-            - Adiciona 15 na defesa de pc
-        - Ataque 3: Mentalização de matrizes n-dimensionais
-            - 30 de dano
-            - 
-        - Ataque 4: Conversão binária
-            - 20 de dano
-            - 
-        - Ataque E1: Invocação de redes neurais
-            - 75 de dano
-            - Subtrai 40 da defesa de pc    
-            - Subtrai 10 da vida de pc
-        - Ataque E2: Enxame de nano-robôs teleguiados
-            - 70 de dano
-            - 
-    - Veterano:
-        - Ataque 1: 
-        - Ataque 2: 
-        - Ataque 3: 
-        - Ataque 4: Feitiço de anulação do somatório das forças
-        - Ataque E1: Manipulação dos campos eletromagnéricos
-        - Ataque E2: Explosões de sódio e água
-    - Professor:
-        - Ataque 1: 
-        - Ataque 2: 
-        - Ataque 3:
-        - Ataque 4:
-        - Ataque E1: 
-        - Ataque E2: Considerando o atrito do ar
-- Humanas/Linguagens
-    - Calouro:
-        - Ataque 1: ataque de flechas psicanalíticas de Freud
-            - 40 de dano
-            - subtrai 20 da defesa de npc
-        - Ataque 2: 
-            - 10 de dano
-            - Adiciona 10 na defesa de pc
-            - Adiciona 20 na vida de pc
-        - Ataque 3:
-        - Ataque 4:
-        - Ataque E1: 
-            - 60 de dano
-            - Subtrai 40 da defesa de npc
-            - Subtrai 35 da defesa de pc
-            - Subtrai 5 da vida de pc
-        - Ataque E2:
-    - Veterano:
-        - Ataque 1:
-        - Ataque 2:
-        - Ataque 3:
-        - Ataque 4:
-        - Ataque E1:
-        - Ataque E2:
-    - Professor:
-        - Ataque 1:
-        - Ataque 2:
-        - Ataque 3:
-        - Ataque 4:
-        - Ataque E1:
-        - Ataque E2:
-- Biológicas
-    - Calouro: 
-        - Ataque 1: 
-            - 45 de dano
-            - Subtrai 5 da defesa de npc
-        - Ataque 2: 
-            - 20 de dano
-            - Subtrai 15 da defesa de npc
-            - Adiciona 20 na vida de pc
-        - Ataque 3:
-        - Ataque 4: 
-        - Ataque E1: Enxame de abelhas assassinas
-            - 75 de dano
-            - Subtrai 40 da defesa de pc
-            - Subtrai 10 da vida de pc
-        - Ataque E2:
-    - Veterano:
-        - Ataque 1:
-        - Ataque 2:
-        - Ataque 3:
-        - Ataque 4:
-        - Ataque E1: Técnica do RNA recombinante
-        - Ataque E2:
-    - Professor:
-        - Ataque 1:
-        - Ataque 2:
-        - Ataque 3:
-        - Ataque 4:
-        - Ataque E1:
-        - Ataque E2:
+- Mago (Exatas/TI)
+    - Raio de derivadas infinitas
+        - 35 de dano
+        - Subtrai 15 da defesa de npc
+    - Feitiço de mudança de coordenadas
+        - 10 de dano
+        - Subtrai 25 da defesa de npc
+        - Adiciona 15 na defesa de pc
+    - Mentalização de matrizes n-dimensionais
+        - 30 de dano
+        - 
+    - Conversão binária
+        - 20 de dano
+        - 
+    - Invocação de redes neurais
+        - 75 de dano
+        - Subtrai 40 da defesa de pc    
+        - Subtrai 10 da vida de pc
+    - Enxame de nano-robôs teleguiados
+        - 70 de dano
+        - 
+    - Feitiço de anulação do somatório das forças
+        - 
+        - 
+    - Manipulação dos campos eletromagnéricos
+        - 
+        - 
+    - Explosões de sódio e água
+        - 
+        - 
+
+- Mestre de armas (Humanas/Linguagens)
+    - Invocação das sombras da caverna de Platão
+        - 40 de dano
+        - subtrai 20 da defesa de npc
+    - 
+        - 10 de dano
+        - Adiciona 10 na defesa de pc
+        - Adiciona 20 na vida de pc
+    - 
+        - 60 de dano
+        - Subtrai 40 da defesa de npc
+        - Subtrai 35 da defesa de pc
+        - Subtrai 5 da vida de pc
+    - Estilingue de traumas
+        - 
+        - 
+    - 
+    - 
+    - 
+    - 
+    - 
+     
+- Druida (Biológicas)
+    - Mini golens melancia
+        - 45 de dano
+        - Subtrai 5 da defesa de npc
+    - Pólen ultra-alérgico
+        - 20 de dano
+        - Subtrai 15 da defesa de npc
+        - Adiciona 20 na vida de pc
+    - Enxame de abelhas assassinas
+        - 75 de dano
+        - Subtrai 40 da defesa de pc
+        - Subtrai 10 da vida de pc
+    - Técnica do RNA recombinante
+        - 
+        - 
+    - Chuva de flechas com venevo de sapo
+        - 
+        - 
+    - Feitiço de gatroenterite aguda
+        - 
+        - 
+    - 
+    - 
+    - 
 
 #23 - Descrição completa (história do pc +atributos)
 **Mago**
@@ -244,77 +224,59 @@
 #31 - Ordem, descrição e NPCs inclusos
 1. EEFETO
     - Professor Maromba
-    - Dançaria perpétua
+    - Tia das vitaminas:
+        Recentemente tem-se escutado falar sobre muitos casos de dor de cabeça, vômito e sudorese excessiva na EEFETO. A causa disso é a nova professora de bioquímica aplicada, a "tia das vitaminas", apelido que ela ganhou nas primeiras semanas de aula por sempre carregar vitamina consigo ao invés de água ou café. Ela é uma pessoa extremamente adorável e seu sorriso torna impossível recusar qualquer coisa que ela ofereça, o que é o maior problema dos estudantes no momento. Todo dia ela chega para dar aula com uma nova de receita de vitamina e, desde que uma aluna pediu para experimentar, ela sempre escolhe uma vítima para julgar suas habilidades culinárias. Nínguem teve a coregem de contar que ela é uma péssima cozinheira, derrote ela antes que álguem acabe parando no hospital!
     - Hércules
+
 2. Veterinária
     - Pinscher raiovoso:
         Alguns alunos de mestrado que estavam estudando o vírus da raiva foram fazer uma pesquisa de campo para coletar morcegos de diferentes espécies contaminados. Eles colocaram os morcegos capturados em gaiolas de metal e levaram eles para o laborário onde ocorreia a pesquisa. Tudo estava ocorrendo estranhamente bem e, em um ato de discuito, os jovens cientistas deixaram a gaiola no chão. Um pinscher curioso se aproximou demais da gaiola e acabou levando uma mordida no nariz. O cachorro fugiu assustado e as únicas pessoas que o viram desde então acabaram sendo mordidas e contraindo raiva.
-    - Bernado, o berne
-
+    - Bernado, o berne:
+        "Cuidado com as moscas!" foi a frase que os alunos mais ouviram durante uma aula prática para aprender a vacinar bois e vacas. A maioria dos estudantes levava o professor na brincadeira, afinal porque ter medo de moscas? O resultado apareceu alguns dias depois, vários alunos reclamando de uma coceira intensa no braço, quando foram olhar a causa dela, bernes. Os alunos resolveram tirar essas larvas alí mesmo, no final da aula de laboratório. Como uma recordação desse horrível evento eles guandaram um dos bernes em um líquido que estava por alí e o apelidaram carinhosamente de Bernado. Foi uma péssima decisão. No dia seguinte, quando foram visitar Bernado, viram que ele tinha crescido exageradamente e agora têm 1,90m de altura! Por favor de um jeito no bernardo, tenho calafrios só de lembrar da existência dele.
     - Centauro invertido:
-        Nos confins da veterinária, haviam alguns estudantes que queriam que a veterinaria tambem tivesse 
-        um ser mitologico, como a EFFTO tem o Hercules e a Engenharia tem o grifo. Por isso, eles juntaram peças de
-        animais e um voluntário para fazer um centauro, só que eles esqueceram a ordem para montar um centauro e
-        acabaram so fazendo um ser com cabeça de cavalo e perna de humano (por isso centauro invertido). Da uma surra 
-        nele pra ver se consegue fazer ele ser um humano de volta.
+        Nos confins da veterinária, haviam alguns estudantes que queriam que a veterinaria tambem tivesse um ser mitologico, como a EFFTO tem o Hercules e a Engenharia tem o grifo. Por isso,eles juntaram peças de animais e um voluntário para fazer um centauro, só que eles esqueceram a ordem para montar um centauro e acabaram so fazendo um ser com cabeça de cavalo e perna de humano (por isso centauro invertido). Da uma surra  nele pra ver se consegue fazer ele ser um humano de volta.
 
 3. Música
-    - Sanfona furada
+    - Sanfona furada:
+        Um estudante de música apaixonado levava a alegria para todo lugar que ia tocando melodias animadas em sua sanfona de estimação. Era impossível ver ele desacompanhado de sua amada. Depois de alguns meses usando ininterrupdamente a sua sanfona, ela furou no meio de uma performance na praça de serviços e, sem pensar duas vezes, o músico apenas a descartou no lixo mais próximo. Aquilo foi um completo choque para a sanfona, ela não acreditou que após meses sendo fiel, ela foi simplesmente descartada. Triste, ela começou a tocar suas músicas mais belas e melancólidas, mas por estar furada o barulho produzido é incrivelmente irritante. Nínguem consegue chegar muito perto dela sem tem uma dor de cabeça aguda ou os ouvidos sangrarem, por favor de um jeito nela, nínguem aguenta mais essa melodia furada.
     - Homem capivara do bosque da música:
         Hmm... Que barulho eh esse?... Eh um homem?... Eh uma capivara?... 
-        Estudantes relatam sons estranhos nas proximidades da escola de musica. Enquanto as autoridades dizem
-        para nao se preocupar porque deve ser apenas um cachorro doente, os estudantes mais antigos falam de
-        uma lenda mais antiga: o homem capivara do bosque da musica. Segundo a lenda ele ja estava aqui quando
-        o bosque da musica era so um bosque, mas ele ficou preso na UFMG por que sempre perde o horario do interno.
-        Agora ele anda pela escola de musica roubando paçoca dos estudantes que passam por ali de noite. Voce deve
-        derrotar ele para que nenhum estudante tenha que voltar pra casa sem a paçoca que ele pegou no RU.
+        Estudantes relatam sons estranhos nas proximidades da escola de musica. Enquanto as autoridades dizem para nao se preocupar porque deve ser apenas um cachorro doente, os estudantes mais antigos falam de uma lenda mais antiga: o homem capivara do bosque da musica. Segundo a lenda ele ja estava aqui quando o bosque da musica era so um bosque, mas ele ficou preso na UFMG por que sempre perde o horario do interno. Agora ele anda pela escola de musica roubando paçoca dos estudantes que passam por ali de noite. Voce deve derrotar ele para que nenhum estudante tenha que voltar pra casa sem a paçoca que ele pegou no RU.
 
 4. Fafich
-    - Vampiros sugadores de esperança
+    - Vampiros sugadores de esperança:
+        Em tempos sombrios de corte de verbas e distribuição de notas, a única coisa que resta aos humilhados estudantes da UFMG é a esperança. Mas o que acontece se eles também forem privados dessa? Bem, o resultado já é visto pela fafich, a cada dia os estudantes se assemelham mais com zumbis do que gente e, apesar de cheio, faz-se um silêncio perpétuo no prédio. Isso é obra dos vampiros. Como seres imortais, eles já vivenciaram diversos acontecimentos históricos  e o tempo os tornaram deveras ranzinzas e amargurados, não podem ver uma pessoa feliz comentando sobre algo que já se aproximam para sugar toda a esperança dela com seus sermões e previsões para o futuro. Expulse esses vampiros daqui antes que toda a faculdade entre em depressão profunda.
     - Getúlio Mineiro:
-        Após uma aula muito eloquente sobre a Revoluçao de 30 e o Estado Novo, um estudante de historia se inspirou 
-        muito em Getulio Vargas e agora clama ser o Getulio Vargas de Minas Gerais, prometendo instaurar na UFMG o Estado
-        Mais Novo, onde o curso de historia dominaria toda a universidade. Ele nao eh um perigo real, mas eh muito chato,
-        entao so da uma pisa nele para ele parar com isso logo!
-
+        Após uma aula muito eloquente sobre a Revoluçao de 30 e o Estado Novo, um estudante de historia se inspirou muito em Getulio Vargas e agora clama ser o Getulio Vargas de Minas Gerais, prometendo instaurar na UFMG o Estado Mais Novo, onde o curso de historia dominaria toda a universidade. Ele nao eh um perigo real, mas eh muito chato, entao so da uma pisa nele para ele parar com isso logo!
     - Amuleto amaldiçoado de Ark'heo'lujia
-        Em uma visita a um sitio arqueologico nas montanhas do Peru, as professoras Mara Croft e Indiara Jones descobriram
-        um amuleto misterioso com um simbolo de caveira entalhado nele (pouco suspeito nao?). Elas trouxeram pra UFMG para 
-        exibir artefatos da comunidade indigena perdida de Ark'heo'lujia para seus alunos, porem as professoras nao imaginavam
-        que o amuleto estava amaldiçoado! desde que ele chegou, os estudantes da Fafich nao recebem suas bolsas de IC e as luzes
-        estao meio estranhas, entao destroi esse amuleto pra ver se consegue quebrar a maldiçao (ou o corte de verba).
-        
+        Em uma visita a um sitio arqueologico nas montanhas do Peru, as professoras Mara Croft e Indiara Jones descobriram um amuleto misterioso com um simbolo de caveira entalhado nele (pouco suspeito nao?). Elas trouxeram pra UFMG para exibir artefatos da comunidade indigena perdida de Ark'heo'lujia para seus alunos, porem as professoras nao imaginavam que o amuleto estava amaldiçoado! desde que ele chegou, os estudantes da Fafich nao recebem suas bolsas de IC e as luzes estao meio estranhas, entao destroi esse amuleto pra ver se consegue quebrar a maldiçao (ou o corte de verba). 
     - Teodósio, o macaco-humano
-        Ha muito tempo atras, estudantes de psicologia faziam testes com um orangotango chamado Bubbaloo, porem o departamento 
-        de psicologia cancelou a pesquisa, por nao entregar nenhum resultado aparente. A sala que era a pesquisa foi 
-        transformada em um deposito de livros velhos de filosofia e historia, entao com o passar dos anos centenas de livros
-        foram jogados la, mas todos se esqueceram da existencia do Bubbaloo. Com o passar dos anos, Bubbaloo aprendeu a ler os
-        livros que estavam la e entendeu de verdade o que eh ser um ser humano, entao agora se denomina de Teodosio, o humano
-        e guardiao da verdade e sabedoria humana. Derrota ele porque um orangutango se comportando como humano me da muuuito medo!
+        Ha muito tempo atras, estudantes de psicologia faziam testes com um orangotango chamado Bubbaloo, porem o departamento de psicologia cancelou a pesquisa, por nao entregar nenhum resultado aparente. A sala que era a pesquisa foi transformada em um deposito de livros velhos de filosofia e historia, entao com o passar dos anos centenas de livro foram jogados la, mas todos se esqueceram da existencia do Bubbaloo. Com o passar dos anos, Bubbaloo aprendeu a ler os livros que estavam la e entendeu de verdade o que eh ser um ser humano, entao agora se denomina de Teodosio, o humano e guardiao da verdade e sabedoria humana. Derrota ele porque um orangutango se comportando como humano me da muuuito medo!
 5. EBA
-    - Pintura inacabada
+    - Pintura inacabada:
+        Existem muitos artistas apaixonados por suas obras que dedicam uma grande parte da vida para produzi-las. A Escola de Belas Artes possuiu um desses artistas que, no fim de sua graduação,conseguiu (por meios ainda misteriosos) literalmente dar um pouco de vida para o quadro que estava pintando, de modo que esse tivesse e transmitisse sentimentos. Os dois tinham uma conexão nunca vista antes, eles se entendiam, se amavam e se reconfortavam sem presisar trocar palavras. Porém tudo isso for por água abaixo quando o estudante se formou e mudou para outro país, deixando para trás essa pintura inacabada. Ela ficou furiosa, o seu criador tinha mostrado para ela o que era um amigo e um amor apenas para partir seu coração. Como forma de extravasar a sua fúria ela agora assombra qualquer um que carregue ou deixe uma arte inacabada no prédio. Por favor, faça ela superar de uma vez, isso é muito irritante.
     - Manequeen
     - Comédia e Tragédia
 6. ICB
     - Meio-Vivo:
-        Durante uma aula de anatomia, um estudante negacionista que estava passando mal e mesmo assim se recusava a usar máscara espirrou sobre o cadáver que estava estudando. A professora que lecionava a matéria ficou furiosa e parou a aula para dar um sermão nesse aluno, porém o estrago já havia sido feito. O espirro continha uma bactéria mutante, que infectou o cadáver e passou a controlar esse. Muito solitário esse novo ser meio-vivo passou a infectar outros cadáveres, até que não restasse mais nenhum completamente morto. Ah rumores de que o objetivo deles é montar um império transformando todos os vivos e mortos em meio-vivos.
-    - Superbactéria 
+        Durante uma aula de anatomia, um estudante negacionista que estava passando mal e mesmo assim se recusava a usar máscara espirrou sobre o cadáver que estava estudando. A professora que lecionava a matéria ficou furiosa e parou a aula para dar um sermão nesse aluno, porém o estrago já havia sido feito. O espirro continha uma bactéria mutante, que infectou o cadáver e passou a controlar esse. Muito solitário esse novo ser meio-vivo passou a infectar outros cadáveres, até que não restasse mais nenhum completamente morto. Ah rumores de que o objetivo deles é montar um império transformando todos os vivos e mortos em meio-vivos, sua tarefa é impedir que isso aconteça.
+    - Superbactéria:
     - Cobaia Superior “Doutor Splointer”
 7. ICEX
-    - Cálculo Maléfico;
+    - Cálculo Maléfico:
         Por causa dos altos indices de reprovaçao e trancamento das matérias de calculo,
         os professores do departamento de matematica se reuniram para formular uma nova materia
         chamada calculo 0,5, para preparar os estudantes para calculo 1. Parece que eles fizeram
         alguma besteira porque a matéria ganhou vida e jurou destruir todo os professores do Icex.
         Voce deve impedir ele e salvar os professores para que eles possam registrar as suas notas
         no sistema.
-
-    - Líquido Estranho do Laboratório de Química (LELAQ)
+    - Líquido Estranho do Laboratório de Química (LELAQ):
+        Em uma aula de laboratório de química orgânica alunos do segundo período estavam tentando fazer o composto G como a professora os havia orientado. Era um dia muito quente, então para se refrescar um estudante tomava o suco de limão do RU que ele havia pegado na hora do almoço. Uma pessoa que passou correndo pelo laboratório, pois havia derrubado o composto G nos olhos esbarrou nesse estudante, como resultado o suco caiu dentro do experimento. Naquele mesmo dia, após a aula, alguns assistentes de laboratório foram limpar as bancados e perceberam que era impossível jogar fora essa experimento: ele desviava do panos e saltava para fora da pia antes de ser sugado pelo ralo. O LELAQ continua solto por aí e nínguem até hoje conseguiu capturá-lo.
     - Newton do mal
 8. Engenharia
     - Bob, o destrutor
     - Elevador Purgatório:
-        Estudantes de engenharia ambiciosos fizeram um projeto inovador de deixar os elevadores mais inteligentes e proporam essa ideia para o colegiado. Ele recusou, porque além de inexperientes o projeto continha enormes falhas de segurança. Revoltados, os estudantes invadiram a faculdade durante uma noite e implementaram a sua ideia, ela era brilhante!. Mas com o passar do tempo, o elevador começou a acumular quantidades cada vez maiores de dados de modo que ele compare várias imformações sobre quem entra para decidir seu destino, mas humanos são criaturas complexas, então o elevador apenas mantém elas no limbo indefinitamente.
+        Estudantes de engenharia ambiciosos fizeram um projeto inovador de deixar os elevadores mais inteligentes e proporam essa ideia para o colegiado. Ele recusou, porque além de inexperientes o projeto continha enormes falhas de segurança. Revoltados, os estudantes invadiram a faculdade durante uma noite e implementaram a sua ideia, ela era brilhante!. Mas com o passar do tempo, o elevador começou a acumular quantidades cada vez maiores de dados de modo que ele compare várias imformações sobre quem entra para decidir seu destino, mas humanos são criaturas complexas, então o elevador apenas mantém elas no limbo indefinitamente. Por favor, destrua esse elevador para resgatar as pessoas presas!
     - Hugger, o robô do juízo final
 10. Letras
     - Dicionário Português - Português   
@@ -331,17 +293,21 @@
 #41 - Pasta de ataques
 **Obs**: os ataques de npc não precisam de descriçaõ e serão escolhidos aleatoriamente
 - Exatas/TI
-    - Calouro:
-    - Veterano:
-    - Professor:
-- Humanas/Linguagens
-    -  Calouro:
-    - Veterano:
-    - Professor:
+    - 
+    - 
+    - 
+- Humanas
+    -  
+    - 
+    - 
+- Linguagens
+    - 
+    - 
+    - 
 - Biológicas
-    - Calouro:
-    - Veterano:
-    - Professor:
+    - 
+    - 
+    - 
     
 #42 - Descrição, frases para batalha, atributos e tipo de ataque
 

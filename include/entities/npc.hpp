@@ -23,7 +23,8 @@ class Npc: public Entity{
         Npc( std::string name,
             int life,
             int defense,
-            std::string description);
+            std::string description,
+            std::string behavior1);
 
         Npc(std::string file);
         
@@ -39,8 +40,10 @@ class Npc: public Entity{
 
         virtual int sizeofHit() override;
 
-        virtual std::string getBehavior();
-    
+        virtual std::string getBehavior() override;
+
+        virtual void showAction(Attack* hit) override;
+
         void doTurn(Entity* player);
         
 

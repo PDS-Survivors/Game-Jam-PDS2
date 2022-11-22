@@ -8,8 +8,10 @@
     Npc::Npc( std::string name,
               int life,
               int defense,
-              std::string description):
-              Entity(name,life,defense), _description(description){_stamina = 5;}
+              std::string description,
+              std::string behavior1):
+              Entity(name,life,defense), _description(description), _behavior(behavior1)
+              {_stamina = 5;}
 
     Npc::Npc(std::string file){
         
@@ -80,4 +82,13 @@
     
     void Npc::doTurn(Entity* player){
         behavior::doBehavior(this, player);
+    }
+
+    void Npc::showAction(Attack* hit){
+        std::cout<<std::endl;
+        std::cout<<this->getName()<<" usou "<<hit->getName();
+        std::cout<<"!"<<std::endl;
+        std::cout<<std::endl;
+        
+        read::wait(1);
     }
