@@ -185,7 +185,7 @@ void Battle::statistcs () {
     read::wait(1);
 
     std::cout << "\n\n== Adversário: " << _adversary->getName();
-    read::wait(4); 
+    read::wait(2); 
     std::cout << "\nVida inicial: " << std::to_string(_adversary->getLife() + _totalDamageNpc);
     read::wait(1);
     std::cout << "\nVida atual: " << std::to_string(_adversary->getLife());
@@ -209,15 +209,14 @@ void Battle::figthPc () {
     std::cout << "Sua vez de brilhar! *.*\n\n";
     read::wait(2);
 
-    while (test){
+    while (test) {
 
         //Escolha da ação: atacar, não atacar, mostrar estatísticas
         std::cout << "(a) Ver estatisticas     (b) Atacar!    (c) Esperar, apenas.\n";
         read::wait(1);
 
         std::cout << "== Stamina atual: " << _player.getStamina() << "\n\n";
-        std::cin.ignore();
-        get_char = std::cin.get();
+        std::cin >> get_char;
 
         switch (get_char) {
             case 'a' :  this->statistcs(); break;
@@ -233,26 +232,30 @@ void Battle::figthPc () {
                         if (att != nullptr) {
                             _player.doHit(_adversary, att);
 
-                            _player.showAction(att);
-                            std::cout << std::endl;
-
                             this->imprimeVida();
                         }
-
+                        else { test = false; break;}
+                        
                         _totalDamagePc += (lpc - _player.getLife());
                         _totalDamageNpc += (lnpc - _adversary->getLife());
                         } 
                         break;
             case 'c' : test = false; break;
-            //Substituir por tratamento de exceção
-            default : std::cout << "Digite 'a', 'b' ou 'c' para continuar\n"; break;
+
+            //Tratamento de exceção para uma entrada inválida
+            default : throw ExcecaoEntradaInvalida(); break;
         }
+
 
         if (this->defineResult()) break;
 
-        if (test) {
+        else if (_player.getStamina() == 0) {
+            test = false;
+            break;
+        }
+
+        else if (test) {
             std::cout << "O que você fará em seguida?\n\n";
-            
             read::wait(2);
         }
     }
@@ -267,7 +270,7 @@ void Battle::fightNpc () {
     int lnpc = _adversary->getLife();
 
     //Escolha do ataque 
-    std::cout << _adversary->getName() << " ira atacar ^o^\n\n"; 
+    std::cout << _adversary->getName() << " ira atacar ^o^\n"; 
     read::wait(2);
 
     _adversary->doTurn(&_player);
@@ -278,7 +281,7 @@ void Battle::fightNpc () {
     this->imprimeVida();
 
     std::cout << "Fim de turno!\n\n";
-    
+
     read::wait(2);
 }
 
@@ -344,3 +347,12 @@ void Battle::fight () {
 
     read::wait(2);
 }
+
+ExcecaoEntradaInvalida::ExcecaoEntradaInvalida () {
+    _msgErro = "Essa entrada é inválida.\nDigite 'a', 'b' ou 'c' para continuar\n";
+}
+
+const char* ExcecaoEntradaInvalida::what () const noexcept {
+    return _msgErro.c_str();
+}
+

@@ -59,4 +59,17 @@ class Battle {
         void fightNpc ();
 };
 
+class ExcecaoEntradaInvalida : public std::exception {
+
+     private:
+
+         std::string _msgErro;
+    
+     public:
+
+         ExcecaoEntradaInvalida ();
+
+         const char* what () const noexcept override;
+ };
+ 
 #endif
