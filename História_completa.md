@@ -323,7 +323,7 @@
     - Catraca:
         Sim, ela voltou, aquela que é a mais temida de todos prédios da UFMG. Apresente agora sua carteirinha para poder entrar. Espera, você esqueceu? E não há nenhum funcionário perto para abrir pra você? Não adianta tentar forçar, a catraca se mantém firme. Você vai tentar pular? É impressão minha ou a catraca está te encarando? E ela com certeza não está feliz.
     - Reitora:
-        
+        add
 12. Boss final
     - Camila Laranjeira
 
