@@ -77,8 +77,8 @@
             if(hit->getStamina() <= this->getStamina()){
                 std::cout<<"( "<<i<<" ) -> ";
                 std::cout<<hit->getName()<<std::endl;
-                i++;
             }
+            i++;
         }
 
        std::cout<<"( "<<i<<" ) -> ";
