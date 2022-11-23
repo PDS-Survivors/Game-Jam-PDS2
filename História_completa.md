@@ -226,7 +226,7 @@
     - Professor Maromba
     - Tia das vitaminas:
         Recentemente tem-se escutado falar sobre muitos casos de dor de cabeça, vômito e sudorese excessiva na EEFETO. A causa disso é a nova professora de bioquímica aplicada, a "tia das vitaminas", apelido que ela ganhou nas primeiras semanas de aula por sempre carregar vitamina consigo ao invés de água ou café. Ela é uma pessoa extremamente adorável e seu sorriso torna impossível recusar qualquer coisa que ela ofereça, o que é o maior problema dos estudantes no momento. Todo dia ela chega para dar aula com uma nova de receita de vitamina e, desde que uma aluna pediu para experimentar, ela sempre escolhe uma vítima para julgar suas habilidades culinárias. Nínguem teve a coregem de contar que ela é uma péssima cozinheira, derrote ela antes que álguem acabe parando no hospital!
-    - Hércules
+    
 
 2. Veterinária
     - Pinscher raiovoso:
@@ -244,8 +244,9 @@
         Estudantes relatam sons estranhos nas proximidades da escola de musica. Enquanto as autoridades dizem para nao se preocupar porque deve ser apenas um cachorro doente, os estudantes mais antigos falam de uma lenda mais antiga: o homem capivara do bosque da musica. Segundo a lenda ele ja estava aqui quando o bosque da musica era so um bosque, mas ele ficou preso na UFMG por que sempre perde o horario do interno. Agora ele anda pela escola de musica roubando paçoca dos estudantes que passam por ali de noite. Voce deve derrotar ele para que nenhum estudante tenha que voltar pra casa sem a paçoca que ele pegou no RU.
 
 4. Fafich
+
     - Vampiros sugadores de esperança:
-        Em tempos sombrios de corte de verbas e distribuição de notas, a única coisa que resta aos humilhados estudantes da UFMG é a esperança. Mas o que acontece se eles também forem privados dessa? Bem, o resultado já é visto pela fafich, a cada dia os estudantes se assemelham mais com zumbis do que gente e, apesar de cheio, faz-se um silêncio perpétuo no prédio. Isso é obra dos vampiros. Como seres imortais, eles já vivenciaram diversos acontecimentos históricos  e o tempo os tornaram deveras ranzinzas e amargurados, não podem ver uma pessoa feliz comentando sobre algo que já se aproximam para sugar toda a esperança dela com seus sermões e previsões para o futuro. Expulse esses vampiros daqui antes que toda a faculdade entre em depressão profunda.
+        Em tempos sombrios de corte de verbas e distribuição de notas, a única coisa que resta aos humilhados estudantes da UFMG é a esperança. Mas o que acontece se eles também forem privados dessa? Bem, o resultado já é visto pela fafich, a cada dia os estudantes se assemelham mais com zumbis do que gente e, apesar de cheio, faz-se um silêncio perpétuo no prédio. Isso é obra dos estudantes de intercambio da Transilvania, ou vampiros. Como seres imortais, eles já vivenciaram diversos acontecimentos históricos  e o tempo os tornaram deveras ranzinzas e amargurados, não podem ver uma pessoa feliz comentando sobre algo que já se aproximam para sugar toda a esperança dela com seus sermões e previsões para o futuro. Expulse esses vampiros daqui antes que toda a faculdade entre em depressão profunda.
     - Getúlio Mineiro:
         Após uma aula muito eloquente sobre a Revoluçao de 30 e o Estado Novo, um estudante de historia se inspirou muito em Getulio Vargas e agora clama ser o Getulio Vargas de Minas Gerais, prometendo instaurar na UFMG o Estado Mais Novo, onde o curso de historia dominaria toda a universidade. Ele nao eh um perigo real, mas eh muito chato, entao so da uma pisa nele para ele parar com isso logo!
     - Amuleto amaldiçoado de Ark'heo'lujia

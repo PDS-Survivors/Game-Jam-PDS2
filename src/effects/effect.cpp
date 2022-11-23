@@ -1,4 +1,4 @@
-#include "effect.hpp"
+#include "../effects/effect.hpp"
 #include "../namespaces/reader.hpp"
 #include <iostream>
 #include <vector>
