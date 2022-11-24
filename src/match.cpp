@@ -1,6 +1,8 @@
 #include "match.hpp"
 #include <iostream>
 
+//Variável estática de battle que armazena número de batalhas perdidas
+int Battle::_totalLoses = 0;
 
 Match::Match(){
     _player = new Pc();

@@ -5,9 +5,9 @@
 #include "namespaces/reader.hpp"
 
 #include <string>
+#include <vector>
 #include <iostream>
 
-//Colocar em match
 int Battle::_totalLoses = 0;
 
 //File: Arquivo para o construtor de battle, contém, arquivo de npc, numero da
@@ -115,7 +115,7 @@ void Battle::imprimeVida () {
     read::wait(2);
 }
 
-//Retorna se o resuktado foi definido ou nn
+//Indica se o resultado já foi definido ou não
 bool Battle::defineResult () {
     //Se perder result = 1, se ganhar = 0;
     if (_player.getLife() <= 0) {
@@ -206,60 +206,101 @@ void Battle::statistcs () {
 
 void Battle::figthPc () {
     bool test = true;
-    char get_char;
 
     std::cout << "Sua vez de brilhar! *.*\n\n";
     read::wait(2);
 
     while (test) {
 
-        //Escolha da ação: atacar, não atacar, mostrar estatísticas
-        std::cout << "(a) Ver estatisticas     (b) Atacar!    (c) Esperar, apenas.\n";
-        read::wait(1);
+        try {
+            //Escolha da ação: mostrar estatísticas, atacar, não atacar
+            std::cout << "(a) Ver estatisticas     (b) Atacar!    (c) Esperar, apenas.\n";
+            read::wait(1);
 
-        std::cout << "== Stamina atual: " << _player.getStamina() << "\n\n";
-        std::cin >> get_char;
+            std::cout << "== Stamina atual: " << _player.getStamina() << "\n\n";
+        
+            std::cin.ignore();
+            char get_char = getchar();
+        
+            switch (get_char) {
+                //Mostra as estatísticas de jogo
+                case 'a' :  this->statistcs(); break;
 
-        switch (get_char) {
-            case 'a' :  this->statistcs(); break;
-            case 'b' :  { 
-                        int lpc = _player.getLife();
-                        int lnpc = _adversary->getLife();
-                        
-                        _player.showHit();
+                //Mostra quais ataques estão disponíveis para o jogador escolher
+                case 'b' :  { 
+                            int lpc = _player.getLife();
+                            int lnpc = _adversary->getLife();
+                            
+                            _player.showHit();
 
-                        Attack* att;
-                        att = _player.chooseAttack();
+                            Attack* att;
+                            bool cond = true;
 
-                        if (att != nullptr) {
-                            _player.doHit(_adversary, att);
+                            do { 
+                                att = _player.chooseAttack(); 
 
-                            this->imprimeVida();
-                        }
-                        else { test = false; break;}
-                        
-                        _totalDamagePc += (lpc - _player.getLife());
-                        _totalDamageNpc += (lnpc - _adversary->getLife());
-                        } 
-                        break;
-            case 'c' : test = false; break;
+                                //Confirmação do ataque, o jogador pode continuar ele ou cancelar
+                                std::cout << "Tem certeza que quer usar " << att->getName();
+                                std::cout << "? (s/n)\n";
 
-            //Tratamento de exceção para uma entrada inválida
-            default : throw ExcecaoEntradaInvalida(); break;
+                                try {
+                                    std::cin.ignore();
+                                    char c = getchar();
+
+                                    if (c == 's') {
+                                        std::cout << "Tabo\n"; 
+                                        read::wait(1); 
+                                        cond = false;
+                                    }
+                                    else if (c == 'n') {
+                                        std::cout << "Qual então?\n"; 
+                                        read::wait(1);
+                                    }
+                                    else { 
+                                        throw ExcecaoEntradaInvalida2();
+                                    }
+                                }
+                                catch (ExcecaoEntradaInvalida2 &e) {
+                                    std::cout << e.what();
+                                    read::wait(1);
+                                }
+                            }
+                            while (cond);
+
+                            //Apenas executa um ataque se for dada uma entrada válida
+                            //Substituir por tratamento de excessão
+                            if (att != nullptr) {
+                                _player.doHit(_adversary, att);
+
+                                this->imprimeVida();
+                            }
+                            else { test = false; break;}
+                            
+                            //Atualiza dados para as estatísticas
+                            _totalDamagePc += (lpc - _player.getLife());
+                            _totalDamageNpc += (lnpc - _adversary->getLife());
+
+                            } break;
+
+                //Encerra o turno do player
+                case 'c' : test = false; break;
+                default : throw ExcecaoEntradaInvalida(); break;
+            }
+
+            if (this->defineResult()) break;
+            
+            //Se a stamina for 0 o turno é encerrado
+            else if (_player.getStamina() == 0) {
+                test = false;
+                break;
+            }
+
+            else if (test) {
+                std::cout << "O que você fará em seguida?\n\n";
+                read::wait(2);
+            }
         }
-
-
-        if (this->defineResult()) break;
-
-        else if (_player.getStamina() == 0) {
-            test = false;
-            break;
-        }
-
-        else if (test) {
-            std::cout << "O que você fará em seguida?\n\n";
-            read::wait(2);
-        }
+        catch (ExcecaoEntradaInvalida &e) { std::cout << e.what(); read::wait(1);}
     }
 
     std::cout << "Fim do seu turno!\n\n";
@@ -271,10 +312,10 @@ void Battle::fightNpc () {
     int lpc = _player.getLife();
     int lnpc = _adversary->getLife();
 
-    //Escolha do ataque 
     std::cout << _adversary->getName() << " ira atacar ^o^\n"; 
     read::wait(2);
 
+    //O npc ataca seguindo um comportamento pré-estabelecido
     _adversary->doTurn(&_player);
 
     _totalDamagePc += (lpc - _player.getLife());
@@ -313,6 +354,7 @@ void Battle::fight () {
 
             if (this->defineResult()) break;
 
+            //No final de cada round a stamina de pc e npc é restaurada
             _player.rebootStamina();
             _adversary->rebootStamina();
         }
@@ -391,10 +433,17 @@ void Battle::manageAttacks(){
 
 }
 ExcecaoEntradaInvalida::ExcecaoEntradaInvalida () {
-    _msgErro = "Essa entrada é inválida.\nDigite 'a', 'b' ou 'c' para continuar\n";
+    _msgErro = "\nEntrada inválida.\nDigite 'a', 'b' ou 'c' para continuar\n\n";
 }
 
 const char* ExcecaoEntradaInvalida::what () const noexcept {
     return _msgErro.c_str();
 }
 
+ExcecaoEntradaInvalida2::ExcecaoEntradaInvalida2 () {
+    _msgErro = "\nEntrada inválida.\nDigite 's' ou 'n' para continuar\n\n";
+}
+
+const char* ExcecaoEntradaInvalida2::what () const noexcept {
+    return _msgErro.c_str();
+}

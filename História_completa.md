@@ -261,7 +261,7 @@
 6. ICB
     - Meio-Vivo:
         Durante uma aula de anatomia, um estudante negacionista que estava passando mal e mesmo assim se recusava a usar máscara espirrou sobre o cadáver que estava estudando. A professora que lecionava a matéria ficou furiosa e parou a aula para dar um sermão nesse aluno, porém o estrago já havia sido feito. O espirro continha uma bactéria mutante, que infectou o cadáver e passou a controlar esse. Muito solitário esse novo ser meio-vivo passou a infectar outros cadáveres, até que não restasse mais nenhum completamente morto. Ah rumores de que o objetivo deles é montar um império transformando todos os vivos e mortos em meio-vivos, sua tarefa é impedir que isso aconteça.
-    - Superbactéria:
+    - Superbactéria
     - Cobaia Superior “Doutor Splointer”
 7. ICEX
     - Cálculo Maléfico:
