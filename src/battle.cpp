@@ -30,7 +30,7 @@ Battle::Battle (Pc *player, std::string file){
     _resultTxt = files[2];
 
     _name = words[0];
-    
+
     _totalDamagePc = 0;
     _totalDamageNpc = 0;
     _round = 0;
@@ -350,6 +350,46 @@ void Battle::fight () {
     read::wait(2);
 }
 
+void Battle::manageAttacks(){
+
+    std::cout<<"Olha so!!! Parece que";
+    std::cout<<_adversary->getName();
+    std::cout<<" deixou cair um ataque dele..."<<std::endl;
+
+    //pega um ataque aleatório do npc
+    Attack* attack = _adversary->getHit( behavior::rollDice(0, _adversary->sizeofHit()));
+
+    std::cout<<attack->getName()<< " : "<<std::endl;
+
+    std::cout<<attack->getDescription()<<std::endl;
+
+    if(!attack->isDefense()) std::cout<<"dano: "<<attack->getDamage()<<std::endl;
+
+    std::cout<<"stamina: "<<attack->getStamina()<<std::endl;
+
+    std::cout<<std::endl<<std::endl;
+
+    read::wait(2);
+
+    std::cout<<"vai levar ou deixar pra tras?"<<std::endl;
+    std::cout<<std::endl;
+
+    std::cout<<"levar, quanto mais melhor ne -> ( s )"<<std::endl;
+    std::cout<<"deixar, meu bolso ta cheio... -> ( n )"<<std::endl;
+
+    char choice = getchar();
+
+    //implementa aqui Talita (pfv) ;)
+    while(true){
+
+        if(choice == 's'){}
+        
+        else if(choice == 'n'){}
+
+        else choice = getchar();
+    }
+
+}
 ExcecaoEntradaInvalida::ExcecaoEntradaInvalida () {
     _msgErro = "Essa entrada é inválida.\nDigite 'a', 'b' ou 'c' para continuar\n";
 }

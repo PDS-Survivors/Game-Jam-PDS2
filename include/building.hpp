@@ -76,6 +76,8 @@ class Building {
     void doBattle();
 
     bool isComplete();
+
+    void manageAttacks();
     
 };
 

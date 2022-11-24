@@ -60,6 +60,8 @@ class Battle {
         void figthPc ();
 
         void fightNpc ();
+
+        void manageAttacks();
 };
 
 class ExcecaoEntradaInvalida : public std::exception {

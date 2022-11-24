@@ -122,3 +122,4 @@ void Building::doBattle(){
 bool Building::isComplete(){
     return _battles.empty();
 }
+
