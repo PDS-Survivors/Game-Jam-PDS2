@@ -31,6 +31,8 @@ class Pc: public Entity{
         
         void addHit(Attack* attack);
 
+        void delHit(int id);
+
         void showHit();
 
         virtual void showAction(Attack* hit) override;

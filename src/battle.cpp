@@ -28,18 +28,17 @@ Battle::Battle (Pc *player, std::string file){
     _adversary = new Npc(files[0]);
     _beginTxt = files[1];
     _resultTxt = files[2];
-
     _name = words[0];
 
     _totalDamagePc = 0;
     _totalDamageNpc = 0;
     _round = 0;
 
-    _size = int((_player.getName()).size())+int((_adversary->getName()).size());
+    _size = _name.size();
 }
 
 //Construtor sem leitura de arquivo para Npc
-Battle::Battle (Pc* player, Npc* adversary, int numBattle, int predio) {
+Battle::Battle (Pc* player, Npc* adversary, int numBattle, int predio, std::string name) {
     _player = *player;
     _adversary = adversary;
     _numBattle = numBattle;
@@ -50,6 +49,7 @@ Battle::Battle (Pc* player, Npc* adversary, int numBattle, int predio) {
     _beginTxt = "Descrição interessante :D (teste)\n";
     _resultTxt = "Hmm obrigada por vencer?\n";
     _size = int((_player.getName()).size())+int((_adversary->getName()).size());
+    _name = name;
 }
 
 Battle::~Battle () {
@@ -247,18 +247,14 @@ void Battle::figthPc () {
                                     std::cin.ignore();
                                     char c = getchar();
 
-                                    if (c == 's') {
-                                        std::cout << "Tabo\n"; 
-                                        read::wait(1); 
-                                        cond = false;
-                                    }
-                                    else if (c == 'n') {
+                                    if (c == 's') { cond = false; }
+
+                                    else if (c == 'n') { 
                                         std::cout << "Qual então?\n"; 
                                         read::wait(1);
                                     }
-                                    else { 
-                                        throw ExcecaoEntradaInvalida2();
-                                    }
+
+                                    else { throw ExcecaoEntradaInvalida2(); }
                                 }
                                 catch (ExcecaoEntradaInvalida2 &e) {
                                     std::cout << e.what();
@@ -331,9 +327,10 @@ void Battle::fightNpc () {
 //Roda a batalha entre Pc e Npc
 void Battle::fight () {
 
-    std::cout << "======= FIGHT " << _numBattle << ": " << _player.getName() << " X ";
-    std::cout << _adversary->getName() << " ========\n\n";
+    std::cout << "======= FIGHT " << _numBattle << ": " << _name << " ========\n\n";
     read::wait(6);
+
+    this->beginTxt();
 
     this->imprimeVida();
 
@@ -394,44 +391,109 @@ void Battle::fight () {
 
 void Battle::manageAttacks(){
 
-    std::cout<<"Olha so!!! Parece que";
+    std::cout << std::endl;
+    for (int i = 0; i < (29 + _size); i++) { std::cout << "="; };
+    std::cout << "\n\n";
+    read::wait(2);
+
+    std::cout<<"Olha so!!! Parece que ";
     std::cout<<_adversary->getName();
-    std::cout<<" deixou cair um ataque dele..."<<std::endl;
+    std::cout<<" deixou cair um ataque...\n"<<std::endl;
+
+    read::wait(3);
 
     //pega um ataque aleatório do npc
     Attack* attack = _adversary->getHit( behavior::rollDice(0, _adversary->sizeofHit()));
 
-    std::cout<<attack->getName()<< " : "<<std::endl;
+    std::cout<<"== "<<attack->getName()<< " : "<<std::endl;
+    read::wait(2);
 
     std::cout<<attack->getDescription()<<std::endl;
+    read::wait(1);
 
     if(!attack->isDefense()) std::cout<<"dano: "<<attack->getDamage()<<std::endl;
+    read::wait(1);
 
     std::cout<<"stamina: "<<attack->getStamina()<<std::endl;
 
     std::cout<<std::endl<<std::endl;
 
-    read::wait(2);
+    read::wait(3);
 
-    std::cout<<"vai levar ou deixar pra tras?"<<std::endl;
+    std::cout<<"Vai levar ou deixar pra tras?"<<std::endl;
     std::cout<<std::endl;
 
-    std::cout<<"levar, quanto mais melhor ne -> ( s )"<<std::endl;
-    std::cout<<"deixar, meu bolso ta cheio... -> ( n )"<<std::endl;
+    read::wait(2);
 
-    char choice = getchar();
+    std::cout<<"(l) Levar, quanto mais melhor neh"<<std::endl;
+    std::cout<<"(d) Deixar, meu bolso ta cheio..."<<std::endl;
 
-    //implementa aqui Talita (pfv) ;)
-    while(true){
+    read::wait(1);
 
-        if(choice == 's'){}
-        
-        else if(choice == 'n'){}
+    bool cond = true;
 
-        else choice = getchar();
+    while (cond) {
+        std::cin.ignore();
+        char choice = getchar();
+
+        try {
+            if(choice == 'l'){
+                //Se o player tiver menos de 4 ataques ele é adicionado automaticamente
+                if (_player.sizeofHit() < 4) {
+                    _player.addHit(attack);
+
+                    std::cout << attack->getName();
+                    std::cout << " foi adcionado à sua coleção de ataques! :D\n";
+
+                    _player.showHit();
+
+                    read::wait(2);
+                }
+                //Caso a coleçao de ataques esteja cheia ele precisará de desfazer de um ataque
+                else {
+                    std::cout << "Essa é a sua coleção de atques:\n\n";
+                    read::wait(1);
+                    _player.showHit();
+                    read::wait(2);
+                    
+                    std::cout << "\nPor qual deles você deseja substituir o novo ataque?\n";
+                    std::cout << "Obs: Caso você queira cancelar essa ação pressione '5'\n\n";
+
+                    int op;
+                    std::cin >> op;
+                    _player.delHit(op);
+                    _player.addHit(attack);
+
+                    std::cout << "Uhuuul. Aqui estão os seus novos ataques:\n\n";
+                    read::wait(2);
+
+                    _player.showHit();
+                    read::wait(3);
+                    
+                    std::cout << "\n";
+                }
+                cond = false;
+            }  
+            else if(choice == 'd'){
+                std::cout << "Não faria o mesmo se fosse você, que sem graça...\n";
+                read::wait(2);
+                cond = false;
+            }
+            else { throw ExcecaoEntradaInvalida3(); }
+        }
+        catch (ExcecaoEntradaInvalida3 &e) {
+            std::cout << e.what();
+            read::wait(1);
+        }
     }
 
+    std::cout << std::endl;
+    for (int i = 0; i < (29 + _size); i++) { std::cout << "="; };
+    std::cout << "\n\n";
+
+    read::wait(4);
 }
+
 ExcecaoEntradaInvalida::ExcecaoEntradaInvalida () {
     _msgErro = "\nEntrada inválida.\nDigite 'a', 'b' ou 'c' para continuar\n\n";
 }
@@ -445,5 +507,13 @@ ExcecaoEntradaInvalida2::ExcecaoEntradaInvalida2 () {
 }
 
 const char* ExcecaoEntradaInvalida2::what () const noexcept {
+    return _msgErro.c_str();
+}
+
+ExcecaoEntradaInvalida3::ExcecaoEntradaInvalida3 () {
+    _msgErro = "\nEntrada inválida.\nDigite 's' ou 'n' para continuar\n\n";
+}
+
+const char* ExcecaoEntradaInvalida3::what () const noexcept {
     return _msgErro.c_str();
 }

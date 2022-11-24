@@ -69,6 +69,16 @@
         
     }
 
+    void Pc::delHit(int id){
+
+        std::list<Attack*>::iterator it = _hit.begin();
+
+        for(int i=0;i<id;i++) it++;
+
+        _hit.erase(it);
+    ;
+    }
+
     void Pc::showHit(){
         
         int i=0;

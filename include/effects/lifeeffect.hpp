@@ -41,6 +41,12 @@
              * @param file : nome do arquivo 
              */
             LifeEffect(std::string file);
+
+            /**
+             * @brief Destrutor padrão de um objeto LifeEffect
+             * 
+             */
+            ~LifeEffect();
             
             // clona o efeito para a entidade colocar esse clone
             // em sua lista de efeitos.

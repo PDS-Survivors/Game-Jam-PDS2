@@ -50,7 +50,7 @@ int main () {
     int numBattle = 1;
     int predio = 4;
 
-    battle = new Battle (player, adversary, numBattle, predio);
+    battle = new Battle (player, adversary, numBattle, predio, "Onde estão os estudantes do quinto periodo?");
 
     battle->beginTxt();
 
@@ -87,7 +87,7 @@ int main () {
     std::cout << "Batalhas perdidas: " << battle->getTotalLoses() << std::endl << std::endl;
     read::wait(3);
 
-    //Obs:Segmentation fault no destrutor de battle
+    battle->manageAttacks();
 
     return 0;
 }

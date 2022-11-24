@@ -1,8 +1,10 @@
 /**
  * @file battle.hpp
- * @author your name (you@domain.com)
- * @brief 
- * @version 0.1
+ * @author Talita Félix Lúcio(talitafelixlucio2004@gmail.com)
+ * @brief Essa biblioteca possui três classes, sendo battle a principal e responsável por fazer
+ * a batalha entre o player e um adversário atacontecer e as outras para tratamento de exceção.
+ * @details 
+ * @version 1.0
  * @date 2022-11-23
  * 
  * @copyright Copyright (c) 2022
@@ -17,6 +19,7 @@
 
 /**
  * @brief 
+ * @details
  * 
  */
 class Battle {
@@ -38,27 +41,39 @@ class Battle {
         static int _totalLoses;
 
     public:
-    
+
+        /**
+         * @brief Constrói um novo objeto Battle
+         * @details 
+         * 
+         * @param player objeto Pc que contem as informações do jogador
+         * @param file arquivo na forma de string que possui informações sobre o adversário, nome
+         * da batalha, texto de introdução da batalha (história do adversário) e um texto de 
+         * vitória caso o jogador derrote o seu adversário.
+         */
         Battle (Pc* player, std::string file);
 
         /**
-         * @brief Construct a new Battle object
+         * @brief Constrói um novo objeto Battle
+         * @details
          * 
          * @param player 
          * @param adversary 
          * @param numBattle 
          * @param predio 
          */
-        Battle (Pc* player, Npc* adversary, int numBattle, int predio);
+        Battle (Pc* player, Npc* adversary, int numBattle, int predio, std::string name);
 
         /**
          * @brief Destroy the Battle object
+         * @details
          * 
          */
         ~Battle ();
 
         /**
          * @brief Get the Result object
+         * @details
          * 
          * @return true 
          * @return false 
@@ -67,6 +82,7 @@ class Battle {
 
         /**
          * @brief Get the Total Loses object
+         * @details
          * 
          * @return int 
          */
@@ -74,6 +90,7 @@ class Battle {
 
         /**
          * @brief Get the Damage Pc object
+         * @details
          * 
          * @return int 
          */
@@ -81,6 +98,7 @@ class Battle {
 
         /**
          * @brief Get the Damage Npc object
+         * @details description
          * 
          * @return int 
          */
@@ -90,6 +108,7 @@ class Battle {
 
         /**
          * @brief Set the Result object
+         * @details description
          * 
          * @param result 
          */
@@ -97,6 +116,7 @@ class Battle {
 
         /**
          * @brief Set the Total Loses object
+         * @details description
          * 
          * @param lose 
          */
@@ -104,18 +124,21 @@ class Battle {
         
         /**
          * @brief 
+         * @details description
          * 
          */
         void beginTxt();
 
         /**
          * @brief 
+         * @details description
          * 
          */
         void imprimeVida ();
 
         /**
          * @brief 
+         * @details
          * 
          * @return true 
          * @return false 
@@ -124,39 +147,49 @@ class Battle {
 
         /**
          * @brief 
+         * @details description
          * 
          */
         void resultTxt ();
 
         /**
          * @brief 
+         * @details
          * 
          */
         void statistcs ();
 
         /**
          * @brief 
+         * @details
          * 
          */
         void fight (); 
 
         /**
          * @brief 
+         * @details
          * 
          */
         void figthPc ();
 
         /**
          * @brief 
+         * @details
          * 
          */
         void fightNpc ();
 
+        /**
+         * @brief 
+         * 
+         */
         void manageAttacks();
 };
 
 /**
  * @brief 
+ * @details
  * 
  */
 class ExcecaoEntradaInvalida : public std::exception {
@@ -169,12 +202,14 @@ class ExcecaoEntradaInvalida : public std::exception {
 
         /**
          * @brief Construct a new Excecao Entrada Invalida object
+         * @details
          * 
          */
         ExcecaoEntradaInvalida ();
 
         /**
          * @brief 
+         * @details
          * 
          * @return const char* 
          */
@@ -183,6 +218,7 @@ class ExcecaoEntradaInvalida : public std::exception {
 
 /**
  * @brief 
+ * @details
  * 
  */
 class ExcecaoEntradaInvalida2 : public std::exception {
@@ -195,9 +231,37 @@ class ExcecaoEntradaInvalida2 : public std::exception {
 
         /**
          * @brief Construct a new Excecao Entrada Invalida 2 object
+         * @details
          * 
          */
         ExcecaoEntradaInvalida2 () ;
+
+        /**
+         * @brief
+         * @details 
+         * 
+         * @return const char* 
+         */
+        const char* what () const noexcept override;
+};
+
+/**
+ * @brief 
+ * 
+ */
+class ExcecaoEntradaInvalida3 : public std::exception {
+
+    private:
+
+        std::string _msgErro;
+    
+    public:
+
+        /**
+         * @brief Construct a new Excecao Entrada Invalida 3 object
+         * 
+         */
+        ExcecaoEntradaInvalida3 ();
 
         /**
          * @brief 
