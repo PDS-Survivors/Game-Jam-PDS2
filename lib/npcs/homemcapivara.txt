@@ -1,0 +1,10 @@
+sHomem-capivara do bosque da musica_
+sSe ele pedir pacoca, corre!_
+shybrid_
+i06_
+i5_
+flib/attacks/escudohumanocapivarad.txt_
+flib/attacks/cantodascapivaras.txt_
+flib/attacks/medleydaspacocas.txt_
+flib/attacks/chutelamenor.txt_
+flib/attacks/aquarelasangrenta.txt_

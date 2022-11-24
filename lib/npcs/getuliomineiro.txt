@@ -3,7 +3,7 @@ ssó um estudante inspirado que acha que eh um presidente morto_
 sspeedy_
 i57_
 i5_
-flib/attacks/revolucaode30.txt
-flib/attacks/socofeb.txt
-flib/attacks/csn.txt
-flib/attacks/reparacaohistoricad.txt
+flib/attacks/revolucaode30.txt_
+flib/attacks/socofeb.txt_
+flib/attacks/csn.txt_
+flib/attacks/reparacaohistoricad.txt_

@@ -1,0 +1,9 @@
+scalculo malefico_
+squando voce acha que calculo nao pode mais piorar…_
+sberserker_
+i07_
+i7_
+flib/attacks/serietaylor.txt_
+flib/attacks/voadoranewtongauss.txt_
+flib/attacks/golpepolinomial.txt_
+flib/attacks/chutenacurvatura.txt_
