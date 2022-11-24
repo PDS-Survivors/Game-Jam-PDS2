@@ -134,7 +134,4 @@
         return false;
     }
 
-    int Attack::Harvest(std::vector<Effect*>& effect){
-
-        return 0;
-    }
+    void Attack::Harvest(std::vector<Effect*>& effect){}

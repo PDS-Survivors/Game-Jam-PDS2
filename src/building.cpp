@@ -43,35 +43,82 @@ void Building::set_numBattle(int num){
 void Building::start_battle(){
     _battles.top().fight();
 }
+        
 
-void Building::add_battles(){ 
+void Building::doBattle(){
 
-    Pc* player;
+    //se for a primeira tentativa
+    if(!_tryagain){
 
-    //vetor com as referencias para os adversarios
-    Npc* adversary[_totalBattles];
+        std::cout<<" Batalha à frente:   ";
+        std::cout<<_battles.top().getName()<<std::endl;
+        std::cout<<std::endl;
 
-    //vector com os arquivos referentes aos objetos NPC
-    std::vector<std::string> files[_totalBattles];
-
-    //vector com os objetos NPC referentes aos adversarios
-    std::vector <Npc> adversaries;
-
-    //cria as objetos refrentes aos Npc
-    for(int i=0;i<_totalBattles;i++){
-         adversaries[i] = Npc(files[i]);
-    }
+        std::cout<<"      [Pressione Enter pra ir a luta] "<<std::endl;
+        std::cout<<std::endl;
     
-    //referencia os objetos
-    for(int i=0;i<_totalBattles;i++){
-         adversary[i] = &adversaries[i];
+        _battles.top().beginTxt();
+        _tryagain = true;
     }
-    //adiciona as batlhas da ultima para a primeira
-    for(int i=_totalBattles;i>0;i--){
-        _battles.push(Battle(player,adversary[i-1],i,_number));
+    //se voce está tentando a mesma batalha de novo
+    else{
+
+        std::cout<<" Batalha à frente:   ";
+        std::cout<<_battles.top().getName()<<std::endl;
+        std::cout<<std::endl;
+        
+        std::cout<<"      [Pressione Enter pra revanche] "<<std::endl;
+        std::cout<<std::endl;
+
+        _battles.top().fight();
+        
+        //se o player perdeu
+        if(_battles.top().getResult()){
+
+            std::cout<<"Quer tentar de novo? (por sua conta em risco)"<<std::endl;
+            std::cout<<std::endl;
+            
+            read::wait(1);
+
+            std::cout<<"vamo la fazer oq -> (s)"<<std::endl;
+            std::cout<<"vou dar uma respirada la fora volto ja -> (n)"<<std::endl;
+
+            char choice = getchar();
+
+            while(true){
+
+                switch(choice){
+
+                    case 's':
+                        doBattle();
+                        return;
+                        break;
+                    
+                    case 'n':
+                        _tryagain = false;
+                        return;
+                        break;
+                    
+                    default: choice = getchar();
+                    break;
+
+                }
+
+            }
+        }
+        
+        // se o player ganhou
+        else{
+
+            _battles.top().resultTxt();
+
+            _battles.pop();
+
+            return;
+        }
     }
 }
-    
-void Building::remove_battle(){
-    _battles.pop();
+
+bool Building::isComplete(){
+    return _battles.empty();
 }

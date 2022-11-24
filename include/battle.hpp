@@ -18,13 +18,14 @@ class Battle {
         int _predio;
         int _round;
         int _size;
+        std::string _name;
         std::string _beginTxt;
         std::string _resultTxt;
         static int _totalLoses;
 
     public:
     
-        Battle (Pc* player, std::string file, std::string beginTxtAdress);
+        Battle (Pc* player, std::string file);
 
         Battle (Pc* player, Npc* adversary, int numBattle, int predio);
 
@@ -37,6 +38,8 @@ class Battle {
         int getDamagePc ();
 
         int getDamageNpc ();
+        
+        std::string getName();
 
         void setResult (bool result);
 

@@ -20,7 +20,7 @@
         return true;
     }
 
-    int Defense::Harvest(std::vector<Effect*>& effect){
+    void Defense::Harvest(std::vector<Effect*>& effect){
 
         if(this->sizeofEffects() != 0){
 
@@ -29,6 +29,4 @@
                 effect.push_back(_effects[i]->cloneEffect());
                 
         }
-    
-        return _damage;
     }

@@ -17,6 +17,7 @@ class Building {
     int _number;
     int _numBattle;
     int _totalBattles;
+    bool _tryagain;
 
     public:
     /**
@@ -72,6 +73,10 @@ class Building {
 
     //bool play_battles(Battle* battle);
 
+    void doBattle();
+
+    bool isComplete();
+    
 };
 
 #endif

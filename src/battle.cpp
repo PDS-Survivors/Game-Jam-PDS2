@@ -12,7 +12,7 @@ int Battle::_totalLoses = 0;
 
 //File: Arquivo para o construtor de battle, contém, arquivo de npc, numero da
 //batalha, numero do predio e três textos de vitória)
-Battle::Battle (Pc *player, std::string file, std::string beginTxtAdress){
+Battle::Battle (Pc *player, std::string file){
 
     _player = *player;
     
@@ -22,13 +22,15 @@ Battle::Battle (Pc *player, std::string file, std::string beginTxtAdress){
 
     read::readfile (file, values, words, files);
 
-    _adversary = new Npc(files[0]);
     _numBattle = values[0];
     _predio = values[1];
-    _resultTxt = words[0];
 
-    _beginTxt = beginTxtAdress;
+    _adversary = new Npc(files[0]);
+    _beginTxt = files[1];
+    _resultTxt = files[2];
 
+    _name = words[0];
+    
     _totalDamagePc = 0;
     _totalDamageNpc = 0;
     _round = 0;
