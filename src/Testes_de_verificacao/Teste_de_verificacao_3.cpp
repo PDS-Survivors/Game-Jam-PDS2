@@ -52,8 +52,6 @@ int main () {
 
     battle = new Battle (player, adversary, numBattle, predio, "Onde estão os estudantes do quinto periodo?");
 
-    battle->beginTxt();
-
     bool i = true;
     while (i == true){
         char get_char;

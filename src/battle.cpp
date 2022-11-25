@@ -48,8 +48,8 @@ Battle::Battle (Pc* player, Npc* adversary, int numBattle, int predio, std::stri
     _round = 0;
     _beginTxt = "Descrição interessante :D (teste)\n";
     _resultTxt = "Hmm obrigada por vencer?\n";
-    _size = int((_player.getName()).size())+int((_adversary->getName()).size());
     _name = name;
+    _size = _name.size();
 }
 
 Battle::~Battle () {
@@ -57,7 +57,8 @@ Battle::~Battle () {
 }
 
 bool Battle::getResult () {
-    return _result;
+    if (!this->defineResult()) {throw ExcecaoResultadoNaoDefinido (); }
+    else { return _result;}
 }
 
 int Battle::getTotalLoses () {
@@ -76,8 +77,8 @@ void Battle::setResult (bool result) {
     _result = result;
 }
 
-void Battle::setTotalLoses (int lose) {
-    _totalLoses = lose;
+void Battle::setTotalLoses () {
+    _totalLoses += 1;
 }
 
 //Texto que introduz a batalha e o adersário
@@ -89,10 +90,11 @@ void Battle::beginTxt () {
 void Battle::imprimeVida () {
 
     std::cout << "== Barras de vida ";
-    for (int i = 0; i < (11 + _size); i++) { std::cout << "="; }
+    for (int i = 0; i < (7 + _size); i++) { std::cout << "="; }
     std::cout << "\n";
     read::wait(2);
 
+    // Imprime a barra de vida do player
     std::cout << "[ ";
     for (int i = 0; i < 25; i++){
         if (_player.getLife() - (4*i) > 0) { std::cout << "§"; }
@@ -101,6 +103,7 @@ void Battle::imprimeVida () {
     std::cout << " ] " << _player.getName() << std::endl;
     read::wait(1);
 
+    //Imprime a barra de vida do adversário
     std::cout << "[ ";
     for (int i = 0; i < 25; i++){
         if (_adversary->getLife() - (4*i) > 0) { std::cout << "§"; }
@@ -109,7 +112,7 @@ void Battle::imprimeVida () {
     std::cout << " ] " << _adversary->getName() << std::endl;
     read::wait(1);
 
-    for (int i = 0; i < (29 + _size); i++) { std::cout << "="; }
+    for (int i = 0; i < (25 + _size); i++) { std::cout << "="; }
     std::cout << "\n\n";
 
     read::wait(2);
@@ -120,7 +123,7 @@ bool Battle::defineResult () {
     //Se perder result = 1, se ganhar = 0;
     if (_player.getLife() <= 0) {
         this->setResult(1); 
-        this->setTotalLoses(1);
+        this->setTotalLoses();
         return true;
     }
     else if (_adversary->getLife() <= 0) {
@@ -135,7 +138,7 @@ bool Battle::defineResult () {
 //Lê o texto de vitória ou derrota ao fim da batalha
 void Battle::resultTxt () {
 
-    for (int i = 0; i < (29 + _size); i++) { std::cout << "="; }
+    for (int i = 0; i < (25 + _size); i++) { std::cout << "="; }
     std::cout << "\n";
 
     if (_result == 0) {
@@ -152,7 +155,7 @@ void Battle::resultTxt () {
         std::cout << "Obrigada por tentar, mas nao volte tão cedo por favor!\n";
     }
 
-    for (int i = 0; i < (29 + _size); i++) { std::cout << "="; }
+    for (int i = 0; i < (25 + _size); i++) { std::cout << "="; }
     std::cout << "\n\n";
 
     read::wait (6);
@@ -161,7 +164,7 @@ void Battle::resultTxt () {
 void Battle::statistcs () {
 
     std::cout << "== Estatisticas de Batalha ";
-    for (int i = 0; i < (2 + _size); i++) { std::cout << "="; }
+    for (int i = 0; i < (_size - 2); i++) { std::cout << "="; }
     std::cout << "\n\n";
     
     read::wait(2);
@@ -198,7 +201,7 @@ void Battle::statistcs () {
     read::wait(1);
 
     std::cout << std::endl;
-    for (int i = 0; i < (29 + _size); i++) { std::cout << "="; };
+    for (int i = 0; i < (25 + _size); i++) { std::cout << "="; };
     std::cout << "\n\n";
 
     read::wait(4);
@@ -336,7 +339,7 @@ void Battle::fight () {
 
     //O npc tem defesa menor, logo ataca primeiro
     if (_player.getDefense() >= _adversary->getDefense()) {
-         while (!this->defineResult()) {
+         while (true) {
 
             _round += 1;
 
@@ -349,17 +352,17 @@ void Battle::fight () {
 
             this->figthPc();
 
-            if (this->defineResult()) break;
-
             //No final de cada round a stamina de pc e npc é restaurada
             _player.rebootStamina();
             _adversary->rebootStamina();
+
+            if (this->defineResult()) break;
         }
     }
 
     //O player tem defesa menor, logo ataca primeiro
     else {
-        while (!this->defineResult()) {
+        while (true) {
 
             _round += 1;
 
@@ -372,10 +375,10 @@ void Battle::fight () {
                 
             this->fightNpc();    
 
-            if (this->defineResult()) break;
-
             _player.rebootStamina();
             _adversary->rebootStamina();
+
+            if (this->defineResult()) break;
         }
     }
 
@@ -383,7 +386,7 @@ void Battle::fight () {
     if (!_result) { std::cout << "APROVAD@ =";}
     else { std::cout << "REPROVAD@ ";}
 
-    for (int i = 0; i < (16 + _size); i++) { std::cout << "=";}
+    for (int i = 0; i < (12 + _size); i++) { std::cout << "=";}
     std::cout << "\n\n";
 
     read::wait(2);
@@ -392,7 +395,7 @@ void Battle::fight () {
 void Battle::manageAttacks(){
 
     std::cout << std::endl;
-    for (int i = 0; i < (29 + _size); i++) { std::cout << "="; };
+    for (int i = 0; i < (25 + _size); i++) { std::cout << "="; };
     std::cout << "\n\n";
     read::wait(2);
 
@@ -488,7 +491,7 @@ void Battle::manageAttacks(){
     }
 
     std::cout << std::endl;
-    for (int i = 0; i < (29 + _size); i++) { std::cout << "="; };
+    for (int i = 0; i < (25 + _size); i++) { std::cout << "="; };
     std::cout << "\n\n";
 
     read::wait(4);
@@ -515,5 +518,13 @@ ExcecaoEntradaInvalida3::ExcecaoEntradaInvalida3 () {
 }
 
 const char* ExcecaoEntradaInvalida3::what () const noexcept {
+    return _msgErro.c_str();
+}
+
+ExcecaoResultadoNaoDefinido::ExcecaoResultadoNaoDefinido () {
+    _msgErro = "\nO resultado ainda não foi definido. Termine a batalha para sabê-lo\n\n";
+}
+
+const char* ExcecaoResultadoNaoDefinido::what () const noexcept {
     return _msgErro.c_str();
 }
