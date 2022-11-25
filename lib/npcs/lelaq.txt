@@ -1,0 +1,9 @@
+sLELAQ (Liquido Estranho do Laboratorio de Quimica)_
+sPorque a consistencia dele eh tao estranha?_
+stank_
+i08_
+i51_
+flib/attacks/ajustedecurvasd.txt_
+flib/attacks/pontesdehd.txt_
+flib/attacks/golpedocquiral.txt_
+flib/attacks/destruicaoquimica.txt_

@@ -1,0 +1,6 @@
+sAjuste de Curvas_
+sdepois de tantos golpes sofridos, melhor uma regressao para linearizar sua coluna_
+i0_
+i2_
+flib/effects/ajustedecurvasl.txt_
+flib/effects/ajustedecurvasd.txt_

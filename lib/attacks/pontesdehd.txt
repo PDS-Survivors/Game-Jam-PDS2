@@ -1,0 +1,5 @@
+sPontes de Hidrogenio reforcadas_
+sAumenta sua resistencia e temperatura de ebulicao!_
+i0_
+i3_
+flib/effects/pontesdehd.txt_
