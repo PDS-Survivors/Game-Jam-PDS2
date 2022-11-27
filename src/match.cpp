@@ -20,3 +20,11 @@ void Match::setEpilogue(){}
 void Match::printEpilogue(){
     std::cout << _epilogue << std::endl;
 }
+
+int Match::getNumLifes(){
+    return _numLifes;
+}
+
+void Match::died(){
+    _numLifes -= 1;
+}

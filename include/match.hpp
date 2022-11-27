@@ -15,7 +15,7 @@ class Match {
         Pc* _player;
         std::stack<Building*> _buildings;
         std::vector<Effect*> _permanentEffects;
-        int _numLifes;
+        int _numLifes = 3;
         std::string _epilogue;
 
     public:
@@ -32,6 +32,10 @@ class Match {
         void setEpilogue();
         
         void printEpilogue();
+
+        int getNumLifes();
+
+        void died();
 
 
 };
