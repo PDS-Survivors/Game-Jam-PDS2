@@ -272,15 +272,19 @@
         Voce deve impedir ele e salvar os professores para que eles possam registrar as suas notas
         no sistema.
     - Líquido Estranho do Laboratório de Química (LELAQ):
-        Em uma aula de laboratório de química orgânica alunos do segundo período estavam tentando fazer o composto G como a professora os havia orientado. Era um dia muito quente, então para se refrescar um estudante tomava o suco de limão do RU que ele havia pegado na hora do almoço. Uma pessoa que passou correndo pelo laboratório, pois havia derrubado o composto G nos olhos esbarrou nesse estudante, como resultado o suco caiu dentro do experimento. Naquele mesmo dia, após a aula, alguns assistentes de laboratório foram limpar as bancados e perceberam que era impossível jogar fora essa experimento: ele desviava do panos e saltava para fora da pia antes de ser sugado pelo ralo. O LELAQ continua solto por aí e nínguem até hoje conseguiu capturá-lo.
-    - Newton do mal
+        Em uma aula de laboratório de química orgânica alunos do segundo período estavam tentando fazer o composto G como a professora os havia orientado. Era um dia muito quente, então para se refrescar um estudante tomava o suco de limão (ou pinho sol) do RU que ele havia pegado na hora do almoço. Uma pessoa que passou correndo pelo laboratório, pois havia derrubado o composto G nos olhos esbarrou nesse estudante, como resultado o suco caiu dentro do experimento. Naquele mesmo dia, após a aula, alguns assistentes de laboratório foram limpar as bancados e perceberam que era impossível jogar fora essa experimento: ele desviava do panos e saltava para fora da pia antes de ser sugado pelo ralo. O LELAQ continua solto por aí e nínguem até hoje conseguiu capturá-lo.
+    - Newton do mal:
+        Essa nao! um professor do departamento de física estava resolvendo uns problemas perdidos do proprio Isaac Newton (por que
+        nao queria corrigir a prova dos alunos), ate que se deparou com uma formula nao resolvida. Nessa formula, ele errou um sinal
+        e acabou invocando uma versao malefica do Newton, que rejeita todas as descobertas e teorias do fisico ingles como a gravidade e o ajuste de curvas. Por enquanto, ele ainda ta perdido no Icex (porque la eh praticamente um labirinto), mas assim que ele sair do pedio, ele vai destruir todas as ciencias exatas! Derrote ele e salve o curso do pessoal que faz matematica e fisica.
 8. Engenharia
     - Bob, o destrutor
     - Elevador Purgatório:
         Estudantes de engenharia ambiciosos fizeram um projeto inovador de deixar os elevadores mais inteligentes e proporam essa ideia para o colegiado. Ele recusou, porque além de inexperientes o projeto continha enormes falhas de segurança. Revoltados, os estudantes invadiram a faculdade durante uma noite e implementaram a sua ideia, ela era brilhante!. Mas com o passar do tempo, o elevador começou a acumular quantidades cada vez maiores de dados de modo que ele compare várias imformações sobre quem entra para decidir seu destino, mas humanos são criaturas complexas, então o elevador apenas mantém elas no limbo indefinitamente. Por favor, destrua esse elevador para resgatar as pessoas presas!
     - Hugger, o robô do juízo final
 10. Letras
-    - Dicionário Português - Português   
+    - Dicionário Português-Português:
+        Nos arquivos perdidos da FALE, existe os livros que nao fazem sentido existir, como o manual que ensina a ler e 
     - Duo do Duolingo
 11.  Reitoria
     - Catraca:
