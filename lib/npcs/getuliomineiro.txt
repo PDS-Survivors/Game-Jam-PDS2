@@ -6,4 +6,4 @@ i5_
 flib/attacks/revolucaode30.txt_
 flib/attacks/socofeb.txt_
 flib/attacks/csn.txt_
-flib/attacks/reparacaohistoricad.txt_
+flib/attacks/reparacaohistoricad.txt

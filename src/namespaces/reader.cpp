@@ -4,8 +4,8 @@
 #include <vector>
 #include <list>
 #include <time.h>
+#include <filesystem>
 #include "../namespaces/reader.hpp"
-
 
     void read::wait(int seg){
 
@@ -59,15 +59,15 @@
                    std::vector<std::string>& files ){
         
         std::fstream file;
-
         file.open(location, std::ios::in);
 
         if(file.is_open()){   
 
             std::string line;
 
+            try{
             while(getline(file, line)){
-
+                
                 std::string::iterator it = line.begin();
 
                 switch(*it){
@@ -88,8 +88,9 @@
 
                 }
             }
-
-            
+            }
+            catch (ExcecaoArquivoInexistente &e) { std::cout << e.what();}
+            file.close();
         }
     }
 
@@ -126,3 +127,14 @@
         }
     }
     
+    ExcecaoArquivoInexistente::ExcecaoArquivoInexistente(std::string file){
+
+        _msg = "Arquivo Inexistente: ";
+        _msg += file;
+        _msg += "nao existe!";
+
+    }
+
+    const char* ExcecaoArquivoInexistente::what() const noexcept{
+        return _msg.c_str();
+    }

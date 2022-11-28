@@ -15,7 +15,7 @@ int Battle::_totalLoses = 0;
 Battle::Battle (Pc *player, std::string file){
 
     _player = *player;
-    
+
     std::vector<std::string> words;
     std::vector<std::string> files;
     std::vector<int> values;
@@ -222,7 +222,6 @@ void Battle::figthPc () {
 
             std::cout << "== Stamina atual: " << _player.getStamina() << "\n\n";
         
-            std::cin.ignore();
             char get_char = getchar();
         
             switch (get_char) {
@@ -247,7 +246,7 @@ void Battle::figthPc () {
                                 std::cout << "? (s/n)\n";
 
                                 try {
-                                    std::cin.ignore();
+                                    //std::cin.ignore();
                                     char c = getchar();
 
                                     if (c == 's') { cond = false; }

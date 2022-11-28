@@ -5,6 +5,30 @@
 
     Pc::Pc() {}
     
+    Pc::Pc(std::string file){
+        
+         //cria vetores para guardar o conteúdo do arquivo
+        std::vector<std::string> words;
+        std::vector<std::string> files;
+        std::vector<int> values;
+
+        //essa função transfere o conteúdo do arquivo para os vetores de cima.
+        read::readfile(file, values, words, files);
+
+       
+        //as posições no arquivo importam já que, por exemplo, a primeira string lida será o nome.
+        _name = words[0];
+        _life = values[0];
+        _defense = values[1];
+        _stamina = 5;
+
+        //percorre a lista de arquivos e cria eles (no caso de Npc, os arquivos serão todos ataques
+        // que por sua vez criarão efeitos).
+        for(std::string fl : files) {
+            _hit.push_back( new Attack(fl) );
+        }
+
+    }
     Pc::Pc( std::string name,
             int life,
             int defense ):

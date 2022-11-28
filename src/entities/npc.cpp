@@ -34,7 +34,12 @@
         //percorre a lista de arquivos e cria eles (no caso de Npc, os arquivos serão todos ataques
         // que por sua vez criarão efeitos).
         for(std::string fl : files) {
-            _hit.push_back( new Attack(fl) );
+        
+            std::string::iterator it = fl.end();
+            for(int i=0;i<5;i++) it--;
+
+            if(*it == 'd') _hit.push_back( new Defense(fl) );
+            else _hit.push_back( new Attack(fl) );
         }
 
     }
