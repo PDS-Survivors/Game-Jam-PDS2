@@ -6,6 +6,8 @@
 #include <vector>
 #include <stack>
 #include <string>
+#include <cstdlib>
+#include <ctime>
 
 Building::Building(std::string desc, std::string name, int number, int totalb){
     _desc = desc;
@@ -124,5 +126,19 @@ void Building::doBattle(){
 
 bool Building::isComplete(){
     return _battles.empty();
+}
+
+int Building::choseEvent(){
+    unsigned seed = time(0);
+    srand(seed);
+
+    int p = rand()%2;
+    if(p == 0){
+        int v = 1+rand()%17;  
+        return v;
+
+    } else{
+        return 0;
+    }
 }
 
