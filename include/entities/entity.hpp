@@ -13,6 +13,7 @@
 #include <iostream>
 #include <list>
 #include "../attacks/attack.hpp"
+#include "../attacks/defense.hpp"
 #include "../effects/effect.hpp"
 
     /**

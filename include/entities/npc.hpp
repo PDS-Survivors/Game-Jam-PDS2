@@ -33,8 +33,6 @@ class Npc: public Entity{
         void addAttack(Attack* attack);
 
         Attack* getHit(int id) override;
-
-        virtual Attack* chooseAttack();
         
         std::string getDescription();
 

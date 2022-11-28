@@ -62,6 +62,11 @@ teste3: battle
 teste4: battle
 	$(CC) $(CFLAGS) -o build/teste4.o build/*.o src/Testes_de_verificacao/Teste_de_verificacao_4.cpp
 	./build/teste4.o
+
+teste5: battle
+	$(CC) $(CFLAGS) -o build/teste5.o build/*.o src/Testes_de_verificacao/Teste_de_verificacao_5.cpp
+	./build/teste5.o
+
 run:
 	./build/teste3.o
 
