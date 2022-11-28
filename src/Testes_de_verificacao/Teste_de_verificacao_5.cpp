@@ -15,7 +15,7 @@ int main(){
     
     Battle bat(player, "lib/battles/fafich1.txt");
 
-    bat.beginTxt();
+    //bat.beginTxt();
 
     bat.fight();
 

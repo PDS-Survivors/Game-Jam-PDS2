@@ -3,4 +3,4 @@ i2_
 flib/npcs/getuliomineiro.txt_
 flib\texts\fafich1beg.txt_
 flib/texts/fafich1end.txt_
-sa revolucao do getulio mineiro_
+sA revolucao do Getulio Mineiro_
