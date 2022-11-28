@@ -41,7 +41,7 @@ void Building::set_numBattle(int num){
 }
 
 void Building::start_battle(){
-    _battles.top().fight();
+    _battles.top()->fight();
 }
         
 
@@ -51,29 +51,30 @@ void Building::doBattle(){
     if(!_tryagain){
 
         std::cout<<" Batalha à frente:   ";
-        std::cout<<_battles.top().getName()<<std::endl;
+        std::cout<<_battles.top()->getName()<<std::endl;
         std::cout<<std::endl;
 
         std::cout<<"      [Pressione Enter pra ir a luta] "<<std::endl;
         std::cout<<std::endl;
     
-        _battles.top().beginTxt();
+        _battles.top()->beginTxt();
         _tryagain = true;
     }
+
     //se voce está tentando a mesma batalha de novo
     else{
 
         std::cout<<" Batalha à frente:   ";
-        std::cout<<_battles.top().getName()<<std::endl;
+        std::cout<<_battles.top()->getName()<<std::endl;
         std::cout<<std::endl;
         
         std::cout<<"      [Pressione Enter pra revanche] "<<std::endl;
         std::cout<<std::endl;
 
-        _battles.top().fight();
+        _battles.top()->fight();
         
         //se o player perdeu
-        if(_battles.top().getResult()){
+        if(_battles.top()->getResult()){
 
             std::cout<<"Quer tentar de novo? (por sua conta em risco)"<<std::endl;
             std::cout<<std::endl;
@@ -110,10 +111,12 @@ void Building::doBattle(){
         // se o player ganhou
         else{
 
-            _battles.top().resultTxt();
+            _battles.top()->resultTxt();
 
             _battles.pop();
 
+            _tryagain = false;
+            
             return;
         }
     }

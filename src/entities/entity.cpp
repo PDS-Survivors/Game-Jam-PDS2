@@ -29,9 +29,6 @@
         return _stamina += value;
     }
 
-    void Entity::setStamina(int stamina){
-        _stamina += stamina;
-    }
 
     int Entity::getStamina(){
         return _stamina;
@@ -159,7 +156,7 @@
         //aqui o ataque faz todo o cálculo da nova vida.
         newLife = hit->doAction(newLife, defense, extradamage, effect);
         //gasta a stamina da entidade
-        this->setStamina(-1 * hit->getStamina());
+        this->rebootStamina(-1 * hit->getStamina());
         
         
 

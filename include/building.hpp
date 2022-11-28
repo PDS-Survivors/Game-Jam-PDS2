@@ -11,7 +11,7 @@
 class Building {
 
     private:
-    std::stack<Battle> _battles;
+    std::stack<Battle*> _battles;
     std::string _desc;
     std::string _name;
     int _number;
@@ -78,7 +78,7 @@ class Building {
     bool isComplete();
 
     void manageAttacks();
-    
+
 };
 
 #endif

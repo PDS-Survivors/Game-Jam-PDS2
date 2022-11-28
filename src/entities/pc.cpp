@@ -86,7 +86,9 @@
         for(Attack* hit: _hit){
             if(hit->getStamina() <= this->getStamina()){
                 std::cout<<"( "<<i<<" ) -> ";
-                std::cout<<hit->getName()<<std::endl;
+                std::cout<<hit->getName()<<" ";
+                std::cout<<"[ "<<hit->getStamina()<<" ]";
+                std::cout<<std::endl;
             }
             i++;
         }
