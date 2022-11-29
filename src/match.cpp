@@ -8,7 +8,7 @@ Match::Match(){
     _player = new Pc();
 }
 
-bool Match::playBuilding(Building* building){}
+void Match::playBuilding(){}
 
 int Match::chooseEffect(){}
 
