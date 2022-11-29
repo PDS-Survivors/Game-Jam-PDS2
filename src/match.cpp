@@ -8,14 +8,14 @@ Match::Match(){
     _player = new Pc();
 }
 
-void Match::playBuilding(Building* building){}
+bool Match::playBuilding(Building* building){}
 
 int Match::chooseEffect(){}
 
-void Match::eventHappen(int numEvent){}
+void Match::eventHappen(){}
 
 //errado, essa função tem que receber alguma coisa, estava em duvida do que seria especificamente por isso não pus
-void Match::setEpilogue(){}
+void Match::setEpilogue(bool result){}
         
 void Match::printEpilogue(){
     std::cout << _epilogue << std::endl;
