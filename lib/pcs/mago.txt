@@ -1,0 +1,5 @@
+smago_
+i05_
+i8_
+flib/attacks/serietaylor.txt_
+flib/attacks/golpepolinomial.txt_

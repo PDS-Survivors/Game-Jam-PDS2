@@ -65,6 +65,7 @@
 
             this->addEffect(effect);
         }
+
     }
 
     Attack::~Attack(){

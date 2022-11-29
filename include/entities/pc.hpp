@@ -33,6 +33,8 @@ class Pc: public Entity{
          */
         Pc ();
         
+        Pc(std::string file);
+        
         /**
          * @brief Constrói um pc manualmente.
          * 

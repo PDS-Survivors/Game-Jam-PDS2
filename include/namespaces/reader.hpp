@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include <time.h>
+#include <filesystem>
 
 namespace read{
 
@@ -22,5 +23,17 @@ namespace read{
     void readtxt( std::string location);
 
 }
+
+class ExcecaoArquivoInexistente : public std::exception{
+
+    public: 
+
+        std::string _msg;
+
+        ExcecaoArquivoInexistente(std::string file);
+
+        const char* what () const noexcept override;
+
+};
 
 #endif

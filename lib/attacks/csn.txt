@@ -2,4 +2,3 @@ sChute no Seu Nariz (CSN)_
 sum chute tao forte que parece uma viga de aco!_
 i8_
 i1_
-flib/effects/poluicaovoltaredondal.txt_

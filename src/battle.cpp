@@ -15,7 +15,7 @@ int Battle::_totalLoses = 0;
 Battle::Battle (Pc *player, std::string file){
 
     _player = *player;
-    
+
     std::vector<std::string> words;
     std::vector<std::string> files;
     std::vector<int> values;
@@ -142,7 +142,7 @@ void Battle::resultTxt () {
     std::cout << "\n";
 
     if (_result == 0) {
-        std::cout << _resultTxt;
+        std::cout << read::readstring(_resultTxt.begin(), _resultTxt);
     }
     else if ((_result == 1) && (_totalLoses != 3)){
         std::cout << "VOCÊ FOI REPROVAD@!\n\nEssa foi apenas uma derrota, não desista!\n";
@@ -221,9 +221,9 @@ void Battle::figthPc () {
             read::wait(1);
 
             std::cout << "== Stamina atual: " << _player.getStamina() << "\n\n";
-        
-            std::cin.ignore();
-            char get_char = getchar();
+
+            char get_char;
+            std::cin >> get_char;
         
             switch (get_char) {
                 //Mostra as estatísticas de jogo
@@ -242,26 +242,29 @@ void Battle::figthPc () {
                             do { 
                                 att = _player.chooseAttack(); 
 
-                                //Confirmação do ataque, o jogador pode continuar ele ou cancelar
-                                std::cout << "Tem certeza que quer usar " << att->getName();
-                                std::cout << "? (s/n)\n";
+                                if (att == nullptr) { cond = false; }
+                                else {
+                                    //Confirmação do ataque, o jogador pode continuar ele ou cancelar
+                                    std::cout << "Tem certeza que quer usar " << att->getName();
+                                    std::cout << "? (s/n)\n";
 
-                                try {
-                                    std::cin.ignore();
-                                    char c = getchar();
+                                    try {
+                                        char c;
+                                        std::cin >> c;
 
-                                    if (c == 's') { cond = false; }
+                                        if (c == 's') { cond = false; }
 
-                                    else if (c == 'n') { 
-                                        std::cout << "Qual então?\n"; 
+                                        else if (c == 'n') { 
+                                            std::cout << "Qual então?\n"; 
+                                            read::wait(1);
+                                        }
+
+                                        else { throw ExcecaoEntradaInvalida2(); }
+                                    }
+                                    catch (ExcecaoEntradaInvalida2 &e) {
+                                        std::cout << e.what();
                                         read::wait(1);
                                     }
-
-                                    else { throw ExcecaoEntradaInvalida2(); }
-                                }
-                                catch (ExcecaoEntradaInvalida2 &e) {
-                                    std::cout << e.what();
-                                    read::wait(1);
                                 }
                             }
                             while (cond);
@@ -273,7 +276,7 @@ void Battle::figthPc () {
 
                                 this->imprimeVida();
                             }
-                            else { test = false; break;}
+                            else {test = false; break;}
                             
                             //Atualiza dados para as estatísticas
                             _totalDamagePc += (lpc - _player.getLife());
