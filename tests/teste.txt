@@ -1,0 +1,7 @@
+Nome: NPC
+Descricao: Um npc para teste
+Vida: 100
+Defesa: 50
+Ataques: Voadora
+         Joelhada
+         Cruzado de direita
