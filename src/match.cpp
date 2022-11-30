@@ -48,7 +48,7 @@ int Match::choseEvent(){
     }
 }
 
-void Match::doEvent(int n){
+std::string Match::doEvent(int n){
 
         std::string event = {};
     if(n==0){
