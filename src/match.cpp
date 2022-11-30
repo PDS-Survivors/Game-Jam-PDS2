@@ -132,8 +132,8 @@ std::string Match::doEvent(int n){
                 _alreadyHappened[1] = 1;
 
                 break;
-        }
-        
+            }
+
         case 2:
             if(_alreadyHappened[2] == 0){
                 event += "Cuscuz\n";
@@ -151,7 +151,7 @@ std::string Match::doEvent(int n){
                 _alreadyHappened[2] = 1;
 
                 break;    
-        }
+            }
         
 
         case 3:
@@ -215,7 +215,7 @@ std::string Match::doEvent(int n){
                 _alreadyHappened[6] = 1;
 
                 break;
-        }
+            }
         
 
         case 7:
@@ -231,7 +231,7 @@ std::string Match::doEvent(int n){
                 _alreadyHappened[7] = 1;
 
                 break;
-        }
+            }
         
 
         case 8:
@@ -257,7 +257,7 @@ std::string Match::doEvent(int n){
                 _alreadyHappened[8] = 1;
 
                 break;    
-        }
+            }
         
 
         case 9:
@@ -273,7 +273,7 @@ std::string Match::doEvent(int n){
                 _alreadyHappened[9] = 1;
 
                 break;    
-        }
+            }
         
 
         case 10:
@@ -294,7 +294,7 @@ std::string Match::doEvent(int n){
                 _alreadyHappened[10] = 1;
 
                 break;
-        }
+            }
         
 
         case 11:
@@ -310,7 +310,7 @@ std::string Match::doEvent(int n){
                 _alreadyHappened[11] = 1;
 
                 break;
-        }
+            }
         
 
         case 12:
@@ -331,7 +331,7 @@ std::string Match::doEvent(int n){
                 _alreadyHappened[12] = 1;
 
                 break;
-        }
+            }
         
         case 13:
             if(_alreadyHappened[13] == 0){
@@ -346,7 +346,7 @@ std::string Match::doEvent(int n){
                 _alreadyHappened[13] = 1;
 
                 break;
-        }
+            }   
         
         case 14:
             if(_alreadyHappened[14] == 0){
@@ -361,7 +361,7 @@ std::string Match::doEvent(int n){
                 _alreadyHappened[14] = 1;
 
                 break;
-        }
+            }
         
         case 15:
             if(_alreadyHappened[15] == 0){
@@ -373,10 +373,10 @@ std::string Match::doEvent(int n){
 
                 // alguma funçao que...
 
-            _   alreadyHappened[15] = 1;
+                _alreadyHappened[15] = 1;
 
                 break;
-        }
+            }
        
         case 16:
             if(_alreadyHappened[16] == 0){
