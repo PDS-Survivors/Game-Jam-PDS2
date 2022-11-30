@@ -121,8 +121,9 @@ class Match {
 
         /**
          * @brief Executa o evento escolhido pela função choseEvent().
-         * @details Executa o evento escolhido pela função choseEvent(). E retorna uma string (bem grande alias)
-         * no formato "Titulo do evento" - "Desrição do evento" - "descrição dos eveitos do evento" 
+         * @details Executa o evento escolhido pela função choseEvent(), caso o evento escolhido ja tenha occorido ele executa
+         * o proximo evento da lista, dessa forma garantido que o mesmo evento não ocorra duas vezes na mesma gameplay.
+         * E retorna uma string (bem grande alias) no formato "Titulo do evento" - "Desrição do evento" - "descrição dos eveitos do evento" 
         */
         std::string doEvent (int n);
 
