@@ -38,11 +38,42 @@
 #12 - Falas principais (não inclui PC, prédio, NPC e evento)
 - **Nome do jogo**
 > Escape from UFMG
+
 - **Recepção do jogador** 
-- **Introdução**
+> PROCURA-SE ESPECIALISTA DE ANOMALIAS
+>
+> Nos últimos semestres um mal maior do que o corte de verbas tem assolado a UFMG: o surgimento de anomalias nos mais diverios prédios da faculdade.
+> Elas tâm atrapalhado a vida de todos os estudantes e funcionários, de modo que é impossível se dedicar completamente à tarefas e projetos importantes.
+> Temos sofrido com muitos casos reprovação, desaparecimento de pessoas e ataques de pânico, a UFMG se encontra em crise.
+> Por isso estamos contratando um Especialista de Anomalias para resolver o problema. O cargo não possui muitos pré-requisitos: desde que você não desista fácil e consiga se adaptar a diversas situações no campus, acreditamos que está apto para ele.
+> O seu trabalho será encontrar e derrotar todas essas anomalias. Elas estão presentes nos 10 principais prédios da faculdade e algumas podem ser bem irritantes...
+> Sabemos o quanto essa tarefa é desafiadora e exaustiva, por isso, como forma de pagamento, iremos providenciar para você um diploma oficial de nossa faculdade no curso de sua preferência. Não é maravilhoso poder se formar sem precisar estudar por cinco anos?
+> Precisamos muito de ajuda para conseguir resolver o problema. Por favor pense com cuidado sobre essa proposta.
+>
+> Atenciosamente,
+> Membros desesperados da reitoria.
+>
+>VOCÊ ACEITARÁ ESSA PROPOSTA?
+> SIM  NÃO
+
+>- **Introdução**
+> OPÇÃO NÂO:
+> 
+> De repende você sente alguém se aproximando por trás. Mas já é muito tarde, a pessoa prende as suas mão atrás do corpo com uma corda aspera enquanto você se debate freneticamente. Ela se afasta e logo em seguida vem a escuridão, ela colocou em saco de ... de pequi? no seu rosto.
+> Você é tirado de seu lugar e levado para fora. Outra pessoa se aproxima e te joga violentamente dentro de um carro, mas a a parte de cima da sua cabeça ababa batendo na lataria do carro e você desmaia...
+> "Nós avisamos para tomar cuidado com a resposta." Você ouve uma voz falando rispidamente.
+> Aparentemente as mesmas pessoas que enviaram aquela oferta de emprego duvidosa agora estão diante de tu após um sequestro.
+> "Acontece que estamos realmente desesperados. Já pedimos para diversas pessoas aceitarem o trabalho, mas a maioria descobriu o que aconteceu com os especialistas de anomalias anteriores e recusou a proposta... Não há mais tempo para procurar alguém e você era a pessoa mais fácil de sequestrar que achamos, caso recusasse a oferta."
+> "Ahh" (Suspiro) "Odeio ter que fazer isso."
+> "Apesar das circunstâncias de nosso encontro não serem as ideias, ainda mantenho a proposta de te dar um diploma ao derrotar todas as anomalias e..."
+> "Você quer saber o que aconteceu com os outros? Bem, isso não é muito importante no momento. Desde que você não seja derrotada mais do que 2 vezes vai ficar tudo bem."
+> "Zeus! Olhe as horas, estou atrasado para uma reunião... Não precisa se preocupar, você tem cara se der inteligente. A UFMG precisa muito de você e cuidado com a reitoria..."
+> "Ah última coisa, preciso depois das suas informações para poder registrar você oficialmente como noss@ funcionário/aluno. Vou deixar aqui um documento pra você colocar suas informações. Boa sorte com tudo!"
+
 - **Escolha seu pc**
-- **Insira seu nome**
+
 - **Texto antes de ir pro primeiro prédio**
+
 - **Ganhou uma batalha**
 
     VOCÊ FOI APROVAD@!
@@ -223,7 +254,8 @@
 ##3 - PRÉDIOS
 #31 - Ordem, descrição e NPCs inclusos
 1. EEFETO
-    - Professor Maromba
+    - Professor Maromba:
+        A faculdade é um lugar assustador. As matérias são difíceis, o ambiente é competitivo e você sente que sempre precisa provar algo a alguém. Como se isso já não bastasse, ainda tem professores que fazem questão de tornar a sua vida um inferno, mas nenhum deles de compara ao professor maromba. Além de te ridicularizar durante a aula ao fazer uma pergunta, ele obriga seus alunos a jogar queimada e fazer queda de braço com ele apenas para exibir a sua força. Esse professor possui um complexo de Deus e fará de tudo para se vangloriar enquanto humilha os já sofridos estudantes. Por favor, faça esse cara cair na real.
     - Tia das vitaminas:
         Recentemente tem-se escutado falar sobre muitos casos de dor de cabeça, vômito e sudorese excessiva na EEFETO. A causa disso é a nova professora de bioquímica aplicada, a "tia das vitaminas", apelido que ela ganhou nas primeiras semanas de aula por sempre carregar vitamina consigo ao invés de água ou café. Ela é uma pessoa extremamente adorável e seu sorriso torna impossível recusar qualquer coisa que ela ofereça, o que é o maior problema dos estudantes no momento. Todo dia ela chega para dar aula com uma nova de receita de vitamina e, desde que uma aluna pediu para experimentar, ela sempre escolhe uma vítima para julgar suas habilidades culinárias. Nínguem teve a coregem de contar que ela é uma péssima cozinheira, derrote ela antes que álguem acabe parando no hospital!
     
@@ -244,7 +276,6 @@
         Estudantes relatam sons estranhos nas proximidades da escola de musica. Enquanto as autoridades dizem para nao se preocupar porque deve ser apenas um cachorro doente, os estudantes mais antigos falam de uma lenda mais antiga: o homem capivara do bosque da musica. Segundo a lenda ele ja estava aqui quando o bosque da musica era so um bosque, mas ele ficou preso na UFMG por que sempre perde o horario do interno. Agora ele anda pela escola de musica roubando paçoca dos estudantes que passam por ali de noite. Voce deve derrotar ele para que nenhum estudante tenha que voltar pra casa sem a paçoca que ele pegou no RU.
 
 4. Fafich
-
     - Vampiros sugadores de esperança:
         Em tempos sombrios de corte de verbas e distribuição de notas, a única coisa que resta aos humilhados estudantes da UFMG é a esperança. Mas o que acontece se eles também forem privados dessa? Bem, o resultado já é visto pela fafich, a cada dia os estudantes se assemelham mais com zumbis do que gente e, apesar de cheio, faz-se um silêncio perpétuo no prédio. Isso é obra dos estudantes de intercambio da Transilvania, ou vampiros. Como seres imortais, eles já vivenciaram diversos acontecimentos históricos  e o tempo os tornaram deveras ranzinzas e amargurados, não podem ver uma pessoa feliz comentando sobre algo que já se aproximam para sugar toda a esperança dela com seus sermões e previsões para o futuro. Expulse esses vampiros daqui antes que toda a faculdade entre em depressão profunda.
     - Getúlio Mineiro:
@@ -256,12 +287,16 @@
 5. EBA
     - Pintura inacabada:
         Existem muitos artistas apaixonados por suas obras que dedicam uma grande parte da vida para produzi-las. A Escola de Belas Artes possuiu um desses artistas que, no fim de sua graduação,conseguiu (por meios ainda misteriosos) literalmente dar um pouco de vida para o quadro que estava pintando, de modo que esse tivesse e transmitisse sentimentos. Os dois tinham uma conexão nunca vista antes, eles se entendiam, se amavam e se reconfortavam sem presisar trocar palavras. Porém tudo isso for por água abaixo quando o estudante se formou e mudou para outro país, deixando para trás essa pintura inacabada. Ela ficou furiosa, o seu criador tinha mostrado para ela o que era um amigo e um amor apenas para partir seu coração. Como forma de extravasar a sua fúria ela agora assombra qualquer um que carregue ou deixe uma arte inacabada no prédio. Por favor, faça ela superar de uma vez, isso é muito irritante.
-    - Manequeen
-    - Comédia e Tragédia
+    - Manequeen:
+        O jeito que uma pessoa se veste pode dizer muito sobre ela e os estudantes de moda sabem disso. Seus manequins recebem nomes carinhosos e costumam ser vestidos de modo a refletir suas personalidades nas horas vagas. De todos, o mais chamativo e excêntrico é sem sombra se dúvidas a rainha: ela está sempre usando roupas feitas pelos veteranos ou com os tecidos mais caros, quando há uma apresentação de trabalho dos alunos ela sempre porta a roupa do aluno que receberá a maior nota. Talvez toda essa glória tenha sido um pouco demais: o espírito de uma antiga rainha que passeava pelas redondensas ficou sabendo desse manequim e, para poder mais uma vez ter atenção, ela o possuiu. Surgiu-se assim o Manequeen, um manequim possuído. Ele enfeitiçou os demais daquele lugar para destruir todas as roupas que não julgasse dignas de si, além de subjulgar os estudantes que tentavam fazer algo contra ele. Os pobres alunos precisam muito recuperar os maneguins (eles não tem dinehiro pra comprar outros), faça um exorcismo ou algo do tipo para expulsar essa rainha. 
+    - Comédia e Tragédia:
+        Tem-se ouvido alguns rumores sobre uma peça de teatro estranha que rolou alguns anos atrás aqui na faculdade. Aparentemente os calouros do curo de teatro resolveram fazer uma releitura de Romeu e Julieta, mas foi um total fracasso. As pouquíssimas pessoas que foram assistir mechiam no celular pra passar o tempo e alguns dos professores que estavam avaliando a peça dormiram. Aquela coisa foi uma ofença profunda a toda a histótia do teatro e por isso na mesma noite as próprias Comédia e Tragédia vieram para a UFMG dar uma lição nesse estudantes. Acontece que elas gostaram muito desse lançe de atrapalhar a vida dos outros e agora dão um sumiço naqueles que atuam mal ou não prestam apresentação em uma apresentação. Aparentemente o curso de Teatro está em crise por causa delas e nínguem quer ir assistir às peças pois ouviram os rumores. Investiga isso aí pra ver se é verídico mesmo, me falaram que vão te deixar escolher uma peça pra per encenada se você achar o problema...
+
 6. ICB
     - Meio-Vivo:
         Durante uma aula de anatomia, um estudante negacionista que estava passando mal e mesmo assim se recusava a usar máscara espirrou sobre o cadáver que estava estudando. A professora que lecionava a matéria ficou furiosa e parou a aula para dar um sermão nesse aluno, porém o estrago já havia sido feito. O espirro continha uma bactéria mutante, que infectou o cadáver e passou a controlar esse. Muito solitário esse novo ser meio-vivo passou a infectar outros cadáveres, até que não restasse mais nenhum completamente morto. Ah rumores de que o objetivo deles é montar um império transformando todos os vivos e mortos em meio-vivos, sua tarefa é impedir que isso aconteça.
-    - Superbactéria
+    - Superbactéria:
+        Tudo era apenas vazio. Pensamentos, emoções, dor, ela não conhecia nada disso. Sua única vontade era constantemente reprimida e suas ações eram retardadas por um frio absoluto. De repente, surge-se uma luz cegante e junto com ela é possível sentir a mudança de temperatura e novos ares de aproximando. Finalmente o vazio tinha começado a ser preenchido e com essas novidades ela também mudou. A bactéria se sentiu eufórica, como isso é possível? Ela foi correndo em direção a luz e saltou sem pensar duas vezes, embarcando logo em seguida em uma queda-livre, foi a primeira vez que ela se sentiu viva de verdade desde o seu nascimento naquele frezeer. Sua queda foi marcada por um pote de miojo que havia sido esquecido a meses no canto daquele ambiente. Aperentemente havia algo de estranho alí, porque a bactéria começou a crescer mais e mais, e junto com sua estatura, sua capacidade de pensamento também aumentou. Agora aquele ser que apenas conheçe o vazio virou uma superbactéria. Muito cuidado, ela está a solta pelo campus atrás de tudo que nunca teve (e de quem a privou disso).
     - Cobaia Superior “Doutor Splointer”
 7. ICEX
     - Cálculo Maléfico:
@@ -281,7 +316,8 @@
     - Bob, o destrutor
     - Elevador Purgatório:
         Estudantes de engenharia ambiciosos fizeram um projeto inovador de deixar os elevadores mais inteligentes e proporam essa ideia para o colegiado. Ele recusou, porque além de inexperientes o projeto continha enormes falhas de segurança. Revoltados, os estudantes invadiram a faculdade durante uma noite e implementaram a sua ideia, ela era brilhante!. Mas com o passar do tempo, o elevador começou a acumular quantidades cada vez maiores de dados de modo que ele compare várias imformações sobre quem entra para decidir seu destino, mas humanos são criaturas complexas, então o elevador apenas mantém elas no limbo indefinitamente. Por favor, destrua esse elevador para resgatar as pessoas presas!
-    - Hugger, o robô do juízo final
+    - Hugger, o robô do juízo final:
+
 10. Letras
     - Dicionário Português-Português:
         Nos arquivos perdidos da FALE, existe os livros que nao fazem sentido existir, como o manual que ensina a ler e 
