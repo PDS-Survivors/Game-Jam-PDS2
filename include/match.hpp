@@ -40,6 +40,15 @@ class Match {
         Match();
 
         /**
+         * @brief Constroi o objeto apontado por _player
+         * @details Recebe o tipo de personagem que o jogador escolheu e cria o personagem adequado
+         * 
+         * @param type informa qual o tipo de personagem deve ser criado
+         * 
+         */
+        void setPlayer(int type);
+
+        /**
          * @brief Chama o prédio no topo da pilha para que seja jogado
          * @details Chama a função start_battle() do prédio no topo da pilha
          * 

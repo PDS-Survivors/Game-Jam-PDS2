@@ -4,11 +4,16 @@
 //Variável estática de battle que armazena número de batalhas perdidas
 int Battle::_totalLoses = 0;
 
-Match::Match(){
-    _player = new Pc();
+Match::Match(){};
+
+void Match::setPlayer(int type){
+    _player = new Pc(type);
 }
 
-void Match::playBuilding(){}
+void Match::playBuilding(){
+    Building* building = _buildings.top();
+    building->start_battle();
+}
 
 int Match::chooseEffect(){}
 
