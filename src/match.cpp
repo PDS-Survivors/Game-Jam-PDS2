@@ -12,15 +12,30 @@ void Match::setPlayer(int type){
 
 void Match::playBuilding(){
     Building* building = _buildings.top();
-    building->start_battle();
+
+    while (!(building->isComplete())){
+        building->doBattle();
+    }
+       
 }
 
-int Match::chooseEffect(){}
-
-void Match::eventHappen(){}
-
-//errado, essa função tem que receber alguma coisa, estava em duvida do que seria especificamente por isso não pus
-void Match::setEpilogue(bool result){}
+void Match::setEpilogue(bool result){
+    std::fstream epilogueFile;
+    std::string epilogue = "";
+    std::string line;
+    epilogueFile.open("epilogue.txt", std::ios::in);
+    if(!epilogueFile.is_open()){
+        trow ExcecaoProblemasAoAbrirArquivo("epilogue.txt");
+    }
+    if(result){
+        for(int i = 0; i < 4; i++){
+            getline(epilogueFile, line);
+            epilogue = epilogue + line + std::endl;
+        }
+    }else{
+        epilogueFile.seekg("#");
+    }
+}
         
 void Match::printEpilogue(){
     std::cout << _epilogue << std::endl;
@@ -34,7 +49,7 @@ void Match::died(){
     _numLifes -= 1;
 }
 
-int Match::choseEvent(){
+int Match::chooseEvent(){
     unsigned seed = time(0);
     srand(seed);
 
@@ -48,8 +63,8 @@ int Match::choseEvent(){
     }
 }
 
-void Match::doEvent(int n){
-
+void Match::doEvent(){
+        int n = chooseEvent();
         std::string event = {};
     if(n==0){
         event += "Você estava indo de um predio a outro e estranhamente não aconteceu nada no caminho\n\n";
@@ -238,4 +253,12 @@ void Match::doEvent(int n){
         }
     }
     return event;
+}
+
+ExcecaoProblemasAoAbrirArquivo::ExcecaoProblemasAoAbrirArquivo(std::string arquivo){
+    _error = "Erro ao abrir o arquivo: " + arquivo + std::endl;
+}
+
+const char* what() const noexcept{
+    return _error.c_str();
 }

@@ -18,9 +18,11 @@
 #include "building.hpp"
 #include "effects/effect.hpp"
 #include "entities/pc.hpp"
+#include "namespaces/reader.hpp"
 #include <string>
 #include <vector>
 #include <stack>
+#include <fstream>
 
 class Match {
     private:
@@ -56,25 +58,11 @@ class Match {
         void playBuilding();
 
         /**
-         * @brief "sorteia" qual o efeito que deve acontecer
-         * @details com uma série de cálculos obtém um valor "aleatório" para ser o número do efeito que deve
-         * ser apicado, o número do efeito corresponde a sua posição no vetor de efeitos _permanentEffects
-         * 
-         * @return inteiro que indica qual o efeito deve ser aplicado entre aqueles no vetor de efeitos 
-         */
-        int chooseEffect();
-
-        /**
-         * @brief Função que faz com que aconteça um evento
-         * @details chama a função chooseEffect(), obtem qual o efeito deve ser aplicado nesse evento e passa
-         * esse efeito para que seja implementado pela classe Pc
-         * 
-         */
-        void eventHappen();
-
-        /**
          * @brief Set the Epilogue object
          * @details epilogue é lido do arquivo e depende se o jogador ganhou ou perdeu a partida 
+         * 
+         * @remark IMPORTANTE: Essa função lança a exceção ExcecaoProblemasAoAbrirArquivo caso haja problemas
+         * com o arquivo
          * 
          * @param result informa se o jogador ganhou ou perdeu a partida
          * result == 1 : ganhou
@@ -109,23 +97,44 @@ class Match {
         /**
          * @brief Retorna 0 caso não vá occorer evento ou o numero do evento (1-17)
          * @details Decide de havera um evento ao final do predio, chance de 50% disso occorer, 
-         * baseado no relogio interno do computador (occore o evento se a o numero da hora, 
-         * contanto os centesimos milesimos de segundo etc. for par). Caso occora um evento 
+         * baseado no relogio interno do computador (occore o evento se o numero da hora, 
+         * contanto os centesimos, milesimos de segundo, etc., for par). Caso occora um evento 
          * ele é selecionado aleatoriamente de forma semelhante (Baseado em uma lista de eventos
          * possiveis, 17 no total, o evento e selecionado a partir do resto da divisão do numero 
-         * da hora, contanto os centesimos milesimos de segundo etc. por 17).
-         * Os eventos podem alterar diversar caracteristicas do player como defesa
+         * da hora por 17).
+         * Os eventos podem alterar diversas caracteristicas do player como defesa
          * ataque, dano, vida etc.  
         */
-        int choseEvent();
+        int chooseEvent();
 
         /**
          * @brief Executa o evento escolhido pela função choseEvent().
-         * @details Executa o evento escolhido pela função choseEvent(). E retorna uma string (bem grande alias)
-         * no formato "Titulo do evento" - "Desrição do evento" - "descrição dos eveitos do evento" 
+         * @details Chama a função chooseEvent() e executa o evento escolhido por ela.
+         * 
+         * @return  String no formato "Titulo do evento" - "Desrição do evento" - "descrição dos eveitos do 
+         * evento" 
         */
-        std::string doEvent(int n);
+        std::string doEvent();
 
 };
 
+class ExcecaoProblemasAoAbrirArquivo: public exception{
+    private:
+        std::string _error;
+    
+    public:
+        /**
+         * @brief Construtor de Excecao Problemas Ao Abrir Arquivo 
+         * 
+         * @param arquivo é o nome do arquivo que não foi aberto como deveria
+         */
+        ExcecaoProblemasAoAbrirArquivo(std::string arquivo);
+
+        /**
+         * @brief retorna frase de erro para que eja impressa
+         * 
+         * @return const char* ponteiro para "Erro ao abrir o arquivo: 'nome do arquivo' \n"
+         */
+        const char* what() const noexcept override;
+};
 #endif
