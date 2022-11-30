@@ -51,6 +51,8 @@ class Building {
         */
         Building(std::string desc, std::string name, int number, int totalb);
 
+        Building(std::string arqv);
+
         /**
          * @brief Destructor of a building object
          * @details Destroi o objeto building 

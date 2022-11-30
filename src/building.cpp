@@ -17,6 +17,22 @@ Building::Building(std::string desc, std::string name, int number, int totalb){
     _numBattle = 0;
 }
 
+Building::Building(std::string arqv){
+
+    std::vector<std::string> words;
+    std::vector<std::string> files;
+    std::vector<int> values;
+
+    read::readfile (arqv, values, words, files);
+
+    _number = values[0];
+    _name = words[0];
+    _desc = files[0];
+    _totalBattles = values[1];
+
+    _numBattle = 0;
+}
+
 Building::~Building(){
     
 
@@ -59,7 +75,7 @@ void Building::doBattle(){
         std::cout<<"      [Pressione Enter pra ir a luta] "<<std::endl;
         std::cout<<std::endl;
     
-        _battles.top()->beginTxt();
+        _battles.top()->fight();
         _tryagain = true;
     }
 

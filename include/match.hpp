@@ -81,14 +81,14 @@ class Match {
          * result == 0 : perdeu
          * 
          */
-        void setEpilogue(bool result);
+        void setEpilogue ();
         
         /**
          * @brief Imprime o epilogo na tela
          * @details O epilogo informa ao jogador o resultado de sua partida(Match): se ganhou ou perdeu
          * 
          */
-        void printEpilogue();
+        void printEpilogue (int lifes);
 
         /**
          * @brief Retorna o numero de vidas que o jogador possui
@@ -124,8 +124,13 @@ class Match {
          * @details Executa o evento escolhido pela função choseEvent(). E retorna uma string (bem grande alias)
          * no formato "Titulo do evento" - "Desrição do evento" - "descrição dos eveitos do evento" 
         */
-        std::string doEvent(int n);
+        std::string doEvent (int n);
 
+        std::string introducao ();
+
+        std::string introducao2 (bool op);
+
+        bool end ();
 };
 
 #endif

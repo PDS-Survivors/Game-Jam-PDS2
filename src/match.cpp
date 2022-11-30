@@ -4,15 +4,67 @@
 //Variável estática de battle que armazena número de batalhas perdidas
 int Battle::_totalLoses = 0;
 
-Match::Match(){};
+Match::Match(){
+}
 
 void Match::setPlayer(int type){
-    _player = new Pc(type);
+    if (type == 0) {
+        //Construtor para mago
+        _player = new Pc ("lib/pcs/mago.txt");
+    }
+    else if (type == 1) {
+        //Construtor para mestre de armas
+        _player = new Pc ();
+    }
+    else if (type == 2) {
+        //Construtor para druida
+        _player = new Pc ();
+    }
+    else {
+        //Implementar lançamento de exceção
+    }
+    
 }
 
 void Match::playBuilding(){
-    Building* building = _buildings.top();
-    building->start_battle();
+    
+    std::cout << "Você acabou de entrar em um novo prédio *0*\n\n";
+
+    //Janela com o nome do prédio na interface
+    std::cout << _buildings.top()->get_name();
+    std::cout << _buildings.top()->get_desc();
+
+    std::cout << "Prepard@ para enfrentear as anomalias desse prédio?\n\n";
+    std::cout << "(s) Sim! Vamos acabar com isso logo\n(n) Calma aê, xô respirar antes\n";
+
+    char c; std::cin >> c;
+
+    if (c == 's'){
+        while (!_buildings.top()->isComplete()) {
+            _buildings.top()->doBattle();
+            if (_numLifes == 0) { return; }
+        }
+    }
+    else if (c == 'n'){
+        std::cout << "No aguardo.\nPressione enter para voltar ao trabalho.\nNão demore!!!\n\n";
+        do { 
+            std::cin >> c; 
+        }
+        while ( c != ' ' );
+
+        while (!_buildings.top()->isComplete()) {
+            _buildings.top()->doBattle();
+            if (_numLifes == 0) { return; }
+        }
+    }
+    else {
+        //Implementar tratamento de exceção
+    }
+
+    std::cout << "As anomalias do " << _buildings.top()->get_name() << "foram exterminadas!\n\n";
+    std::cout << "Você está um prédio, mais próxim@ de seu diploma agora :D\n\n";
+
+    _buildings.pop();
 }
 
 int Match::chooseEffect(){}
@@ -20,10 +72,24 @@ int Match::chooseEffect(){}
 void Match::eventHappen(){}
 
 //errado, essa função tem que receber alguma coisa, estava em duvida do que seria especificamente por isso não pus
-void Match::setEpilogue(bool result){}
-        
-void Match::printEpilogue(){
-    std::cout << _epilogue << std::endl;
+//recebe o valor de total loses
+void Match::setEpilogue (){
+}
+
+//getepilogue para ser usado pela interface
+void Match::printEpilogue(int lifes){
+    if (lifes = 0) {
+        std::cout << "Que vida triste e sem diploma a sua...\n\n";
+
+        //Arquivo com epílogo de derrota
+        read::readtxt("");
+    }
+    else {
+        std::cout << "Agora que você tem um diploma sua vida ira melhorar exponencialmente. Certo?\n\n";
+
+        //Arquivo com epílogo de derrota
+        read::readtxt("");
+    }
 }
 
 int Match::getNumLifes(){
@@ -327,4 +393,49 @@ std::string Match::doEvent(int n){
         }
     }
     return event;
+}
+
+std::string introducao(){
+    //Substituir por leitura de arquivo futuramente
+    std::string txt {};
+
+    txt += "PROCURA-SE ESPECIALISTA DE ANOMALIAS\n\n";
+    txt += "Nos últimos semestres um mal maior do que o corte de verbas tem assolado a UFMG: o surgimento de anomalias nos mais diverios prédios da faculdade.\n";
+    txt += "Elas tâm atrapalhado a vida de todos os estudantes e funcionários, de modo que é impossível se dedicar completamente à tarefas e projetos importantes.\n";
+    txt += "Temos sofrido com muitos casos reprovação, desaparecimento de pessoas e ataques de pânico, a UFMG se encontra em crise.\n";
+    txt += "Por isso estamos contratando um Especialista de Anomalias para resolver o problema. O cargo não possui muitos pré-requisitos: desde que você não desista fácil e consiga se adaptar a diversas situações no campus, acreditamos que está apto para ele.\n";
+    txt += "O seu trabalho será encontrar e derrotar todas essas anomalias. Elas estão presentes nos 10 principais prédios da faculdade e algumas podem ser bem irritantes...\n";
+    txt += "Sabemos o quanto essa tarefa é desafiadora e exaustiva, por isso, como forma de pagamento, iremos providenciar para você um diploma oficial de nossa faculdade no curso de sua preferência. Não é maravilhoso poder se formar sem precisar estudar por cinco anos?\n";
+    txt += "Precisamos muito de ajuda para conseguir resolver o problema. Por favor pense com cuidado sobre essa proposta.\n\n";
+    txt += "Atenciosamente,\n";
+    txt += "Membros desesperados da reitoria.\n\n";
+
+    return txt;
+}
+
+std::string introducao2(bool op){
+    //Substituir por leitura de arquivo futuramente
+    std::string txt {};
+
+    if (op){
+        txt += "Texto em construção, volte depois\n\n";
+    }
+    else {
+        txt += "De repende você sente alguém se aproximando por trás. Mas já é muito tarde, a pessoa prende as suas mão atrás do corpo com uma corda aspera enquanto você se debate freneticamente. Ela se afasta e logo em seguida vem a escuridão, ela colocou em saco de ... de pequi? no seu rosto.\n";
+        txt += "Você é tirado de seu lugar e levado para fora. Outra pessoa se aproxima e te joga violentamente dentro de um carro, mas a a parte de cima da sua cabeça ababa batendo na lataria do carro e você desmaia...\n";
+        txt += "'Nós avisamos para tomar cuidado com a resposta.' Você ouve uma voz falando rispidamente.\n";
+        txt += "Aparentemente as mesmas pessoas que enviaram aquela oferta de emprego duvidosa agora estão diante de tu após um sequestro.\n";
+        txt += "'Acontece que estamos realmente desesperados. Já pedimos para diversas pessoas aceitarem o trabalho, mas a maioria descobriu o que aconteceu com os especialistas de anomalias anteriores e recusou a proposta... Não há mais tempo para procurar alguém e você era a pessoa mais fácil de sequestrar que achamos, caso recusasse a oferta.'\n";
+        txt += "'Ahh' (Suspiro) 'Odeio ter que fazer isso.'\n";
+        txt += "'Apesar das circunstâncias de nosso encontro não serem as ideias, ainda mantenho a proposta de te dar um diploma ao derrotar todas as anomalias e...'\n";
+        txt += "'Você quer saber o que aconteceu com os outros? Bem, isso não é muito importante no momento. Desde que você não seja derrotada mais do que 2 vezes vai ficar tudo bem.'\n";
+        txt += "'Zeus! Olhe as horas, estou atrasado para uma reunião... Não precisa se preocupar, você tem cara se der inteligente. A UFMG precisa muito de você e cuidado com a reitoria...'\n";
+        txt += "'Ah última coisa, preciso depois das suas informações para poder registrar você oficialmente como noss@ funcionário/aluno. Vou deixar aqui um documento pra você colocar suas informações. Boa sorte com tudo!'\n\n";
+    }
+
+    return txt;
+}
+
+bool Match::end () {
+    return _buildings.empty();
 }
