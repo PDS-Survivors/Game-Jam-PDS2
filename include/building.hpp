@@ -52,6 +52,12 @@ class Building {
         */
         Building(std::string desc, std::string name, int number, int totalb);
 
+        /**
+        * @brief Constructor a new Building object
+        * @details Construtor de um objeto building a partir de um arquivo
+        * @param player ponteiro referente ao player
+        * @param arqv arquivo referente ao predio em especifico
+        */
         Building(Pc* player, std::string arqv);
 
         /**
@@ -100,14 +106,17 @@ class Building {
         void start_battle();
 
         /**
-         * @brief 
-         * @details
+         * @brief Inicia a proxima batalha
+         * @details Incia a batalha que esta no topo da pilha de execução de batalhas em building
+         * verifica se é a primeira tentativa do player em realiza-la e verifica os resultados de batalha
+         * para dar continuidade à gameplay
         */
         void doBattle();
 
         /**
-         * @brief 
-         * @details
+         * @brief Informa se todas as batalhas foram concluidas
+         * @details Retorna um valor booleano "true" se todas as batalhas tiverem sido conluidas,
+         * para isso verifica se a pilha de execuções de batalha do predio esta vazia
         */
         bool isComplete();
 
