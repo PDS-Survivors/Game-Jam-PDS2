@@ -113,20 +113,7 @@ class Building {
          * @details
         */
         void manageAttacks();
-
-        /**
-         * @brief Retorna 0 caso não vá occorer evento ou o numero do evento (1-17)
-         * @details Decide de havera um evento ao final do predio, chance de 50% disso occorer, 
-         * baseado no relogio interno do computador (occore o evento se a o numero da hora, 
-         * contanto os centesimos milesimos de segundo etc. for par). Caso occora um evento 
-         * ele é selecionado aleatoriamente de forma semelhante (Baseado em uma lista de eventos
-         * possiveis, 17 no total, o evento e selecionado a partir do resto da divisão do numero 
-         * da hora, contanto os centesimos milesimos de segundo etc. por 17).
-         * Os eventos podem alterar diversar caracteristicas do player como defesa
-         * ataque, dano, vida etc.  
-        */
-        int Building::choseEvent();
-
+        
 };
 
 #endif
