@@ -38,6 +38,7 @@ class Building {
         int _numBattle;
         int _totalBattles;
         bool _tryagain;
+        Pc* _player;
 
     public:
 
@@ -51,7 +52,7 @@ class Building {
         */
         Building(std::string desc, std::string name, int number, int totalb);
 
-        Building(std::string arqv);
+        Building(Pc* player, std::string arqv);
 
         /**
          * @brief Destructor of a building object

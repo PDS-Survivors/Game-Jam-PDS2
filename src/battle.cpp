@@ -8,8 +8,6 @@
 #include <vector>
 #include <iostream>
 
-int Battle::_totalLoses = 0;
-
 //File: Arquivo para o construtor de battle, contém, arquivo de npc, numero da
 //batalha, numero do predio e três textos de vitória)
 Battle::Battle (Pc *player, std::string file){
@@ -61,24 +59,20 @@ bool Battle::getResult () {
     else { return _result;}
 }
 
-int Battle::getTotalLoses () {
-    return _totalLoses;
-}
-
 int Battle::getDamagePc () {
     return _totalDamagePc;
 }
 
-int Battle::getDamageNpc (){
+int Battle::getDamageNpc () {
     return _totalDamageNpc;
+}
+
+std::string Battle::getName () {
+    return _name;
 }
 
 void Battle::setResult (bool result) {
     _result = result;
-}
-
-void Battle::setTotalLoses () {
-    _totalLoses += 1;
 }
 
 //Texto que introduz a batalha e o adersário
@@ -123,7 +117,7 @@ bool Battle::defineResult () {
     //Se perder result = 1, se ganhar = 0;
     if (_player.getLife() <= 0) {
         this->setResult(1); 
-        this->setTotalLoses();
+        _player.setNumLifes();
         return true;
     }
     else if (_adversary->getLife() <= 0) {
@@ -142,14 +136,14 @@ void Battle::resultTxt () {
     std::cout << "\n";
 
     if (_result == 0) {
-        std::cout << read::readstring(_resultTxt.begin(), _resultTxt);
+        std::cout << read::readstring(_resultTxt.begin(), _resultTxt) << '\n';
     }
-    else if ((_result == 1) && (_totalLoses != 3)){
+    else if ((_result == 1) && (_player.getNumLifes() > 0)){
         std::cout << "VOCÊ FOI REPROVAD@!\n\nEssa foi apenas uma derrota, não desista!\n";
         std::cout << "A ufmg precisa de voce!\n";
         std::cout << "(Você vai mesmo querer estudar 5 anos por esse diploma?)\n";
     }
-    else if ((_result == 1) && (_totalLoses == 3)){
+    else if ((_result == 1) && (_player.getNumLifes() == 0)){
         std::cout << "VOCÊ FOI JUBILAD@!\n\nEssa foi a sua terceira derrota\n";
         std::cout << "Chegou-se a conclusao de que você não e capaz de ajudar a UFMG\n";
         std::cout << "Obrigada por tentar, mas nao volte tão cedo por favor!\n";

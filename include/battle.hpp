@@ -41,8 +41,6 @@ class Battle {
         std::string _beginTxt;
         std::string _resultTxt;
 
-        static int _totalLoses;
-
     public:
 
         /**
@@ -93,14 +91,6 @@ class Battle {
         bool getResult ();
 
         /**
-         * @brief Pega o valor atual de _totalLoses
-         * @details Essa função mostra quantas batalhas o jogador já perdeu
-         * 
-         * @return int _totalLoses : quantidade de derrotas do jogador
-         */
-        static int getTotalLoses ();
-
-        /**
          * @brief Pega o valor atual de _totalDamagePc
          * @details Esse atributo armazeda a quantidade de dano que o jogador recebeu ao longo
          * da batalha e, toda vez que o adversário ataca, esse valor é atualizado
@@ -134,14 +124,6 @@ class Battle {
          * @param result variável boolena que define o resultado da batalha
          */
         void setResult (bool result);
-
-        /**
-         * @brief Incrementa o conteúdo de _totalLoses
-         * @details Toda vez que o jogador perde uma batalha essa função é chamada para aumentar 
-         * em um o número de batalhas perdidas durante o jogo
-         * 
-         */
-        void setTotalLoses ();
         
         /**
          * @brief Lê o texto introdutório da batalha (Descrição detalhada do Npc)

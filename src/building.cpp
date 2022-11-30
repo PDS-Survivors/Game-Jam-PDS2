@@ -13,11 +13,13 @@ Building::Building(std::string desc, std::string name, int number, int totalb){
     _desc = desc;
     _name = name;
     _number = number;
-    _totalBattles =totalb;
+    _totalBattles = totalb;
     _numBattle = 0;
 }
 
-Building::Building(std::string arqv){
+Building::Building(Pc* player, std::string arqv){
+
+    _player = player;
 
     std::vector<std::string> words;
     std::vector<std::string> files;
@@ -30,7 +32,12 @@ Building::Building(std::string arqv){
     _desc = files[0];
     _totalBattles = values[1];
 
-    _numBattle = 0;
+    for (int i = 1; i <= _totalBattles; i++){
+        //Colocar as batalhas em ordem decrescente na pilha
+        Battle* bat = new Battle (_player, files[i]);
+        _battles.emplace(bat);
+    }
+
 }
 
 Building::~Building(){
@@ -68,15 +75,22 @@ void Building::doBattle(){
     //se for a primeira tentativa
     if(!_tryagain){
 
-        std::cout<<" Batalha à frente:   ";
+        std::cout<<"\n== Batalha à frente:   ";
         std::cout<<_battles.top()->getName()<<std::endl;
         std::cout<<std::endl;
 
+        read::wait(2);
+
         std::cout<<"      [Pressione Enter pra ir a luta] "<<std::endl;
         std::cout<<std::endl;
+        
+        getchar();
     
         _battles.top()->fight();
+        _battles.top()->resultTxt();
+
         _tryagain = true;
+        return;
     }
 
     //se voce está tentando a mesma batalha de novo
@@ -90,6 +104,8 @@ void Building::doBattle(){
         std::cout<<std::endl;
 
         _battles.top()->fight();
+        _battles.top()->resultTxt();
+        _battles.top()->manageAttacks();
         
         //se o player perdeu
         if(_battles.top()->getResult()){
@@ -99,8 +115,8 @@ void Building::doBattle(){
             
             read::wait(1);
 
-            std::cout<<"vamo la fazer oq -> (s)"<<std::endl;
-            std::cout<<"vou dar uma respirada la fora volto ja -> (n)"<<std::endl;
+            std::cout<<"Vamo la fazer oq -> (s)"<<std::endl;
+            std::cout<<"Vou dar uma respirada la fora volto ja -> (n)"<<std::endl;
 
             char choice = getchar();
 
@@ -130,6 +146,7 @@ void Building::doBattle(){
         else{
 
             _battles.top()->resultTxt();
+            _battles.top()->manageAttacks();
 
             _battles.pop();
 

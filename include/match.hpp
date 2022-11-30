@@ -29,7 +29,6 @@ class Match {
         Pc* _player;
         std::stack<Building*> _buildings;
         std::vector<Effect*> _permanentEffects;
-        int _numLifes = 3;
         std::string _epilogue;
 
     public:
@@ -39,7 +38,7 @@ class Match {
          * @details Lê do arquivo os prédios e os efeitos permanentes(usados nos eventos)
          * 
          */
-        Match();
+        Match ();
 
         /**
          * @brief Constroi o objeto apontado por _player
@@ -76,23 +75,7 @@ class Match {
          * @details O epilogo informa ao jogador o resultado de sua partida(Match): se ganhou ou perdeu
          * 
          */
-        void printEpilogue (int lifes);
-
-        /**
-         * @brief Retorna o numero de vidas que o jogador possui
-         * @details Esse numero de vidas determina se o jogador pode continuar a partida ou se ele perdeu e a 
-         * partida(match) deve ser interrompida 
-         * 
-         * @return int _numLifes
-         */
-        int getNumLifes();
-
-        /**
-         * @brief Reduz o numero de vidas que o jogador tem
-         * @details Chamada quando o jogador morre ao lutar contra um adiversario
-         * 
-         */
-        void died();
+        void printEpilogue ();
 
         /**
          * @brief Retorna 0 caso não vá occorer evento ou o numero do evento (1-17)
@@ -117,12 +100,14 @@ class Match {
 
         std::string introducao ();
 
-        std::string introducao2 (bool op);
+        std::string introducao2 (char op);
 
         bool end ();
+
+        void setBuildingStack (std::string arqv);
 };
 
-class ExcecaoProblemasAoAbrirArquivo: public exception{
+class ExcecaoProblemasAoAbrirArquivo: public std::exception{
     private:
         std::string _error;
     

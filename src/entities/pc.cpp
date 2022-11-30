@@ -6,8 +6,10 @@
     Pc::Pc() {}
     
     Pc::Pc(std::string file){
+
+        _numLifes = 3;
         
-         //cria vetores para guardar o conteúdo do arquivo
+        //cria vetores para guardar o conteúdo do arquivo
         std::vector<std::string> words;
         std::vector<std::string> files;
         std::vector<int> values;
@@ -15,7 +17,6 @@
         //essa função transfere o conteúdo do arquivo para os vetores de cima.
         read::readfile(file, values, words, files);
 
-       
         //as posições no arquivo importam já que, por exemplo, a primeira string lida será o nome.
         _name = words[0];
         _life = values[0];
@@ -127,9 +128,18 @@
     
     void Pc::showAction(Attack* hit){
         std::cout<<std::endl;
-        std::cout<<"voce usou "<<hit->getName();
+        std::cout<<"Voce usou "<<hit->getName();
         std::cout<<"!"<<std::endl;
         std::cout<<std::endl;
         
         read::wait(1);
+    }
+
+    void Pc::setNumLifes (){
+        _numLifes -= 1;
+        //Fazer tratamento de exceção caso a vida seja 0
+    }
+
+    int Pc::getNumLifes () {
+        return _numLifes;
     }

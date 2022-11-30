@@ -1,0 +1,5 @@
+i4_
+i1_
+sFAFICH_
+fInserir descricao alguma hora_
+flib/battles/fafich1.txt_

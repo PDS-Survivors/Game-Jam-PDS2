@@ -24,6 +24,7 @@ class Pc: public Entity{
     private:
 
         std::list<Attack*> _hit;
+        int _numLifes;
 
     public:
 
@@ -100,5 +101,9 @@ class Pc: public Entity{
          * @param hit : o ataque que foi usado pelo jogador. 
          */
         virtual void showAction(Attack* hit) override;
+
+        void setNumLifes ();
+
+        int getNumLifes ();
 };
 #endif
