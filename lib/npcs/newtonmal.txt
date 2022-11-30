@@ -1,0 +1,10 @@
+sNewton do Mal_
+sUma versao do mal do proprio newton que rejeita a gravidade_
+shybrid_
+i08_
+i8_
+flib/attacks/ajustedecurvasd.txt_
+flib/attacks/voadoranewtongauss.txt_
+flib/attacks/gravitacaoinvesa.txt_
+flib/attacks/prismapinkfloyd.txt_
+flib/attacks/derivadasinfinitas.txt_
