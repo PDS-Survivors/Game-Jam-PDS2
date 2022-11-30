@@ -139,7 +139,9 @@ std::string Match::doEvent(int n){
                 event += "\nEfeitos:\n Multiplica dano do player por X permanentemente";
 
                 // alguma funçao que Aumente o dano produzido por pc em npc
+
                 _alreadyHappened[1] = 1;
+
                 break;
         }
         
@@ -156,7 +158,9 @@ std::string Match::doEvent(int n){
                 event += "\nEfeitos:\n-Aumenta a vida maxima do player em X permanentemente";
 
                 // alguma funçao que Aumente a totallife do player
+
                 _alreadyHappened[2] = 1;
+
                 break;    
         }
         
@@ -169,7 +173,10 @@ std::string Match::doEvent(int n){
         
                 event += "\nEfeitos:\n";
 
+                // alguma funçao que...
+
                 _alreadyHappened[3] = 1;
+
                 break;    
             }
         
@@ -182,7 +189,10 @@ std::string Match::doEvent(int n){
         
                 event += "\nEfeitos:\n";
 
+                // alguma funçao que...
+
                 _alreadyHappened[4] = 1;
+
                 break;    
             }
         
@@ -194,6 +204,8 @@ std::string Match::doEvent(int n){
                 event += "\n\n";
         
                 event += "\nEfeitos:\n";
+
+                // alguma funçao que...
 
                 _alreadyHappened[5] = 1;
 
@@ -208,6 +220,8 @@ std::string Match::doEvent(int n){
                 event += "\n\n";
         
                 event += "\nEfeitos:\n";
+                
+                // alguma funçao que...
 
                 _alreadyHappened[6] = 1;
 
@@ -222,6 +236,8 @@ std::string Match::doEvent(int n){
                 event += "\n\n";
         
                 event += "\nEfeitos:\n";
+
+                // alguma funçao que...
 
                 _alreadyHappened[7] = 1;
 
@@ -263,6 +279,8 @@ std::string Match::doEvent(int n){
         
                 event += "\nEfeitos:\n";
 
+                // alguma funçao que...
+
                 _alreadyHappened[9] = 1;
 
                 break;    
@@ -298,6 +316,8 @@ std::string Match::doEvent(int n){
         
                 event += "\nEfeitos:\n";
 
+                // alguma funçao que...
+
                 _alreadyHappened[11] = 1;
 
                 break;
@@ -332,6 +352,8 @@ std::string Match::doEvent(int n){
         
                 event += "\nEfeitos:\n";
 
+                // alguma funçao que...
+
                 _alreadyHappened[13] = 1;
 
                 break;
@@ -344,6 +366,8 @@ std::string Match::doEvent(int n){
                 event += "\n\n";
         
                 event += "\nEfeitos:\n";
+
+                // alguma funçao que...
 
                 _alreadyHappened[14] = 1;
 
@@ -358,6 +382,8 @@ std::string Match::doEvent(int n){
         
                 event += "\nEfeitos:\n";
 
+                // alguma funçao que...
+
             _   alreadyHappened[15] = 1;
 
                 break;
@@ -370,6 +396,8 @@ std::string Match::doEvent(int n){
                 event += "\n\n";
         
                 event += "\nEfeitos:\n";
+
+                // alguma funçao que...
 
                 _alreadyHappened[16] = 1;
 
@@ -384,6 +412,8 @@ std::string Match::doEvent(int n){
                 event += "\n\n";
         
                 event += "\nEfeitos:\n";
+
+                // alguma funçao que...
 
                 _alreadyHappened[17] = 1;
 
