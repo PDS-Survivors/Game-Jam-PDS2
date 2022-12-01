@@ -650,10 +650,10 @@ static void UpdateDrawFrame(void)
                     DrawTextEx(base, "natureza.", (Vector2){ 452, 432 }, 24, 4, WHITE);
                 }
                 DrawRectangle(460 + optionSelect*272, 568, 90, 50, SKYBLUE);
-                DrawTextEx(font, "DESEJA SELECIONAR ESSE", (Vector2){ 460, 520 }, 24, 4, SKYBLUE);
-                DrawTextEx(font, "PERSONAGEM?", (Vector2){ 460, 540 }, 24, 4, SKYBLUE);
-                DrawTextEx(font, "SIM", (Vector2){ 470, 578 }, 32, 4, (optionSelect == 0)? BLUE : SKYBLUE);
-                DrawTextEx(font, "NAO", (Vector2){ 748, 578 }, 32, 4, (optionSelect == 1)? BLUE : SKYBLUE);
+                DrawTextEx(font, "DESEJA SELECIONAR ESSE", (Vector2){ 460, 520 }, 24, 4, WHITE);
+                DrawTextEx(font, "PERSONAGEM?", (Vector2){ 460, 540 }, 24, 4, WHITE);
+                DrawTextEx(font, "SIM", (Vector2){ 470, 578 }, 32, 4, (optionSelect == 0)? BLUE : WHITE);
+                DrawTextEx(font, "NAO", (Vector2){ 748, 578 }, 32, 4, (optionSelect == 1)? BLUE : WHITE);
             } break;   
                     
             case STORY:
