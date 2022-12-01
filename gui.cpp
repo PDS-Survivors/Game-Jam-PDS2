@@ -27,7 +27,7 @@ static int score = 0;
 static int hiscore = 0;
 static int titleState = 0;
 static int optionSelect = 0;       // Main menu option selection
-int i = 20, j = 0, k = 0;
+int i = 0, j = 0, k = 0;
 
 int pcvida, pcvidamax, pcestamina, pcestaminamax, pcdef, pcdefmax;
 int npcvida, npcvidamax, npcestamina, npcestaminamax;
@@ -166,7 +166,7 @@ static void UpdateDrawFrame(void)
             }    
             else if (decision == true)
             {
-                i = 25;
+                i = 1;
                 if (IsKeyPressed(KEY_RIGHT))
                 {
                     optionSelect++;
@@ -520,7 +520,7 @@ static void UpdateDrawFrame(void)
                     DrawRectangle(0, 0, 1280, 720, BLACK);
                     if (i>0) DrawTextEx(base, "PROCURA-SE ESPECIALISTA DE ANOMALIAS", (Vector2){80, 70}, 20, 4, WHITE);
                     if (i>1) DrawTextEx(base, "Nos últimos semestres um mal maior do que o corte de verbas tem assolado a UFMG: o surgi-", (Vector2){80,100}, 20, 4, WHITE);
-                    if (i>2) DrawTextEx(base, "mento de anomalias nos mais diverios prédios da faculdade.", (Vector2){80,120}, 20, 4, WHITE);
+                    if (i>2) DrawTextEx(base, "mento de anomalias nos mais diversos prédios da faculdade.", (Vector2){80,120}, 20, 4, WHITE);
                     if (i>=4) DrawTextEx(base, "Elas tâm atrapalhado a vida de todos os estudantes e funcionários, de modo que é impossí-", (Vector2){80,140}, 20, 4, WHITE);
                     if (i>=5) DrawTextEx(base, "vel se dedicar completamente à tarefas e projetos importantes.", (Vector2){80,160}, 20, 4, WHITE);
                     if (i>=6) DrawTextEx(base, "Temos sofrido com muitos casos reprovação, desaparecimento de pessoas e ataques de pânico,", (Vector2){80,180}, 20, 4, WHITE);
@@ -528,7 +528,7 @@ static void UpdateDrawFrame(void)
                     if (i>=8) DrawTextEx(base, "Por isso estamos contratando um Especialista de Anomalias para resolver o problema. O cargo", (Vector2){80,220}, 20, 4, WHITE);
                     if (i>=9) DrawTextEx(base, "não possui muitos pré-requisitos: desde que você não desista fácil e consiga se adaptar a", (Vector2){80,240}, 20, 4, WHITE);
                     if (i>=10) DrawTextEx(base, "diversas situações no campus, acreditamos que está apto para ele.", (Vector2){80,260}, 20, 4, WHITE);
-                    if (i>=11) DrawTextEx(base, "seu trabalho será encontrar e derrotar todas essas anomalias. Elas estão presentes nos", (Vector2){80,280}, 20, 4, WHITE);
+                    if (i>=11) DrawTextEx(base, "Seu trabalho será encontrar e derrotar todas essas anomalias. Elas estão presentes nos", (Vector2){80,280}, 20, 4, WHITE);
                     if (i>=12) DrawTextEx(base, "10 principais prédios da faculdade e algumas podem ser bem irritantes...", (Vector2){80,300}, 20, 4, WHITE);
                     if (i>=13) DrawTextEx(base, "Sabemos o quanto essa tarefa é desafiadora e exaustiva, por isso, como forma de pagamento,", (Vector2){80,320}, 20, 4, WHITE);
                     if (i>=14) DrawTextEx(base, "iremos providenciar para você um diploma oficial de nossa faculdade no curso de sua pre-", (Vector2){80,340}, 20, 4, WHITE);
@@ -577,11 +577,11 @@ static void UpdateDrawFrame(void)
             {
                 DrawRectangle(0, 0, 1280, 720, BLACK);
                 if (i>1) DrawTextEx(base, "De repende você sente alguém se aproximando por trás. Mas já é muito tarde, a pessoa pren-", (Vector2){80,100}, 20, 4, WHITE);
-                if (i>2) DrawTextEx(base, "de as suas mão atrás do corpo com uma corda aspera enquanto você se debate freneticamente.", (Vector2){80,120}, 20, 4, WHITE);
-                if (i>=4) DrawTextEx(base, "Ela se afasta e logo em seguida vem a escuridão, ela colocou em saco de ... de pequi? no ", (Vector2){80,140}, 20, 4, WHITE);
+                if (i>2) DrawTextEx(base, "de as suas mão atrás do corpo com uma corda áspera enquanto você se debate freneticamente.", (Vector2){80,120}, 20, 4, WHITE);
+                if (i>=4) DrawTextEx(base, "Ela se afasta e logo em seguida vem a escuridão, ela colocou um saco de ... de pequi? no ", (Vector2){80,140}, 20, 4, WHITE);
                 if (i>=5) DrawTextEx(base, "seu rosto.", (Vector2){80,160}, 20, 4, WHITE);
                 if (i>=6) DrawTextEx(base, "Você é tirado de seu lugar e levado para fora. Outra pessoa se aproxima e te joga violen-", (Vector2){80,180}, 20, 4, WHITE);
-                if (i>=7) DrawTextEx(base, "tamente dentro de um carro, mas a a parte de cima da sua cabeça ababa batendo na lataria ", (Vector2){80,200}, 20, 4, WHITE);
+                if (i>=7) DrawTextEx(base, "tamente dentro de um carro, mas a a parte de cima da sua cabeça acaba batendo na lataria ", (Vector2){80,200}, 20, 4, WHITE);
                 if (i>=8) DrawTextEx(base, "do carro e você desmaia...", (Vector2){80,220}, 20, 4, WHITE);
                 if (i>=9) DrawTextEx(base, "'Nós avisamos para tomar cuidado com a resposta.' Você ouve uma voz falando rispidamente.", (Vector2){80,240}, 20, 4, WHITE);
                 if (i>=10) DrawTextEx(base, "Aparentemente as mesmas pessoas que enviaram aquela oferta de emprego duvidosa agora es-", (Vector2){80,260}, 20, 4, WHITE);
