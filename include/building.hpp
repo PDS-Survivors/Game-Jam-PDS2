@@ -22,9 +22,9 @@
 
 /**
  * @brief Em qual predio da faculdade o PC esta
- * @details Classe responsavel pela classe "building" que se refere al predio da universidade em que o
- * player "pc" esta, responsavel tambem pela criação da pilha de batalhas e tambem pela inicialização
- * das batalhas 
+ * @details Classe responsavel pela classe "building" que se refere ao predio da universidade em que o
+ * player "pc" esta, ela tambem é responsavel pela criação da pilha de batalhas do predio e tambem pela inicialização
+ * dessas batalhas 
  * 
  */
 class Building {
@@ -45,7 +45,7 @@ class Building {
         /**
         * @brief Constructor a new Building object
         * @details Construtor de um objeto building a partir de parametros
-        * @param desc Complete descripition of the building
+        * @param desc Desrição completa do objeto Building (predio da faculdade)
         * @param name Name of the building
         * @param number Number of the building
         * @param totalb Number of battles in the building
@@ -54,54 +54,58 @@ class Building {
 
         /**
         * @brief Constructor a new Building object
-        * @details Construtor de um objeto building a partir de um arquivo
-        * @param player ponteiro referente ao player
-        * @param arqv arquivo referente ao predio em especifico
+        * @details Construtor de um objeto Building a partir da leitura de um arquivo
+        * @param player Ponteiro para um objeto Pc que contem as informações do jogador
+        * @param arqv arquivo referente ao objeto predio em especifico
         */
         Building(Pc* player, std::string arqv);
 
         /**
-         * @brief Destructor of a building object
-         * @details Destroi o objeto building 
+         * @brief Destructor of a Building object
+         * @details Destroi o objeto Building 
          * 
          */
         ~Building();
 
         /**
          * @brief Retorna a descrição de building 
-         * @details Essa função retorna a descrição completa do objeto builidng, predio, em que
+         * @details Essa função retorna a descrição completa do objeto Building, predio, em que
          *  o player esta.
+         * @return std::string
         */
         std::string get_desc();
 
         /**
          * @brief Retorna o nome de building 
-         * @details Essa função retorna o nome do objeto builidng, predio, em que o player esta.
+         * @details Essa função retorna o nome do objeto Building, predio, em que o player esta.
+         * @return std::string
         */
         std::string get_name();
 
         /**
          * @brief Retorna o numero de building 
-         * @details Essa função retorna o numero referente ao objeto builidng, predio, em que
+         * @details Essa função retorna o numero referente ao objeto Building, predio, em que
          *  o player esta.
+         * @return int
         */
         int get_number();
 
         /**
-         * @brief Return the nuber of the battle
-         * @details
+         * @brief Return the nuber of atual battle
+         * @details Retorna o numero da batalha em que o player esta
+         * @return int
         */
         int get_numBattle();
 
         /**
          * @brief Set the nuber of the battle
-         * @details
+         * @details Set o numero da batalha em que o player esta
         */
         void set_numBattle(int num);
 
         /**
-         * @brief Starts a battle
-         * @details
+         * @brief Inicia a proxima batalha
+         * @details Inicia a proxima batalha (essa função não esta sendo utilizada)
         */
         void start_battle();
 
@@ -121,8 +125,8 @@ class Building {
         bool isComplete();
 
         /**
-         * @brief 
-         * @details
+         * @brief ??
+         * @details ??
         */
         void manageAttacks();
         

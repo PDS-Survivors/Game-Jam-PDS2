@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <ctime>
 
+//construtor baseado em parametros
 Building::Building(std::string desc, std::string name, int number, int totalb){
     _desc = desc;
     _name = name;
@@ -18,6 +19,7 @@ Building::Building(std::string desc, std::string name, int number, int totalb){
     _tryagain = false;
 }
 
+//construtor baseado na leitura de um arquivo
 Building::Building(Pc* player, std::string arqv){
 
     _player = player;
@@ -44,7 +46,6 @@ Building::Building(Pc* player, std::string arqv){
 
 Building::~Building(){
     
-
 }
 
 std::string Building::get_desc(){

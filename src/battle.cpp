@@ -75,7 +75,7 @@ void Battle::setResult (bool result) {
     _result = result;
 }
 
-//Texto que introduz a batalha e o adersário
+//Texto que introduz a batalha e o adversário
 void Battle::beginTxt () {
     read::readtxt (_beginTxt);
 }
