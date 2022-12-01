@@ -75,7 +75,7 @@ void Battle::setResult (bool result) {
     _result = result;
 }
 
-//Texto que introduz a batalha e o adersário
+//Texto que introduz a batalha e o adversário
 void Battle::beginTxt () {
     read::readtxt (_beginTxt);
 }
@@ -248,7 +248,7 @@ void Battle::figthPc () {
                                         if (c == 's') { cond = false; }
 
                                         else if (c == 'n') { 
-                                            std::cout << "Qual então?\n"; 
+                                            std::cout << "Uai, qual então?\n"; 
                                             read::wait(1);
                                         }
 
