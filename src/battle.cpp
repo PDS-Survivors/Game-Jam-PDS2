@@ -51,7 +51,9 @@ Battle::Battle (Pc player, Npc* adversary, int numBattle, int predio, std::strin
 }
 
 Battle::~Battle () {
-    _adversary->~Npc();
+    std::cout<<"destroi battle"<<std::endl;
+    delete[] _adversary;
+
 }
 
 bool Battle::getResult () {
@@ -248,7 +250,11 @@ void Battle::figthPc () {
                                         if (c == 's') { cond = false; }
 
                                         else if (c == 'n') { 
+<<<<<<< Updated upstream
                                             std::cout << "Uai, qual então?\n"; 
+=======
+                                            std::cout << "Uai, Qual então?\n"; 
+>>>>>>> Stashed changes
                                             read::wait(1);
                                         }
 
