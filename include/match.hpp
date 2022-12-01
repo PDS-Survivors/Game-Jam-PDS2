@@ -42,6 +42,12 @@ class Match {
         Match ();
 
         /**
+         * @brief Destrutor de Match
+         * 
+         */
+        ~Match();
+
+        /**
          * @brief Constroi o objeto apontado por _player
          * @details Recebe o tipo de personagem que o jogador escolheu e cria o personagem adequado
          * 
@@ -56,20 +62,6 @@ class Match {
          * 
          */
         void playBuilding();
-
-        /**
-         * @brief Set the Epilogue object
-         * @details epilogue é lido do arquivo e depende se o jogador ganhou ou perdeu a partida 
-         * 
-         * @remark IMPORTANTE: Essa função lança a exceção ExcecaoProblemasAoAbrirArquivo caso haja problemas
-         * com o arquivo
-         * 
-         * @param result informa se o jogador ganhou ou perdeu a partida
-         * result == 1 : ganhou
-         * result == 0 : perdeu
-         * 
-         */
-        void setEpilogue ();
         
         /**
          * @brief Imprime o epilogo na tela
@@ -99,15 +91,40 @@ class Match {
         */
         std::string doEvent (int n);
 
+        /**
+         * @brief Monta a introdução do jogo e a retorna na forma de string
+         * 
+         * @return std::string 
+         */
         std::string introducao ();
 
+        /**
+         * @brief Monta a segunda versão da introdução do jogo e a retorna na forma de string
+         * @details O conteudo dessa introdução varia dependendo do parametro recebido
+         * 
+         * @param op pode ser "s" ou "p"
+         * @remark Essa função lança exceção caso receba um parametro diferente dos esperados
+         * 
+         * @return std::string 
+         */
         std::string introducao2 (char op);
 
+        /**
+         * @brief Informa se a pilha de prédios está vazia e, consequentemente, o jogo deve ser encerrado
+         * 
+         * @return true se a pilha de prédios estiver vazia
+         * @return false se a pilha de prédios ainda contiver prédios
+         */
         bool end ();
 
+        /**
+         * @brief Preenche a pilha de prédios
+         * @details As informações sobre os prédios para compor a pilha são lidas do arquivo 
+         * 
+         * @param arqv nome do arquivo de onde se lê os nomes dos arquivos necessários para construir cada um dos prédios
+         */
         void setBuildingStack (std::string arqv);
 
-        int getPlayerLifes ();
 };
 
 class ExcecaoProblemasAoAbrirArquivo: public std::exception{

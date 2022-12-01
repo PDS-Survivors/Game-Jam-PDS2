@@ -5,6 +5,20 @@
 
 Match::Match () {}
 
+Match::~Match(){
+
+    delete _player;
+        
+    while(!_buildings.empty()){
+        delete *(_buildings.top());
+    }
+    
+    while(!_permanentEffects.empty()){
+        delete *(_permanentEffects.back());
+    }
+
+}
+
 void Match::setPlayer(int type){
     if (type == 0) {
         //Construtor para mago
@@ -65,14 +79,6 @@ void Match::playBuilding(){
     _buildings.pop();
 }
 
-//int Match::chooseEffect(){}
-
-//void Match::eventHappen(){}
-
-//errado, essa função tem que receber alguma coisa, estava em duvida do que seria especificamente por isso não pus
-//recebe o valor de total loses
-
-//void Match::setEpilogue (){}
 
 //getepilogue para ser usado pela interface
 void Match::printEpilogue(){
@@ -481,6 +487,4 @@ void Match::setBuildingStack (std::string arqv) {
     }
 }
 
-int Match::getPlayerLifes (){
-    return _player->getNumLifes();
-}
+
