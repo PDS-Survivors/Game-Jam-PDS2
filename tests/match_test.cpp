@@ -19,7 +19,7 @@ TEST_CASE("Função setPlayer"){
         CHECK_NOTHROW(c.setPlayer(2));
     }
     
-    SUBCASE("Parametro recebido fora de escopo"){
+    SUBCASE("Parametro inválido"){
         Match d, e;
         CHECK_THROWS(d.setPlayer(-1));
         CHECK_THROWS(e.setPlayer(3));
@@ -31,7 +31,7 @@ TEST_CASE("Função setPlayer"){
 
 TEST_CASE("Função chooseEvent"){
     CHECK(chooseEvent() < 17);
-    CHECK(chooseEvent() > 0);
+    CHECK(chooseEvent() >= 0);
 }
 
 
@@ -261,7 +261,7 @@ TEST_CASE("Função introducao2"){
         CHECK_EQ(txt, introducao2(n));  
     }
 
-    SUBCASE("Parametro fora de escopo"){
+    SUBCASE("Parâmetro inválido"){
         CHECK_THROWS(introducao2(a))
     }
     
