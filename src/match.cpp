@@ -1,7 +1,4 @@
 #include "match.hpp"
-#include <iostream>
-
-//Variável estática de battle que armazena número de batalhas perdidas
 
 Match::Match () {}
 
@@ -12,7 +9,7 @@ Match::~Match(){
     while(!_buildings.empty()){
         delete *(_buildings.top());
     }
-    
+
     while(!_permanentEffects.empty()){
         delete *(_permanentEffects.back());
     }
@@ -33,7 +30,7 @@ void Match::setPlayer(int type){
         _player = new Pc ();
     }
     else {
-        //Implementar lançamento de exceção
+        throw std::invalid_argument("Não existe um personagem que corresponda a esse número");
     }
     
 }
@@ -80,7 +77,10 @@ void Match::playBuilding(){
 }
 
 
-//getepilogue para ser usado pela interface
+std::string Match::getEpilogue(){
+    return _epilogue;
+}
+
 void Match::printEpilogue(){
     if (_player->getNumLifes() == 0) {
         std::cout << "Que vida triste e sem diploma a sua...\n\n";

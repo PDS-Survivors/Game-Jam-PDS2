@@ -22,7 +22,7 @@
 #include <string>
 #include <vector>
 #include <stack>
-#include <fstream>
+#include <iostream>
 
 class Match {
     private:
@@ -51,18 +51,29 @@ class Match {
          * @brief Constroi o objeto apontado por _player
          * @details Recebe o tipo de personagem que o jogador escolheu e cria o personagem adequado
          * 
-         * @param type informa qual o tipo de personagem deve ser criado
+         * @remark essa função lança a exceção std::invalid_argument caso o parametro recebido não seja um dos esperados
+         * 
+         * @param type informa qual o tipo de personagem deve ser criado, são aceitos 0, 1 e 2
          * 
          */
         void setPlayer(int type);
 
         /**
          * @brief Chama o prédio no topo da pilha para que seja jogado
-         * @details Chama a função start_battle() do prédio no topo da pilha
+         * @details Apos o consenso do jogador para o início da batalha, chama a função start_battle() do prédio no topo da pilha
          * 
          */
         void playBuilding();
-        
+
+        /**
+         * @brief Get the Epilogue object
+         * 
+         * @remark Função para ser usada pela interface
+         * 
+         * @return std::string _epilogue
+         */
+        std::string getEpilogue();
+
         /**
          * @brief Imprime o epilogo na tela
          * @details O epilogo informa ao jogador o resultado de sua partida(Match): se ganhou ou perdeu
@@ -127,23 +138,5 @@ class Match {
 
 };
 
-class ExcecaoProblemasAoAbrirArquivo: public std::exception{
-    private:
-        std::string _error;
-    
-    public:
-        /**
-         * @brief Construtor de Excecao Problemas Ao Abrir Arquivo 
-         * 
-         * @param arquivo é o nome do arquivo que não foi aberto como deveria
-         */
-        ExcecaoProblemasAoAbrirArquivo(std::string arquivo);
 
-        /**
-         * @brief retorna frase de erro para que eja impressa
-         * 
-         * @return const char* ponteiro para "Erro ao abrir o arquivo: 'nome do arquivo' \n"
-         */
-        const char* what() const noexcept override;
-};
 #endif
