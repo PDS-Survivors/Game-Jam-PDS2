@@ -50,6 +50,13 @@
         "codecvt": "cpp",
         "ctime": "cpp",
         "iomanip": "cpp",
-        "ratio": "cpp"
+        "ratio": "cpp",
+        "condition_variable": "cpp",
+        "csignal": "cpp",
+        "cstring": "cpp",
+        "unordered_set": "cpp",
+        "set": "cpp",
+        "mutex": "cpp",
+        "thread": "cpp"
     }
 }
