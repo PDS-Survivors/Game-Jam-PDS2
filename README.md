@@ -10,9 +10,9 @@ que diferem em atributos e ataques. E os adversários, bosses NPCs em cada préd
 O programa está organizado de forma que uma partida contém uma pilha de prédios e em cada prédio há uma pilha de batalhas, que funcionam com o sistema de turnos. O jogador é considerado vencedor caso zere a pilha de prédios, sendo para isso necessário que zere a pilha de batalhas de cada um, vencendo todas elas, ou perdedor, caso morra três vezes - zere o número de vidas - sem completar o jogo.
 
 # Colaboradores
-Beatriz Siqueira Campagnaro
-Cássio Antônio Magalhães de Souza Almeida
-Enzo Vídero Pinheiro Bahia
-Leonardo Antônio Gomes da Silva
-Pedro Silveira Polesca Boseja
+Beatriz Siqueira Campagnaro,
+Cássio Antônio Magalhães de Souza Almeida,
+Enzo Vídero Pinheiro Bahia,
+Leonardo Antônio Gomes da Silva,
+Pedro Silveira Polesca Boseja e
 Talita Félix Lúcio
