@@ -136,6 +136,15 @@ class Match {
          */
         void setBuildingStack (std::string arqv);
 
+        /**
+         * @brief Retorna a quantidade de vidas do jogador
+         * @details Como não é possível acessar diretamente a quantidade de vidas do jogador, foi
+         * criada essa função para isso
+         * 
+         * @return int : quantidadde de vidas do jogador
+         */
+        int getPlayerLifes ();
+
 };
 
 

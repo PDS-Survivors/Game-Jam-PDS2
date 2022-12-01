@@ -1,5 +1,5 @@
 i4_
 i1_
 sFAFICH_
-fSeja bem-vind@ à Facich! Espero que você tenha um bom tempo enquanto anda por aqui :)_
+fSeja bem-vind@ à Fafich! Espero que você tenha um bom tempo enquanto anda por aqui :)_
 flib/battles/fafich1.txt_

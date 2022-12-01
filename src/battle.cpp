@@ -248,7 +248,7 @@ void Battle::figthPc () {
                                         if (c == 's') { cond = false; }
 
                                         else if (c == 'n') { 
-                                            std::cout << "Qual então?\n"; 
+                                            std::cout << "Uai, qual então?\n"; 
                                             read::wait(1);
                                         }
 
