@@ -30,7 +30,8 @@ void Match::playBuilding(){
 
     //Janela com o nome do prédio na interface
     std::cout << "========================================================================================\n\n";
-    std::cout << "                                " << _buildings.top()->get_name() << "\n\n";
+    std::cout << "                           Prédio " << _buildings.top()->get_number();
+    std::cout << ": " << _buildings.top()->get_name() << "\n\n";
     std::cout << "== " << _buildings.top()->get_desc() << "\n\n";
 
     std::cout << "Prepard@ para enfrentear as anomalias desse prédio?\n\n";
@@ -41,7 +42,7 @@ void Match::playBuilding(){
     if (c == 's'){
         while (!_buildings.top()->isComplete()) {
             _buildings.top()->doBattle();
-            if (_player->getNumLifes() == 0) { return; }
+            if (_player->getNumLifes() == 0) { break; }
         }
     }
     else if (c == 'n'){
@@ -51,7 +52,7 @@ void Match::playBuilding(){
 
         while (!_buildings.top()->isComplete()) {
             _buildings.top()->doBattle();
-            if (_player->getNumLifes() == 0) { return; }
+            if (_player->getNumLifes() == 0) { break; }
         }
     }
     else {
@@ -89,7 +90,7 @@ void Match::printEpilogue(){
     }
 }
 
-int Match::choseEvent(){
+int Match::chooseEvent(){
     unsigned seed = time(0);
     srand(seed);
 
@@ -478,4 +479,8 @@ void Match::setBuildingStack (std::string arqv) {
         Building* build = new Building (_player, files[i]);
         _buildings.emplace(build);
     }
+}
+
+int Match::getPlayerLifes (){
+    return _player->getNumLifes();
 }

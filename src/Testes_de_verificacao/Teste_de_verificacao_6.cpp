@@ -75,7 +75,8 @@ int main () {
     while (!match->end()){
 
         match->playBuilding();
-        match->choseEvent();
+        if (match->getPlayerLifes() <= 0) { break;}
+        match->chooseEvent();
 
     }
 

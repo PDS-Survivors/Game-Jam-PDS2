@@ -36,8 +36,8 @@ Battle::Battle (Pc *player, std::string file){
 }
 
 //Construtor sem leitura de arquivo para Npc
-Battle::Battle (Pc* player, Npc* adversary, int numBattle, int predio, std::string name) {
-    _player = *player;
+Battle::Battle (Pc player, Npc* adversary, int numBattle, int predio, std::string name) {
+    _player = player;
     _adversary = adversary;
     _numBattle = numBattle;
     _predio = predio;
@@ -117,7 +117,6 @@ bool Battle::defineResult () {
     //Se perder result = 1, se ganhar = 0;
     if (_player.getLife() <= 0) {
         this->setResult(1); 
-        _player.setNumLifes();
         return true;
     }
     else if (_adversary->getLife() <= 0) {
@@ -345,7 +344,10 @@ void Battle::fight () {
             
             this->fightNpc();      
                     
-            if (this->defineResult()) break;
+            if (this->defineResult()) {
+                if (!_result) {_player.setNumLifes();}
+                break;
+            }
 
             this->figthPc();
 
@@ -353,7 +355,10 @@ void Battle::fight () {
             _player.rebootStamina();
             _adversary->rebootStamina();
 
-            if (this->defineResult()) break;
+            if (this->defineResult()) {
+                if (!_result) {_player.setNumLifes();}
+                break;
+            }
         }
     }
 
@@ -368,14 +373,20 @@ void Battle::fight () {
 
             this->figthPc();
                 
-            if (this->defineResult()) break;
+            if (this->defineResult()) {
+                if (!_result) {_player.setNumLifes();}
+                break;
+            }
                 
             this->fightNpc();    
 
             _player.rebootStamina();
             _adversary->rebootStamina();
 
-            if (this->defineResult()) break;
+            if (this->defineResult()) {
+                if (!_result) {_player.setNumLifes();}
+                break;
+            }
         }
     }
 
@@ -433,8 +444,8 @@ void Battle::manageAttacks(){
     bool cond = true;
 
     while (cond) {
-        std::cin.ignore();
-        char choice = getchar();
+        char choice;
+        std::cin >> choice;
 
         try {
             if(choice == 'l'){
@@ -511,7 +522,7 @@ const char* ExcecaoEntradaInvalida2::what () const noexcept {
 }
 
 ExcecaoEntradaInvalida3::ExcecaoEntradaInvalida3 () {
-    _msgErro = "\nEntrada inválida.\nDigite 's' ou 'n' para continuar\n\n";
+    _msgErro = "\nEntrada inválida.\nDigite 'l' ou 'd' para continuar\n\n";
 }
 
 const char* ExcecaoEntradaInvalida3::what () const noexcept {

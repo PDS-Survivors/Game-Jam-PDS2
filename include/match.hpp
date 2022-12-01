@@ -30,6 +30,7 @@ class Match {
         std::stack<Building*> _buildings;
         std::vector<Effect*> _permanentEffects;
         std::string _epilogue;
+        std::vector<int> _alreadyHappened;
 
     public:
 
@@ -105,6 +106,8 @@ class Match {
         bool end ();
 
         void setBuildingStack (std::string arqv);
+
+        int getPlayerLifes ();
 };
 
 class ExcecaoProblemasAoAbrirArquivo: public std::exception{

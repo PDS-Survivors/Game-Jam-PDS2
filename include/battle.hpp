@@ -19,7 +19,9 @@
 
 /**
  * @brief Executa a batalha entre o player e um adversário
- * @details 
+ * @details Essa classe irá incializar um objeto batalha e realizar a luta entre o jogador e seu
+ * adversário, impriminto uma descrição sobre a batalha antes de seu início e um texto com o
+ * resultado dessa ao final
  * 
  */
 class Battle {
@@ -70,7 +72,7 @@ class Battle {
          * @param predio Número inteiro que indica em qual prédio a batalha está
          * @param name String que contém o nome da batalha
          */
-        Battle (Pc* player, Npc* adversary, int numBattle, int predio, std::string name);
+        Battle (Pc player, Npc* adversary, int numBattle, int predio, std::string name);
 
         /**
          * @brief Destrutor de um objeto Battle
@@ -226,8 +228,9 @@ class Battle {
 };
 
 /**
- * @brief 
- * @details
+ * @brief Classe para tratamentp de exceção
+ * @details Responsável por tratar a exceção lançada quando o player não digita uma entrada válida
+ * na vez de escolher qual ação irá fazer em figthpc()
  * 
  */
 class ExcecaoEntradaInvalida : public std::exception {
@@ -238,24 +241,26 @@ class ExcecaoEntradaInvalida : public std::exception {
      public:
 
         /**
-         * @brief Construct a new Excecao Entrada Invalida object
-         * @details
+         * @brief Construtor de um objeto ExcecaoEntradaInvalida
+         * @details Esse construtor não recebe parâmetros e inicializa o atributo _msgErro
          * 
          */
         ExcecaoEntradaInvalida ();
 
         /**
-         * @brief 
-         * @details
+         * @brief Função que mostra a mensagem de erro
+         * @details Essa função será chamada durante o laçamento da exceçaõ e irá retornar a
+         * string _msgErro como um const char*
          * 
-         * @return const char* 
+         * @return const char* : retorna a string _msgErro no formato pedido
          */
         const char* what () const noexcept override;
  };
 
 /**
- * @brief 
- * @details
+ * @brief Classe para tratamentp de exceção
+ * @details Responsável por tratar a exceção lançada quando o player não digita uma entrada válida
+ * quando é pedida a confirmação do ataque escolhido em fightPc()
  * 
  */
 class ExcecaoEntradaInvalida2 : public std::exception {
@@ -266,23 +271,26 @@ class ExcecaoEntradaInvalida2 : public std::exception {
     public:
 
         /**
-         * @brief Construct a new Excecao Entrada Invalida 2 object
-         * @details
+         * @brief Construtor de um objeto ExcecaoEntradaInvalida2
+         * @details Esse construtor não recebe parâmetros e inicializa o atributo _msgErro
          * 
          */
         ExcecaoEntradaInvalida2 () ;
 
         /**
-         * @brief
-         * @details 
+         * @brief Função que mostra a mensagem de erro
+         * @details Essa função será chamada durante o laçamento da exceçaõ e irá retornar a
+         * string _msgErro como um const char*
          * 
-         * @return const char* 
+         * @return const char* : retorna a string _msgErro no formato pedido
          */
         const char* what () const noexcept override;
 };
 
 /**
- * @brief 
+ * @brief Classe para tratamentp de exceção
+ * @details Essa classe é responsável pela exceção lançada quando o jogador digita uma entrada
+ * inválida em manageAttacks() quando o narrador pergunta se ele quer o ataque ou não;
  * 
  */
 class ExcecaoEntradaInvalida3 : public std::exception {
@@ -293,19 +301,28 @@ class ExcecaoEntradaInvalida3 : public std::exception {
     public:
 
         /**
-         * @brief Construct a new Excecao Entrada Invalida 3 object
+         * @brief Construtor de um objeto ExcecaoEntradaInvalida3
+         * @details Esse construtor não recebe parâmetros e inicializa o atributo _msgErro
          * 
          */
         ExcecaoEntradaInvalida3 ();
 
         /**
-         * @brief 
+         * @brief Função que mostra a mensagem de erro
+         * @details Essa função será chamada durante o laçamento da exceçaõ e irá retornar a
+         * string _msgErro como um const char*
          * 
-         * @return const char* 
+         * @return const char* : retorna a string _msgErro no formato pedido
          */
         const char* what () const noexcept override;
 };
 
+/**
+ * @brief Classe para tratamentp de exceção
+ * @details Essa exceção é usada quando alguem tenta pegar o valor do resultado do jogo sendo
+ * que esse ainda não foi definido
+ * 
+ */
 class ExcecaoResultadoNaoDefinido : public std::exception {
 
     private:
@@ -314,8 +331,20 @@ class ExcecaoResultadoNaoDefinido : public std::exception {
 
     public:
 
+        /**
+         * @brief Construtor de um objeto ExcecaoResultadoNaoDefinido
+         * @details Esse construtor não recebe parâmetros e inicializa o atributo _msgErro
+         * 
+         */
         ExcecaoResultadoNaoDefinido ();
 
+        /**
+         * @brief Função que mostra a mensagem de erro
+         * @details Essa função será chamada durante o laçamento da exceçaõ e irá retornar a
+         * string _msgErro como um const char*
+         * 
+         * @return const char* : retorna a string _msgErro no formato pedido
+         */
         const char* what () const noexcept override;
 
 };
