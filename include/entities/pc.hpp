@@ -102,7 +102,7 @@ class Pc: public Entity{
          */
         virtual void showAction(Attack* hit) override;
 
-        void setNumLifes ();
+        void setNumLifes (int numLifes);
 
         int getNumLifes ();
 };

@@ -135,8 +135,8 @@
         read::wait(1);
     }
 
-    void Pc::setNumLifes (){
-        _numLifes -= 1;
+    void Pc::setNumLifes (int numLifes){
+        _numLifes += numLifes;
         //Fazer tratamento de exceção caso a vida seja 0
     }
 

@@ -12,7 +12,7 @@
 //batalha, numero do predio e três textos de vitória)
 Battle::Battle (Pc *player, std::string file){
 
-    _player = *player;
+    _player = player;
 
     std::vector<std::string> words;
     std::vector<std::string> files;
@@ -37,7 +37,7 @@ Battle::Battle (Pc *player, std::string file){
 
 //Construtor sem leitura de arquivo para Npc
 Battle::Battle (Pc player, Npc* adversary, int numBattle, int predio, std::string name) {
-    _player = player;
+    *_player = player;
     _adversary = adversary;
     _numBattle = numBattle;
     _predio = predio;
@@ -57,8 +57,9 @@ Battle::~Battle () {
 }
 
 bool Battle::getResult () {
-    if (!this->defineResult()) {throw ExcecaoResultadoNaoDefinido (); }
-    else { return _result;}
+    //if (!this->defineResult()) {throw ExcecaoResultadoNaoDefinido (); }
+    //else { return _result;}
+    return _result;
 }
 
 int Battle::getDamagePc () {
@@ -93,10 +94,10 @@ void Battle::imprimeVida () {
     // Imprime a barra de vida do player
     std::cout << "[ ";
     for (int i = 0; i < 25; i++){
-        if (_player.getLife() - (4*i) > 0) { std::cout << "§"; }
+        if (_player->getLife() - (4*i) > 0) { std::cout << "§"; }
         else { std::cout << " "; }
     }
-    std::cout << " ] " << _player.getName() << std::endl;
+    std::cout << " ] " << _player->getName() << std::endl;
     read::wait(1);
 
     //Imprime a barra de vida do adversário
@@ -117,7 +118,7 @@ void Battle::imprimeVida () {
 //Indica se o resultado já foi definido ou não
 bool Battle::defineResult () {
     //Se perder result = 1, se ganhar = 0;
-    if (_player.getLife() <= 0) {
+    if (_player->getLife() <= 0) {
         this->setResult(1); 
         return true;
     }
@@ -137,14 +138,14 @@ void Battle::resultTxt () {
     std::cout << "\n";
 
     if (_result == 0) {
-        std::cout << read::readstring(_resultTxt.begin(), _resultTxt) << '\n';
+        read::readtxt(_resultTxt);
     }
-    else if ((_result == 1) && (_player.getNumLifes() > 0)){
+    else if ((_result == 1) && (_player->getNumLifes() > 0)){
         std::cout << "VOCÊ FOI REPROVAD@!\n\nEssa foi apenas uma derrota, não desista!\n";
         std::cout << "A ufmg precisa de voce!\n";
         std::cout << "(Você vai mesmo querer estudar 5 anos por esse diploma?)\n";
     }
-    else if ((_result == 1) && (_player.getNumLifes() == 0)){
+    else if ((_result == 1) && (_player->getNumLifes() == 0)){
         std::cout << "VOCÊ FOI JUBILAD@!\n\nEssa foi a sua terceira derrota\n";
         std::cout << "Chegou-se a conclusao de que você não e capaz de ajudar a UFMG\n";
         std::cout << "Obrigada por tentar, mas nao volte tão cedo por favor!\n";
@@ -173,15 +174,17 @@ void Battle::statistcs () {
     else { std::cout << "vitoria :D\n\n"; }
     read::wait(2);
     
-    std::cout << "== Player: " << _player.getName();
+    std::cout << "== Player: " << _player->getName();
     read::wait(1);
-    std::cout << "\nVida inicial: " << std::to_string(_player.getLife() + _totalDamagePc);
+    std::cout << "\nVidas restantes: " << std::to_string(_player->getNumLifes());
     read::wait(1);
-    std::cout << "\nVida atual: " << std::to_string(_player.getLife());
+    std::cout << "\nVida inicial: " << std::to_string(_player->getLife() + _totalDamagePc);
     read::wait(1);
-    std::cout << "\nDefesa: " << std::to_string(_player.getDefense());
+    std::cout << "\nVida atual: " << std::to_string(_player->getLife());
     read::wait(1);
-    std::cout << "\nStamina: " << std::to_string(_player.getStamina());
+    std::cout << "\nDefesa: " << std::to_string(_player->getDefense());
+    read::wait(1);
+    std::cout << "\nStamina: " << std::to_string(_player->getStamina());
     read::wait(1);
 
     std::cout << "\n\n== Adversário: " << _adversary->getName();
@@ -215,7 +218,7 @@ void Battle::figthPc () {
             std::cout << "(a) Ver estatisticas     (b) Atacar!    (c) Esperar, apenas.\n";
             read::wait(1);
 
-            std::cout << "== Stamina atual: " << _player.getStamina() << "\n\n";
+            std::cout << "== Stamina atual: " << _player->getStamina() << "\n\n";
 
             char get_char;
             std::cin >> get_char;
@@ -226,16 +229,16 @@ void Battle::figthPc () {
 
                 //Mostra quais ataques estão disponíveis para o jogador escolher
                 case 'b' :  { 
-                            int lpc = _player.getLife();
+                            int lpc = _player->getLife();
                             int lnpc = _adversary->getLife();
                             
-                            _player.showHit();
+                            _player->showHit();
 
                             Attack* att;
                             bool cond = true;
 
                             do { 
-                                att = _player.chooseAttack(); 
+                                att = _player->chooseAttack(); 
 
                                 if (att == nullptr) { cond = false; }
                                 else {
@@ -250,11 +253,7 @@ void Battle::figthPc () {
                                         if (c == 's') { cond = false; }
 
                                         else if (c == 'n') { 
-<<<<<<< Updated upstream
                                             std::cout << "Uai, qual então?\n"; 
-=======
-                                            std::cout << "Uai, Qual então?\n"; 
->>>>>>> Stashed changes
                                             read::wait(1);
                                         }
 
@@ -271,14 +270,14 @@ void Battle::figthPc () {
                             //Apenas executa um ataque se for dada uma entrada válida
                             //Substituir por tratamento de excessão
                             if (att != nullptr) {
-                                _player.doHit(_adversary, att);
+                                _player->doHit(_adversary, att);
 
                                 this->imprimeVida();
                             }
                             else {test = false; break;}
                             
                             //Atualiza dados para as estatísticas
-                            _totalDamagePc += (lpc - _player.getLife());
+                            _totalDamagePc += (lpc - _player->getLife());
                             _totalDamageNpc += (lnpc - _adversary->getLife());
 
                             } break;
@@ -291,7 +290,7 @@ void Battle::figthPc () {
             if (this->defineResult()) break;
             
             //Se a stamina for 0 o turno é encerrado
-            else if (_player.getStamina() == 0) {
+            else if (_player->getStamina() == 0) {
                 test = false;
                 break;
             }
@@ -310,16 +309,16 @@ void Battle::figthPc () {
 
 void Battle::fightNpc () {
 
-    int lpc = _player.getLife();
+    int lpc = _player->getLife();
     int lnpc = _adversary->getLife();
 
     std::cout << _adversary->getName() << " ira atacar ^o^\n"; 
     read::wait(2);
 
     //O npc ataca seguindo um comportamento pré-estabelecido
-    _adversary->doTurn(&_player);
+    _adversary->doTurn(_player);
 
-    _totalDamagePc += (lpc - _player.getLife());
+    _totalDamagePc += (lpc - _player->getLife());
     _totalDamageNpc += (lnpc - _adversary->getLife());
 
     this->imprimeVida();
@@ -340,7 +339,7 @@ void Battle::fight () {
     this->imprimeVida();
 
     //O npc tem defesa menor, logo ataca primeiro
-    if (_player.getDefense() >= _adversary->getDefense()) {
+    if (_player->getDefense() >= _adversary->getDefense()) {
          while (true) {
 
             _round += 1;
@@ -351,18 +350,18 @@ void Battle::fight () {
             this->fightNpc();      
                     
             if (this->defineResult()) {
-                if (!_result) {_player.setNumLifes();}
+                if (_result) {_player->setNumLifes(-1);}
                 break;
             }
 
             this->figthPc();
 
             //No final de cada round a stamina de pc e npc é restaurada
-            _player.rebootStamina();
+            _player->rebootStamina();
             _adversary->rebootStamina();
 
             if (this->defineResult()) {
-                if (!_result) {_player.setNumLifes();}
+                if (_result) {_player->setNumLifes(-1);}
                 break;
             }
         }
@@ -380,17 +379,17 @@ void Battle::fight () {
             this->figthPc();
                 
             if (this->defineResult()) {
-                if (!_result) {_player.setNumLifes();}
+                if (_result) {_player->setNumLifes(-1);}
                 break;
             }
                 
             this->fightNpc();    
 
-            _player.rebootStamina();
+            _player->rebootStamina();
             _adversary->rebootStamina();
 
             if (this->defineResult()) {
-                if (!_result) {_player.setNumLifes();}
+                if (_result) {_player->setNumLifes(-1);}
                 break;
             }
         }
@@ -404,6 +403,21 @@ void Battle::fight () {
     std::cout << "\n\n";
 
     read::wait(2);
+
+    this->resultTxt ();
+
+    //Ao final de uma batalha a vida do player e do adversário é restaurada
+    //Fazer função battleReset?
+    _player->rebootLife (_player->getLife() + _totalDamagePc);
+    _adversary->rebootLife (_adversary->getLife() + _totalDamageNpc);
+
+    _player->setStamina(5);
+    _adversary->setStamina(5);
+
+    _round = 0;
+
+    _totalDamagePc = 0;
+    _totalDamageNpc = 0;
 }
 
 void Battle::manageAttacks(){
@@ -456,21 +470,23 @@ void Battle::manageAttacks(){
         try {
             if(choice == 'l'){
                 //Se o player tiver menos de 4 ataques ele é adicionado automaticamente
-                if (_player.sizeofHit() < 4) {
-                    _player.addHit(attack);
+                if (_player->sizeofHit() < 4) {
+                    _player->addHit(attack);
 
-                    std::cout << attack->getName();
-                    std::cout << " foi adcionado à sua coleção de ataques! :D\n";
-
-                    _player.showHit();
+                    std::cout << '\n' << attack->getName();
+                    std::cout << " foi adcionado à sua coleção de ataques! :D\n\n";
 
                     read::wait(2);
+
+                    _player->showHit();
+
+                    read::wait(5);
                 }
                 //Caso a coleçao de ataques esteja cheia ele precisará de desfazer de um ataque
                 else {
                     std::cout << "Essa é a sua coleção de atques:\n\n";
-                    read::wait(1);
-                    _player.showHit();
+                    read::wait(2);
+                    _player->showHit();
                     read::wait(2);
                     
                     std::cout << "\nPor qual deles você deseja substituir o novo ataque?\n";
@@ -478,22 +494,22 @@ void Battle::manageAttacks(){
 
                     int op;
                     std::cin >> op;
-                    _player.delHit(op);
-                    _player.addHit(attack);
+                    _player->delHit(op);
+                    _player->addHit(attack);
 
                     std::cout << "Uhuuul. Aqui estão os seus novos ataques:\n\n";
                     read::wait(2);
 
-                    _player.showHit();
-                    read::wait(3);
+                    _player->showHit();
+                    read::wait(5);
                     
                     std::cout << "\n";
                 }
                 cond = false;
             }  
             else if(choice == 'd'){
-                std::cout << "Não faria o mesmo se fosse você, que sem graça...\n";
-                read::wait(2);
+                std::cout << "Não faria o mesmo se fosse você, que sem graça...\n\n";
+                read::wait(3);
                 cond = false;
             }
             else { throw ExcecaoEntradaInvalida3(); }

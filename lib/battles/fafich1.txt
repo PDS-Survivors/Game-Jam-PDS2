@@ -1,6 +1,6 @@
 i1_
 i2_
 flib/npcs/getuliomineiro.txt_
-flib\texts\fafich1beg.txt_
+flib/texts/fafich1beg.txt_
 flib/texts/fafich1end.txt_
 sA revolucao do Getulio Mineiro_

@@ -64,11 +64,12 @@
             int getLife();
 
             /**
-             * @brief função para resetar a vida da entidade a quatidade máxima.
-             * @details retorna um valor inteiro para dar um feedback da vida atual da entidade
-             * @return int : vida atual da entidade (em seu valor máximo) 
+             * @brief 
+             * @details
+             * 
+             * @param totalLife 
              */
-            int rebootLife();
+            void rebootLife (int totalLife);
 
             /**
              * @brief reseta ou gasta a estamina da entidade após um turno.
@@ -83,7 +84,9 @@
              * @details essa função é importante para o controle dos ataques das entidades.
              * @return int : a stamina atual da entidade.
              */
-            int getStamina();
+            int getStamina ();
+
+            void setStamina (int value);
 
             /**
              * @brief Muda a vida da entidade.

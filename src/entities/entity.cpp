@@ -20,18 +20,21 @@
     int Entity::getLife(){
         return _life;
     }
-    
-    int Entity::rebootLife(){
-        return _life = _total_life;
+
+    void Entity::rebootLife (int totalLife){
+        _life = totalLife;
     }
 
-    int Entity::rebootStamina(int value){
+    int Entity::rebootStamina(int value) {
         return _stamina += value;
     }
 
-
     int Entity::getStamina(){
         return _stamina;
+    }
+
+    void Entity::setStamina(int value) {
+        _stamina = value;
     }
 
     //função pra mudar a vida de uma entidade.

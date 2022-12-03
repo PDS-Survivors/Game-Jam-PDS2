@@ -28,7 +28,7 @@ class Battle {
 
     private:
 
-        Pc _player;
+        Pc* _player;
         Npc* _adversary;
 
         bool _result;

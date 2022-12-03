@@ -48,22 +48,13 @@ class Match {
         ~Match();
 
         /**
-         * @brief Constroi o objeto apontado por _player
-         * @details Recebe o tipo de personagem que o jogador escolheu e cria o personagem adequado
+         * @brief Retorna a quantidade de vidas do jogador
+         * @details Como não é possível acessar diretamente a quantidade de vidas do jogador, foi
+         * criada essa função para isso
          * 
-         * @remark essa função lança a exceção std::invalid_argument caso o parametro recebido não seja um dos esperados
-         * 
-         * @param type informa qual o tipo de personagem deve ser criado, são aceitos 0, 1 e 2
-         * 
+         * @return int : quantidadde de vidas do jogador
          */
-        void setPlayer(int type);
-
-        /**
-         * @brief Chama o prédio no topo da pilha para que seja jogado
-         * @details Apos o consenso do jogador para o início da batalha, chama a função start_battle() do prédio no topo da pilha
-         * 
-         */
-        void playBuilding();
+        int getPlayerLifes ();
 
         /**
          * @brief Get the Epilogue object
@@ -75,32 +66,37 @@ class Match {
         std::string getEpilogue();
 
         /**
+         * @brief Constroi o objeto apontado por _player
+         * @details Recebe o tipo de personagem que o jogador escolheu e cria o personagem adequado
+         * 
+         * @remark essa função lança a exceção std::invalid_argument caso o parametro recebido não seja um dos esperados
+         * 
+         * @param type informa qual o tipo de personagem deve ser criado, são aceitos 0, 1 e 2
+         * 
+         */
+        void setPlayer(int type);
+
+        /**
+         * @brief Preenche a pilha de prédios
+         * @details As informações sobre os prédios para compor a pilha são lidas do arquivo 
+         * 
+         * @param arqv nome do arquivo de onde se lê os nomes dos arquivos necessários para construir cada um dos prédios
+         */
+        void setBuildingStack (std::string arqv);
+
+        /**
+         * @brief Chama o prédio no topo da pilha para que seja jogado
+         * @details Apos o consenso do jogador para o início da batalha, chama a função start_battle() do prédio no topo da pilha
+         * 
+         */
+        void playBuilding();
+
+        /**
          * @brief Imprime o epilogo na tela
          * @details O epilogo informa ao jogador o resultado de sua partida(Match): se ganhou ou perdeu
          * 
          */
         void printEpilogue ();
-
-        /**
-         * @brief Retorna 0 caso não vá occorer evento ou o numero do evento (1-17)
-         * @details Decide de havera um evento ao final do predio, chance de 50% disso occorer, 
-         * baseado no relogio interno do computador (occore o evento se o numero da hora, 
-         * contanto os centesimos, milesimos de segundo, etc., for par). Caso occora um evento 
-         * ele é selecionado aleatoriamente de forma semelhante (Baseado em uma lista de eventos
-         * possiveis, 17 no total, o evento e selecionado a partir do resto da divisão do numero 
-         * da hora por 17).
-         * Os eventos podem alterar diversas caracteristicas do player como defesa
-         * ataque, dano, vida etc.  
-        */
-        int chooseEvent();
-
-        /**
-         * @brief Executa o evento escolhido pela função choseEvent().
-         * @details Executa o evento escolhido pela função choseEvent(), caso o evento escolhido ja tenha occorido ele executa
-         * o proximo evento da lista, dessa forma garantido que o mesmo evento não ocorra duas vezes na mesma gameplay.
-         * E retorna uma string (bem grande alias) no formato "Titulo do evento" - "Desrição do evento" - "descrição dos eveitos do evento" 
-        */
-        std::string doEvent (int n);
 
         /**
          * @brief Monta a introdução do jogo e a retorna na forma de string
@@ -129,22 +125,25 @@ class Match {
         bool end ();
 
         /**
-         * @brief Preenche a pilha de prédios
-         * @details As informações sobre os prédios para compor a pilha são lidas do arquivo 
-         * 
-         * @param arqv nome do arquivo de onde se lê os nomes dos arquivos necessários para construir cada um dos prédios
-         */
-        void setBuildingStack (std::string arqv);
+         * @brief Retorna 0 caso não vá occorer evento ou o numero do evento (1-17)
+         * @details Decide de havera um evento ao final do predio, chance de 50% disso occorer, 
+         * baseado no relogio interno do computador (occore o evento se o numero da hora, 
+         * contanto os centesimos, milesimos de segundo, etc., for par). Caso occora um evento 
+         * ele é selecionado aleatoriamente de forma semelhante (Baseado em uma lista de eventos
+         * possiveis, 17 no total, o evento e selecionado a partir do resto da divisão do numero 
+         * da hora por 17).
+         * Os eventos podem alterar diversas caracteristicas do player como defesa
+         * ataque, dano, vida etc.  
+        */
+        int chooseEvent();
 
         /**
-         * @brief Retorna a quantidade de vidas do jogador
-         * @details Como não é possível acessar diretamente a quantidade de vidas do jogador, foi
-         * criada essa função para isso
-         * 
-         * @return int : quantidadde de vidas do jogador
-         */
-        int getPlayerLifes ();
-
+         * @brief Executa o evento escolhido pela função choseEvent().
+         * @details Executa o evento escolhido pela função choseEvent(), caso o evento escolhido ja tenha occorido ele executa
+         * o proximo evento da lista, dessa forma garantido que o mesmo evento não ocorra duas vezes na mesma gameplay.
+         * E retorna uma string (bem grande alias) no formato "Titulo do evento" - "Desrição do evento" - "descrição dos eveitos do evento" 
+        */
+        std::string doEvent (int n);
 };
 
 

@@ -96,7 +96,7 @@
 
     void read::readtxt(std::string location){
 
-        std::cout<<"             ================================"<<std::endl;
+        //std::cout<<"             ================================"<<std::endl;
 
         std::fstream file;
         file.open(location, std::ios::in);
@@ -111,7 +111,7 @@
 
                     wait(4);
 
-                    std::cout<<std::endl<<std::endl;
+                    std::cout<<std::endl;
                     std::cout<<"Pressione enter para continuar..."<<std::endl;
                     
                     char c = getchar();

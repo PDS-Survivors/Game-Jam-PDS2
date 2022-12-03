@@ -75,29 +75,38 @@ void Building::start_battle(){
 
 void Building::doBattle(){
 
-    Battle* actualBattle = _battles.top();
+    bool theEnd = false;
 
     //se for a primeira tentativa
-    if(!_tryagain){
+    if(!theEnd){
 
-        std::cout<<"\n== Batalha à frente:   ";
+        std::cout<<"\n== Batalha à frente: ";
         std::cout<<_battles.top()->getName()<<std::endl;
         std::cout<<std::endl;
 
         read::wait(2);
+        
+        //Se for a sua primeira que a batalha ocorre
+        if (!_tryagain) { std::cout<<"      [Pressione Enter pra ir a luta] "<<std::endl;}
+        //Se não for a primeira vez
+        else { std::cout<<"      [Pressione Enter pra revanche] "<<std::endl; }
 
-        std::cout<<"      [Pressione Enter pra ir a luta] "<<std::endl;
         std::cout<<std::endl;
         
-        getchar();
-        getchar();
+        getchar(); 
+        
+        char c = getchar();
+
+        while(c != char(10)) {
+            std::cin>>c;
+            c = getchar();
+        }
     
         _battles.top()->fight();
-        _battles.top()->resultTxt();
 
         if(_battles.top()->getResult()){
 
-            if (_player->getNumLifes() == 0) {return;}
+            if (_player->getNumLifes() == 0) { theEnd = true;}
 
             else {
                 std::cout<<"Quer tentar de novo? (por sua conta em risco)"<<std::endl;
@@ -115,6 +124,7 @@ void Building::doBattle(){
                     switch(choice){
 
                         case 's':
+                            _tryagain = true;
                             doBattle();
                             return;
                             break;
@@ -125,6 +135,7 @@ void Building::doBattle(){
                             break;
                         
                         default: choice = getchar();
+                        //implementar tratamento de exceção
                         break;
 
                     }
@@ -141,76 +152,8 @@ void Building::doBattle(){
             _battles.pop();
 
             _tryagain = false;
-            
-            return;
-        }
-    }
-    //se voce está tentando a mesma batalha de novo
-    else{
 
-        _battles.pop();
-        _battles.emplace(actualBattle);
-
-        std::cout<<" Batalha à frente:   ";
-        std::cout<<_battles.top()->getName()<<std::endl;
-        std::cout<<std::endl;
-        
-        std::cout<<"      [Pressione Enter pra revanche] "<<std::endl;
-        std::cout<<std::endl;
-        
-        getchar();
-
-        _battles.top()->fight();
-        _battles.top()->resultTxt();
-        
-        //se o player perdeu
-        if(_battles.top()->getResult()){
-
-            if (_player->getNumLifes() == 0) {return;}
-
-            else {
-                std::cout<<"Quer tentar de novo? (por sua conta em risco)"<<std::endl;
-                std::cout<<std::endl;
-                
-                read::wait(1);
-
-                std::cout<<"Vamo la fazer oq -> (s)"<<std::endl;
-                std::cout<<"Vou dar uma respirada la fora volto ja -> (n)"<<std::endl;
-
-                char choice = getchar();
-
-                while(true){
-
-                    switch(choice){
-
-                        case 's':
-                            doBattle();
-                            return;
-                            break;
-                        
-                        case 'n':
-                            _tryagain = false;
-                            return;
-                            break;
-                        
-                        default: choice = getchar();
-                        break;
-
-                    }
-                }
-            }
-        }
-        
-        // se o player ganhou
-        else{
-
-            _battles.top()->manageAttacks();
-
-            _battles.pop();
-
-            _tryagain = false;
-            
-            return;
+            theEnd = true;
         }
     }
 }
