@@ -44,7 +44,7 @@
 
     }
     Npc::~Npc(){
-
+        std::cout<<"destroi npc"<<std::endl;
         std::list<Effect*>::iterator ite;
 
         for(ite  = _effect.begin();ite != _effect.end(); ite++){

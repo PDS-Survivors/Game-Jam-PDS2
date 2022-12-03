@@ -70,6 +70,7 @@
 
     Attack::~Attack(){
         
+        std::cout<<"destroi atacck"<<std::endl;
         // deleta os ponteiros na heap primeiro.
         for(Effect* e : _effects)
             delete[] e;

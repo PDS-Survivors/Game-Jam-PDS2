@@ -5,7 +5,10 @@
 
     Defense::Defense(std::string file): Attack(file){}
 
+    
     Defense::~Defense(){ 
+
+        std::cout<<"destroi defense"<<std::endl;
            // deleta os ponteiros na heap primeiro.
         for(Effect* e : _effects)
             delete[] e;

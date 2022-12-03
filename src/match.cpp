@@ -4,15 +4,15 @@ Match::Match () {}
 
 Match::~Match(){
 
-    delete _player;
+    // delete _player;
         
-    while(!_buildings.empty()){
-        delete *(_buildings.top());
-    }
+    // while(!_buildings.empty()){
+    //     delete (_buildings.top());
+    // }
 
-    while(!_permanentEffects.empty()){
-        delete *(_permanentEffects.back());
-    }
+    // while(!_permanentEffects.empty()){
+    //     delete (_permanentEffects.back());
+    // }
 
 }
 
@@ -487,4 +487,7 @@ void Match::setBuildingStack (std::string arqv) {
     }
 }
 
+int Match::getPlayerLifes (){
+    return _player->getNumLifes();
+}
 
