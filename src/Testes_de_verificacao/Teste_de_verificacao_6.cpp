@@ -11,7 +11,7 @@
 #include <fstream>
 
 int main () {
-    //Tela de introdução do jogo na intervace
+    //Tela de introdução do jogo na interface
     std::cout << "========================================================================================";
     std::cout << "\n\n                            ESCAPE FROM UFMG\n\n";
     std::cout << "========================================================================================\n\n";

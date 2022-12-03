@@ -26,7 +26,10 @@
 
 class Match {
     private:
+
         Pc* _player;
+        std::string _match;
+
         std::stack<Building*> _buildings;
         std::vector<Effect*> _permanentEffects;
         std::string _epilogue;
@@ -80,9 +83,15 @@ class Match {
          * @brief Preenche a pilha de prédios
          * @details As informações sobre os prédios para compor a pilha são lidas do arquivo 
          * 
-         * @param arqv nome do arquivo de onde se lê os nomes dos arquivos necessários para construir cada um dos prédios
          */
-        void setBuildingStack (std::string arqv);
+        void setBuildingStack ();
+
+        /**
+         * @brief 
+         * @details
+         * 
+         */
+        void chooseMatch ();
 
         /**
          * @brief Chama o prédio no topo da pilha para que seja jogado

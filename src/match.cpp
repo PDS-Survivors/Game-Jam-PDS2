@@ -45,7 +45,7 @@ void Match::setPlayer(int type){
 
 //Monta uma pilha de prédios de acordo com sua ordem em um arquivo
 //Obs:: O último prédio do percurso é o primeiro do arquivo
-void Match::setBuildingStack (std::string arqv) {
+void Match::setBuildingStack () {
 
     int numBuildings;
 
@@ -53,7 +53,7 @@ void Match::setBuildingStack (std::string arqv) {
     std::vector<std::string> files;
     std::vector<int> values;
 
-    read::readfile (arqv, values, words, files);
+    read::readfile (_match, values, words, files);
 
     //Número de prédios que a partida terá
     numBuildings = values[0];
@@ -64,7 +64,40 @@ void Match::setBuildingStack (std::string arqv) {
     }
 }
 
-void Match::playBuilding(){
+void Match::chooseMatch () {
+
+    std::vector<std::string> words;
+    std::vector<std::string> files;
+    std::vector<int> values;
+
+    read::readfile ("lib/matches/All.txt", values, words, files);
+
+    std::cout << "== Selecione uma partida para começar sua aventura *.*\n\n";
+
+    read::wait(2);
+
+    std::cout << "(0) : Entrada Carlos Luz\n";
+    std::cout << "(1) : Entrada Antônio Carlos\n";
+    std::cout << "(x) em breve mais opções...\n\n";
+
+    bool cond = true;
+
+    do 
+    {
+        char op;
+        std::cin >> op;
+
+        switch (op)
+        {
+            case '0' : _match = files[0]; cond = false; break;
+            case '1' : std::cout << "Em construção, escolhe outro :D\n"; break;
+            default : std::cout << "Escreva uma entrada válida para continuar\n"; break;
+        }
+    }
+    while (cond);
+}
+
+void Match::playBuilding() {
     
     std::cout << "\nVocê acabou de entrar em um novo prédio *0*\n\n";
 
