@@ -9,6 +9,8 @@ EFFFG := -I include/effects/ -Wall
 ATTFG := -I include/attacks/ -Wall
 ENTFG := -I include/entities/ -Wall
 
+RAYLIB := -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
+
 all: battle
 
 reader:
@@ -84,3 +86,6 @@ clean:
 	$(RM) -r $(BUILD)/* $(TARGET)
 
 reboot: clean all 
+
+gui: 
+	$(CC) gui.cpp $(RAYLIB)
