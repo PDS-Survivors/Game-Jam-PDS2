@@ -56,6 +56,7 @@ static Texture2D warriorPic = { 0 };
 static Texture2D magePic = { 0 };
 static Texture2D back1 = { 0 };
 static Texture2D pintura = { 0 };
+static Texture2D bmasterPic = {0};
 Texture2D charac_pic;
 
 // FONTES
@@ -82,13 +83,14 @@ int main()
     texTitle = LoadTexture("resources/interface/title.png");
     texBar = LoadTexture("resources/interface/barra_texto.png");
     battleBar = LoadTexture("resources/interface/barra_acao.png");
-    background = LoadTexture("resources/background/background3.png");
+    background = LoadTexture("resources/background/arena.png");
     bdruidPic = LoadTexture("resources/pc/druida2.png");
     druidPic = LoadTexture("resources/pc/druida.png");
     warriorPic = LoadTexture("resources/pc/chuvas.png");
     magePic = LoadTexture("resources/pc/mago.png");
     back1 = LoadTexture("resources/background/fundo1.png");
     pintura = LoadTexture("resources/npc/pintura.png");
+    bmasterPic = LoadTexture("resources/pc/chuvas2.png");
 
     // carrega fontes
     font = LoadFont("resources/interface/alpha_beta.png");
@@ -695,7 +697,7 @@ static void UpdateDrawFrame(void)
             } break;
             case BATTLE1:
             {
-                DrawTexture(background, 0, -120, WHITE);
+                DrawTextureEx(background, (Vector2){-1, 0}, 0, 2.8, WHITE);
 
                 DrawRectangle(72, 72, 496, 136, DARKBLUE);
                 DrawRectangle(80, 80, 480, 120, LIGHTGRAY);
@@ -707,14 +709,14 @@ static void UpdateDrawFrame(void)
                 DrawRectangle(712, 350, 496, 136, DARKBLUE);
                 DrawRectangle(720, 358, 480, 120, LIGHTGRAY);
                 DrawTextEx(base, "Vida:    /", (Vector2){730, 380}, 26, 4, BLACK);
-                DrawTextEx(base, std::to_string(npcvida).c_str(), (Vector2){814, 380}, 26, 4, BLACK);
-                DrawTextEx(base, std::to_string(npcvidamax).c_str(), (Vector2){872, 380}, 26, 4, BLACK);
+                DrawTextEx(base, std::to_string(pcvida).c_str(), (Vector2){814, 380}, 26, 4, BLACK);
+                DrawTextEx(base, std::to_string(pcvidamax).c_str(), (Vector2){872, 380}, 26, 4, BLACK);
                 DrawTextEx(base, "Estamina:   /", (Vector2){730, 420}, 26, 4, BLACK);
                 DrawTextEx(base, std::to_string(pcestamina).c_str(), (Vector2){880, 420}, 26, 4, BLACK);
                 DrawTextEx(base, std::to_string(pcestaminamax).c_str(), (Vector2){920, 420}, 26, 4, BLACK);
 
                 if (character == mage) DrawTextureEx(charac_pic, (Vector2){272, 300}, 0, 1.10, WHITE);
-                else if (character == master) DrawTextureEx(charac_pic, (Vector2){250, 620}, 0, 1.4, WHITE);
+                else if (character == master) DrawTextureEx(bmasterPic, (Vector2){208, 300}, 0, 1.6, WHITE);
                 else if (character == druid) DrawTextureEx(bdruidPic, (Vector2){208, 300}, 0, 1.6, WHITE);
 
                 DrawTextureEx(pintura, (Vector2){840, 60}, 0, 0.4, WHITE);
