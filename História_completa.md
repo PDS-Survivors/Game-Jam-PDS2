@@ -258,6 +258,8 @@
         A faculdade é um lugar assustador. As matérias são difíceis, o ambiente é competitivo e você sente que sempre precisa provar algo a alguém. Como se isso já não bastasse, ainda tem professores que fazem questão de tornar a sua vida um inferno, mas nenhum deles de compara ao professor maromba. Além de te ridicularizar durante a aula ao fazer uma pergunta, ele obriga seus alunos a jogar queimada e fazer queda de braço com ele apenas para exibir a sua força. Esse professor possui um complexo de Deus e fará de tudo para se vangloriar enquanto humilha os já sofridos estudantes. Por favor, faça esse cara cair na real.
     - Tia das vitaminas:
         Recentemente tem-se escutado falar sobre muitos casos de dor de cabeça, vômito e sudorese excessiva na EEFETO. A causa disso é a nova professora de bioquímica aplicada, a "tia das vitaminas", apelido que ela ganhou nas primeiras semanas de aula por sempre carregar vitamina consigo ao invés de água ou café. Ela é uma pessoa extremamente adorável e seu sorriso torna impossível recusar qualquer coisa que ela ofereça, o que é o maior problema dos estudantes no momento. Todo dia ela chega para dar aula com uma nova de receita de vitamina e, desde que uma aluna pediu para experimentar, ela sempre escolhe uma vítima para julgar suas habilidades culinárias. Nínguem teve a coregem de contar que ela é uma péssima cozinheira, derrote ela antes que álguem acabe parando no hospital!
+    - A Enfermeira:
+        Atividades físicas são necessárias para a manutenção da saúde e o bom desenvolvimento do corpo humano. Porém, mesmo quando feitas com cuidado, acidentes ocorrem, gerando lesões e machucados pelo corpo. Por anos a enfermeira cuidou dos feridos, tratando de todo tipo de machucado que aparecia e garantindo o bem estar dos alunos. Porém, sempre vinham mais e mais pessoas precisando de cuidados, deixando seu trabalho sem um fim. Ela então decidiu "proteger" os estudantes, predendo-os e assim impedido que se machucassem. Liberte esses pobres alunos.   
     
 
 2. Veterinária
@@ -266,7 +268,7 @@
     - Bernado, o berne:
         "Cuidado com as moscas!" foi a frase que os alunos mais ouviram durante uma aula prática para aprender a vacinar bois e vacas. A maioria dos estudantes levava o professor na brincadeira, afinal porque ter medo de moscas? O resultado apareceu alguns dias depois, vários alunos reclamando de uma coceira intensa no braço, quando foram olhar a causa dela, bernes. Os alunos resolveram tirar essas larvas alí mesmo, no final da aula de laboratório. Como uma recordação desse horrível evento eles guandaram um dos bernes em um líquido que estava por alí e o apelidaram carinhosamente de Bernado. Foi uma péssima decisão. No dia seguinte, quando foram visitar Bernado, viram que ele tinha crescido exageradamente e agora têm 1,90m de altura! Por favor de um jeito no bernardo, tenho calafrios só de lembrar da existência dele.
     - Centauro invertido:
-        Nos confins da veterinária, haviam alguns estudantes que queriam que a veterinaria tambem tivesse um ser mitologico, como a EFFTO tem o Hercules e a Engenharia tem o grifo. Por isso,eles juntaram peças de animais e um voluntário para fazer um centauro, só que eles esqueceram a ordem para montar um centauro e acabaram so fazendo um ser com cabeça de cavalo e perna de humano (por isso centauro invertido). Da uma surra  nele pra ver se consegue fazer ele ser um humano de volta.
+        Nos confins da veterinária, haviam alguns estudantes que queriam que a veterinaria tambem tivesse um ser mitologico, como a EFFTO tem o Hercules e a Engenharia tem o grifo. Por isso,eles juntaram peças de animais e um voluntário para fazer um centauro, só que eles esqueceram a ordem para montar um centauro e acabaram so fazendo um ser com cabeça de cavalo e perna de humano (por isso centauro invertido). Dê uma surra nele pra ver se consegue fazer ele ser um humano de volta.
 
 3. Música
     - Sanfona furada:
@@ -274,6 +276,7 @@
     - Homem capivara do bosque da música:
         Hmm... Que barulho eh esse?... Eh um homem?... Eh uma capivara?... 
         Estudantes relatam sons estranhos nas proximidades da escola de musica. Enquanto as autoridades dizem para nao se preocupar porque deve ser apenas um cachorro doente, os estudantes mais antigos falam de uma lenda mais antiga: o homem capivara do bosque da musica. Segundo a lenda ele ja estava aqui quando o bosque da musica era so um bosque, mas ele ficou preso na UFMG por que sempre perde o horario do interno. Agora ele anda pela escola de musica roubando paçoca dos estudantes que passam por ali de noite. Voce deve derrotar ele para que nenhum estudante tenha que voltar pra casa sem a paçoca que ele pegou no RU.
+    -     
 
 4. Fafich
     - Vampiros sugadores de esperança:
@@ -314,21 +317,28 @@
         e acabou invocando uma versao malefica do Newton, que rejeita todas as descobertas e teorias do fisico ingles como a gravidade e o ajuste de curvas. Por enquanto, ele ainda ta perdido no Icex (porque la eh praticamente um labirinto), mas assim que ele sair do pedio, ele vai destruir todas as ciencias exatas! Derrote ele e salve o curso do pessoal que faz matematica e fisica.
 8. Engenharia
     - Bob, o destrutor
+        Convenhamos, engenharia não é um curso fácil, e é muito comum estudantes apresentam dificuldades, porém Boberson conseguiu superar a todos com sua péssima afinidade. Tudom que ele tocava estraga, e nem os melhores professores conseguiram ajudar o rapaz. Eles sabiam que Bob nunca conseguiria construir algo, mas sua habilidade destrutiva era útil, então aprovaram o rapaz mesmo assim, contratando-o como destrutor oficial da engenharia. Para que... Hmmm... "Resolvesse" alguns assuntos delicados.
     - Elevador Purgatório:
         Estudantes de engenharia ambiciosos fizeram um projeto inovador de deixar os elevadores mais inteligentes e proporam essa ideia para o colegiado. Ele recusou, porque além de inexperientes o projeto continha enormes falhas de segurança. Revoltados, os estudantes invadiram a faculdade durante uma noite e implementaram a sua ideia, ela era brilhante!. Mas com o passar do tempo, o elevador começou a acumular quantidades cada vez maiores de dados de modo que ele compare várias imformações sobre quem entra para decidir seu destino, mas humanos são criaturas complexas, então o elevador apenas mantém elas no limbo indefinitamente. Por favor, destrua esse elevador para resgatar as pessoas presas!
     - Hugger, o robô do juízo final:
+        O final de semestre é um período complicado, o cansaço se junta à saudade de casa e muitos estudantes acabam cansados e deprimidos. Para solucionar esse problema, Hugger foi criado, um robô com a função de abraçar e acolher os alunos em seus dias mais difíceis. Seu lançamento fui um sucesso, todos queriam um abraço do robô. Mas, com o tempo, reclamações surgiram sobre ele abraçar sempre da mesmo forma e ser muito impessoal. Foi decidido então dar a Hugger uma inteligência artificial e, para que aprendesse mais sobre pessoas e abraços, o conectaram à internet. Porém, pela alta demanda, essa atualização foi feita com pressa, deixando ele sem filtro pelo internmet, o que permitiu que Hugger acessasse àreas obscura, como o twitter e o reddit. Em menos de cinco minutos conectado, o robô decidiu que a tristeza da humanidade era ela mesma. Agora, seus abraços serão os últimos.
+
 
 10. Letras
     - Dicionário Português-Português:
         Nos arquivos perdidos da FALE, existe os livros que nao fazem sentido existir, como o manual que ensina a ler e 
     - Duo do Duolingo
+
 11.  Reitoria
+    -Lobisomen Pidão:
+        
     - Catraca:
         Sim, ela voltou, aquela que é a mais temida de todos prédios da UFMG. Apresente agora sua carteirinha para poder entrar. Espera, você esqueceu? E não há nenhum funcionário perto para abrir pra você? Não adianta tentar forçar, a catraca se mantém firme. Você vai tentar pular? É impressão minha ou a catraca está te encarando? E ela com certeza não está feliz.
     - Reitora:
         add
 12. Boss final
-    - Camila Laranjeira
+    - Camila Laranjeira:
+
 
 ##4 - NPC
 #41 - Pasta de ataques
