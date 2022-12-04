@@ -32,7 +32,7 @@
         std::vector<std::string> words;
         std::vector<std::string> files;
 
-        read::readfile(file, values, words, files);
+        reader::readfile(file, values, words, files);
         
         _damage = values[0];
         _stamina = values[1];

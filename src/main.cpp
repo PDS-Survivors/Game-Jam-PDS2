@@ -17,7 +17,7 @@ int main ()
   std::cout << "\n\n                            ESCAPE FROM UFMG\n\n";
   std::cout << "========================================================================================\n\n";
     
-  read::wait(6);
+  reader::wait(6);
 
   //Quanto o botão de começar é pressionado o objeto match é instânciado
   Match* match = new Match;
@@ -26,7 +26,7 @@ int main ()
 
   std::cout << match->introducao();
 
-  read::wait (10);
+  reader::wait (10);
 
   std::cout << "== VOCÊ ACEITARÁ ESSA PROPOSTA?(s/n)\n";
 
@@ -35,7 +35,7 @@ int main ()
 
   std::cout << match->introducao2(op);
 
-  read::wait(10);
+  reader::wait(10);
 
   //Tela de escolha do personagem pela interface
 
@@ -49,14 +49,14 @@ int main ()
 
   match->setPlayer(pc);
 
-  read::wait(3);
+  reader::wait(3);
 
   std::cout << "\n== Agora que já possuimos suas informações, está na hora de começar a trabahar!\n\n";
 
   std::cout << "========================================================================================\n\n";
   std::cout <<"Entrando na UFMG . . .";
 
-  read::wait(4);
+  reader::wait(4);
 
   match->setBuildingStack();
 

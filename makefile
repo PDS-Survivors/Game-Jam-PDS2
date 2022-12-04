@@ -55,7 +55,7 @@ building: battle
 match: building
 	$(CC) $(CFLAGS) -o build/match.o -c src/match.cpp
 
-start: match
+start: match 
 	$(CC) $(CFLAGS) -o build/start.o build/*.o src/main.cpp
 	./build/start.o
 

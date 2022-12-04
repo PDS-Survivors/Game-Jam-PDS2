@@ -7,13 +7,13 @@
 #include <filesystem>
 #include "../namespaces/reader.hpp"
 
-    void read::wait(int seg){
+    void reader::wait(int seg){
 
         int itv = time(NULL) + seg;
         while(time(NULL) != itv){}
     }
 
-    int read::readint(std::string::iterator it, std::string& line){
+    int reader::readint(std::string::iterator it, std::string& line){
 
         int number = 0, pot = 1;
         
@@ -35,7 +35,7 @@
         return number;
     }
 
-    std::string read::readstring(std::string::iterator it, std::string& line){
+    std::string reader::readstring(std::string::iterator it, std::string& line){
 
         std::string word = "";
 
@@ -53,7 +53,7 @@
         
     }
 
-    void read::readfile( std::string location,
+    void reader::readfile( std::string location,
                    std::vector<int>& values,
                    std::vector<std::string>& words,
                    std::vector<std::string>& files ){
@@ -94,7 +94,7 @@
         }
     }
 
-    void read::readtxt(std::string location){
+    void reader::readtxt(std::string location){
 
         //std::cout<<"             ================================"<<std::endl;
 

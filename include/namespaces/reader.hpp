@@ -7,7 +7,7 @@
 #include <time.h>
 #include <filesystem>
 
-namespace read{
+namespace reader{
 
     void wait(int seg);
     

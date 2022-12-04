@@ -21,7 +21,7 @@
         std::vector<int> values;
 
         //essa função transfere o conteúdo do arquivo para os vetores de cima.
-        read::readfile(file, values, words, files);
+        reader::readfile(file, values, words, files);
 
         //as posições no arquivo importam já que, por exemplo, a primeira string lida será o nome.
         _name = words[0];
@@ -91,5 +91,5 @@
         std::cout<<"!"<<std::endl;
         std::cout<<std::endl;
         
-        read::wait(1);
+        reader::wait(1);
     }

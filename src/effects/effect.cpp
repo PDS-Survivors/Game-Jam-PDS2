@@ -17,7 +17,7 @@
         std::vector<std::string> files;
         
 
-        read::readfile(file, values, words, files);
+        reader::readfile(file, values, words, files);
 
         _value = values[0];
         _durability = values[1];

@@ -28,7 +28,7 @@ Building::Building(Pc* player, std::string arqv){
     std::vector<std::string> files;
     std::vector<int> values;
 
-    read::readfile (arqv, values, words, files);
+    reader::readfile (arqv, values, words, files);
 
     _number = values[0];
     _name = words[0];
@@ -84,7 +84,7 @@ void Building::doBattle(){
         std::cout<<_battles.top()->getName()<<std::endl;
         std::cout<<std::endl;
 
-        read::wait(2);
+        reader::wait(2);
         
         //Se for a sua primeira que a batalha ocorre
         if (!_tryagain) { std::cout<<"      [Pressione Enter pra ir a luta] "<<std::endl;}
@@ -112,7 +112,7 @@ void Building::doBattle(){
                 std::cout<<"Quer tentar de novo? (por sua conta em risco)"<<std::endl;
                 std::cout<<std::endl;
                 
-                read::wait(1);
+                reader::wait(1);
 
                 std::cout<<"Vamo la fazer oq -> (s)"<<std::endl;
                 std::cout<<"Vou dar uma respirada la fora volto ja -> (n)"<<std::endl;

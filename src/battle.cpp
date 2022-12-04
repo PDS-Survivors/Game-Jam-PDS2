@@ -18,7 +18,7 @@ Battle::Battle (Pc *player, std::string file){
     std::vector<std::string> files;
     std::vector<int> values;
 
-    read::readfile (file, values, words, files);
+    reader::readfile (file, values, words, files);
 
     _numBattle = values[0];
     _predio = values[1];
@@ -80,7 +80,7 @@ void Battle::setResult (bool result) {
 
 //Texto que introduz a batalha e o adversário
 void Battle::beginTxt () {
-    read::readtxt (_beginTxt);
+    reader::readtxt (_beginTxt);
 }
 
 //Obs:tirar essa função quando implementar a interface
@@ -89,7 +89,7 @@ void Battle::imprimeVida () {
     std::cout << "== Barras de vida ";
     for (int i = 0; i < (7 + _size); i++) { std::cout << "="; }
     std::cout << "\n";
-    read::wait(2);
+    reader::wait(2);
 
     // Imprime a barra de vida do player
     std::cout << "[ ";
@@ -98,7 +98,7 @@ void Battle::imprimeVida () {
         else { std::cout << " "; }
     }
     std::cout << " ] " << _player->getName() << std::endl;
-    read::wait(1);
+    reader::wait(1);
 
     //Imprime a barra de vida do adversário
     std::cout << "[ ";
@@ -107,12 +107,12 @@ void Battle::imprimeVida () {
         else { std::cout << " "; }
     }
     std::cout << " ] " << _adversary->getName() << std::endl;
-    read::wait(1);
+    reader::wait(1);
 
     for (int i = 0; i < (25 + _size); i++) { std::cout << "="; }
     std::cout << "\n\n";
 
-    read::wait(2);
+    reader::wait(2);
 }
 
 //Indica se o resultado já foi definido ou não
@@ -138,7 +138,7 @@ void Battle::resultTxt () {
     std::cout << "\n";
 
     if (_result == 0) {
-        read::readtxt(_resultTxt);
+        reader::readtxt(_resultTxt);
     }
     else if ((_result == 1) && (_player->getNumLifes() > 0)){
         std::cout << "VOCÊ FOI REPROVAD@!\n\nEssa foi apenas uma derrota, não desista!\n";
@@ -154,7 +154,7 @@ void Battle::resultTxt () {
     for (int i = 0; i < (25 + _size); i++) { std::cout << "="; }
     std::cout << "\n\n";
 
-    read::wait (6);
+    reader::wait (6);
 }
 
 void Battle::statistcs () {
@@ -163,60 +163,60 @@ void Battle::statistcs () {
     for (int i = 0; i < (_size - 2); i++) { std::cout << "="; }
     std::cout << "\n\n";
     
-    read::wait(2);
+    reader::wait(2);
 
     std::cout << "== Round: " << std::to_string(_round) << "\n\n";
-    read::wait(2);
+    reader::wait(2);
 
     std::cout << "== Resultado: ";
     if (!this->defineResult()) { std::cout << "nao definido *-*\n\n"; }
     else if (_result) { std::cout << "derrota T_T\n\n"; }
     else { std::cout << "vitoria :D\n\n"; }
-    read::wait(2);
+    reader::wait(2);
     
     std::cout << "== Player: " << _player->getName();
-    read::wait(1);
+    reader::wait(1);
     std::cout << "\nVidas restantes: " << std::to_string(_player->getNumLifes());
-    read::wait(1);
+    reader::wait(1);
     std::cout << "\nVida inicial: " << std::to_string(_player->getLife() + _totalDamagePc);
-    read::wait(1);
+    reader::wait(1);
     std::cout << "\nVida atual: " << std::to_string(_player->getLife());
-    read::wait(1);
+    reader::wait(1);
     std::cout << "\nDefesa: " << std::to_string(_player->getDefense());
-    read::wait(1);
+    reader::wait(1);
     std::cout << "\nStamina: " << std::to_string(_player->getStamina());
-    read::wait(1);
+    reader::wait(1);
 
     std::cout << "\n\n== Adversário: " << _adversary->getName();
-    read::wait(2); 
+    reader::wait(2); 
     std::cout << "\nVida inicial: " << std::to_string(_adversary->getLife() + _totalDamageNpc);
-    read::wait(1);
+    reader::wait(1);
     std::cout << "\nVida atual: " << std::to_string(_adversary->getLife());
-    read::wait(1);
+    reader::wait(1);
     std::cout << "\nDefesa: " << std::to_string(_adversary->getDefense());
-    read::wait(1);
+    reader::wait(1);
     std::cout << "\nStamina: " << std::to_string(_adversary->getStamina());
-    read::wait(1);
+    reader::wait(1);
 
     std::cout << std::endl;
     for (int i = 0; i < (25 + _size); i++) { std::cout << "="; };
     std::cout << "\n\n";
 
-    read::wait(4);
+    reader::wait(4);
 }
 
 void Battle::figthPc () {
     bool test = true;
 
     std::cout << "Sua vez de brilhar! *.*\n\n";
-    read::wait(2);
+    reader::wait(2);
 
     while (test) {
 
         try {
             //Escolha da ação: mostrar estatísticas, atacar, não atacar
             std::cout << "(a) Ver estatisticas     (b) Atacar!    (c) Esperar, apenas.\n";
-            read::wait(1);
+            reader::wait(1);
 
             std::cout << "== Stamina atual: " << _player->getStamina() << "\n\n";
 
@@ -254,14 +254,14 @@ void Battle::figthPc () {
 
                                         else if (c == 'n') { 
                                             std::cout << "Uai, qual então?\n"; 
-                                            read::wait(1);
+                                            reader::wait(1);
                                         }
 
                                         else { throw ExcecaoEntradaInvalida2(); }
                                     }
                                     catch (ExcecaoEntradaInvalida2 &e) {
                                         std::cout << e.what();
-                                        read::wait(1);
+                                        reader::wait(1);
                                     }
                                 }
                             }
@@ -297,14 +297,14 @@ void Battle::figthPc () {
 
             else if (test) {
                 std::cout << "O que você fará em seguida?\n\n";
-                read::wait(2);
+                reader::wait(2);
             }
         }
-        catch (ExcecaoEntradaInvalida &e) { std::cout << e.what(); read::wait(1);}
+        catch (ExcecaoEntradaInvalida &e) { std::cout << e.what(); reader::wait(1);}
     }
 
     std::cout << "Fim do seu turno!\n\n";
-    read::wait(1);
+    reader::wait(1);
 }
 
 void Battle::fightNpc () {
@@ -313,7 +313,7 @@ void Battle::fightNpc () {
     int lnpc = _adversary->getLife();
 
     std::cout << _adversary->getName() << " ira atacar ^o^\n"; 
-    read::wait(2);
+    reader::wait(2);
 
     //O npc ataca seguindo um comportamento pré-estabelecido
     _adversary->doTurn(_player);
@@ -325,14 +325,14 @@ void Battle::fightNpc () {
 
     std::cout << "Fim de turno!\n\n";
 
-    read::wait(2);
+    reader::wait(2);
 }
 
 //Roda a batalha entre Pc e Npc
 void Battle::fight () {
 
     std::cout << "======= FIGHT " << _numBattle << ": " << _name << " ========\n\n";
-    read::wait(6);
+    reader::wait(6);
 
     this->beginTxt();
 
@@ -345,7 +345,7 @@ void Battle::fight () {
             _round += 1;
 
             std::cout << "== ROUND " << _round << "\n\n";
-            read::wait(2);
+            reader::wait(2);
             
             this->fightNpc();      
                     
@@ -374,7 +374,7 @@ void Battle::fight () {
             _round += 1;
 
             std::cout << "== ROUND " << _round << "\n\n";
-            read::wait(2);
+            reader::wait(2);
 
             this->figthPc();
                 
@@ -402,7 +402,7 @@ void Battle::fight () {
     for (int i = 0; i < (12 + _size); i++) { std::cout << "=";}
     std::cout << "\n\n";
 
-    read::wait(2);
+    reader::wait(2);
 
     this->resultTxt ();
 
@@ -425,41 +425,41 @@ void Battle::manageAttacks(){
     std::cout << std::endl;
     for (int i = 0; i < (25 + _size); i++) { std::cout << "="; };
     std::cout << "\n\n";
-    read::wait(2);
+    reader::wait(2);
 
     std::cout<<"Olha so!!! Parece que ";
     std::cout<<_adversary->getName();
     std::cout<<" deixou cair um ataque...\n"<<std::endl;
 
-    read::wait(3);
+    reader::wait(3);
 
     //pega um ataque aleatório do npc
     Attack* attack = _adversary->getHit( behavior::rollDice(0, _adversary->sizeofHit()));
 
     std::cout<<"== "<<attack->getName()<< " : "<<std::endl;
-    read::wait(2);
+    reader::wait(2);
 
     std::cout<<attack->getDescription()<<std::endl;
-    read::wait(1);
+    reader::wait(1);
 
     if(!attack->isDefense()) std::cout<<"dano: "<<attack->getDamage()<<std::endl;
-    read::wait(1);
+    reader::wait(1);
 
     std::cout<<"stamina: "<<attack->getStamina()<<std::endl;
 
     std::cout<<std::endl<<std::endl;
 
-    read::wait(3);
+    reader::wait(3);
 
     std::cout<<"Vai levar ou deixar pra tras?"<<std::endl;
     std::cout<<std::endl;
 
-    read::wait(2);
+    reader::wait(2);
 
     std::cout<<"(l) Levar, quanto mais melhor neh"<<std::endl;
     std::cout<<"(d) Deixar, meu bolso ta cheio..."<<std::endl;
 
-    read::wait(1);
+    reader::wait(1);
 
     bool cond = true;
 
@@ -476,18 +476,18 @@ void Battle::manageAttacks(){
                     std::cout << '\n' << attack->getName();
                     std::cout << " foi adcionado à sua coleção de ataques! :D\n\n";
 
-                    read::wait(2);
+                    reader::wait(2);
 
                     _player->showHit();
 
-                    read::wait(5);
+                    reader::wait(5);
                 }
                 //Caso a coleçao de ataques esteja cheia ele precisará de desfazer de um ataque
                 else {
                     std::cout << "Essa é a sua coleção de atques:\n\n";
-                    read::wait(2);
+                    reader::wait(2);
                     _player->showHit();
-                    read::wait(2);
+                    reader::wait(2);
                     
                     std::cout << "\nPor qual deles você deseja substituir o novo ataque?\n";
                     std::cout << "Obs: Caso você queira cancelar essa ação pressione '5'\n\n";
@@ -498,10 +498,10 @@ void Battle::manageAttacks(){
                     _player->addHit(attack);
 
                     std::cout << "Uhuuul. Aqui estão os seus novos ataques:\n\n";
-                    read::wait(2);
+                    reader::wait(2);
 
                     _player->showHit();
-                    read::wait(5);
+                    reader::wait(5);
                     
                     std::cout << "\n";
                 }
@@ -509,14 +509,14 @@ void Battle::manageAttacks(){
             }  
             else if(choice == 'd'){
                 std::cout << "Não faria o mesmo se fosse você, que sem graça...\n\n";
-                read::wait(3);
+                reader::wait(3);
                 cond = false;
             }
             else { throw ExcecaoEntradaInvalida3(); }
         }
         catch (ExcecaoEntradaInvalida3 &e) {
             std::cout << e.what();
-            read::wait(1);
+            reader::wait(1);
         }
     }
 
@@ -524,7 +524,7 @@ void Battle::manageAttacks(){
     for (int i = 0; i < (25 + _size); i++) { std::cout << "="; };
     std::cout << "\n\n";
 
-    read::wait(4);
+    reader::wait(4);
 }
 
 ExcecaoEntradaInvalida::ExcecaoEntradaInvalida () {

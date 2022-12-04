@@ -53,7 +53,7 @@ void Match::setBuildingStack () {
     std::vector<std::string> files;
     std::vector<int> values;
 
-    read::readfile (_match, values, words, files);
+    reader::readfile (_match, values, words, files);
 
     //Número de prédios que a partida terá
     numBuildings = values[0];
@@ -70,11 +70,11 @@ void Match::chooseMatch () {
     std::vector<std::string> files;
     std::vector<int> values;
 
-    read::readfile ("lib/matches/All.txt", values, words, files);
+    reader::readfile ("lib/matches/All.txt", values, words, files);
 
     std::cout << "== Selecione uma partida para começar sua aventura *.*\n\n";
 
-    read::wait(2);
+    reader::wait(2);
 
     std::cout << "(0) : Entrada Carlos Luz\n";
     std::cout << "(1) : Entrada Antônio Carlos\n";
@@ -137,17 +137,17 @@ void Match::playBuilding() {
         std::cout << "Diga adeus ao seu diploma.\n\n";
         std::cout << "Se você continuar desse jeito não sei o que será do seu futuro.\n\n";
 
-        read::wait(2);
+        reader::wait(2);
 
         std::cout << "Melhore\n\n";
 
-        read::wait(2);
+        reader::wait(2);
     }
     else {
         std::cout << "As anomalias do " << _buildings.top()->get_name() << " foram exterminadas!\n\n";
         std::cout << "Você está um prédio, mais próxim@ de seu diploma agora :D\n\n";
 
-        read::wait(2);
+        reader::wait(2);
     }
     
     _buildings.pop();
@@ -158,13 +158,13 @@ void Match::printEpilogue(){
         std::cout << "Que vida triste e sem diploma a sua...\n\n";
 
         //Arquivo com epílogo de derrota
-        read::readtxt("");
+        reader::readtxt("");
     }
     else {
         std::cout << "Agora que você tem um diploma sua vida ira melhorar exponencialmente. Certo?\n\n";
 
         //Arquivo com epílogo de derrota
-        read::readtxt("");
+        reader::readtxt("");
     }
 }
 
