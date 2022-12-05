@@ -43,6 +43,10 @@ void Match::setPlayer(int type){
     
 }
 
+Pc* Match::getPlayer(){
+    return _player;
+}
+
 //Monta uma pilha de prédios de acordo com sua ordem em um arquivo
 //Obs:: O último prédio do percurso é o primeiro do arquivo
 void Match::setBuildingStack () {
@@ -62,6 +66,10 @@ void Match::setBuildingStack () {
         Building* build = new Building (_player, files[i]);
         _buildings.emplace(build);
     }
+}
+
+std::stack<Building*>* Match::getBuildingStack(){
+    return &_buildings;
 }
 
 void Match::chooseMatch () {
@@ -222,7 +230,7 @@ int Match::chooseEvent(){
 
     int p = rand()%2;
     if(p == 0){
-        int v = 1+rand()%17;  
+        int v = 1+rand()%18;  
         return v;
 
     } else{

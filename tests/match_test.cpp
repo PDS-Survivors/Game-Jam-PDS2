@@ -1,22 +1,42 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "match.hpp"
+#include "pc.hpp"
+#include "building.hpp"
 #include "../third_party/doctest.h"
+#include <stack>
 
+// Há dois CHECK_EQ não preenchidos em SUBCASEs "Mestre de Armas" e "Druida" por que os files deles não estavam
+// prontos para pegar os dados
 TEST_CASE("Função setPlayer"){
 
     SUBCASE("Player Mago"){
         Match a;
         CHECK_NOTHROW(a.setPlayer(0));
+        Pc* jogador;
+        jogador = a.getPlayer();
+        CHECK_EQ("Mago", jogador->getName());
+        CHECK_EQ(05, jogador->getLife());
+        CHECK_EQ(8, jogador->getDefense());
     }
 
     SUBCASE("Player Mestre de Armas"){
         Match b;
         CHECK_NOTHROW(b.setPlayer(1));
+        Pc* jogador;
+        jogador = a.getPlayer();
+        CHECK_EQ("Mestre de Armas", jogador->getName());
+        CHECK_EQ(,);
+        CHECK_EQ(,);
     }
     
     SUBCASE("Player Druida"){
         Match c;
         CHECK_NOTHROW(c.setPlayer(2));
+        Pc* jogador;
+        jogador = a.getPlayer();
+        CHECK_EQ("Druida", jogador->getName());
+        CHECK_EQ(,);
+        CHECK_EQ(,);
     }
     
     SUBCASE("Parametro inválido"){
@@ -28,9 +48,21 @@ TEST_CASE("Função setPlayer"){
     
 }
 
+TEST_CASE("Função getPlayerLifes"){
+    Match a;
+    CHECK(a.getPlayerLifes == 3);
+}
+
+TEST_CASE("Função setBuildingStack"){
+    Match a;
+    a.setBuildingStack();
+    std::stack<Building*>* buildingStack = a.getBuildingStack();
+    EXPECT_FALSE((*buildingStack).empty());
+}
+
 
 TEST_CASE("Função chooseEvent"){
-    CHECK(chooseEvent() < 17);
+    CHECK(chooseEvent() < 18);
     CHECK(chooseEvent() >= 0);
 }
 
@@ -268,8 +300,4 @@ TEST_CASE("Função introducao2"){
 }
 
 
-TEST_CASE("Função getPlayerLifes"){
-    Match a;
-    CHECK(a.getPlayerLifes == 3);
-}
 

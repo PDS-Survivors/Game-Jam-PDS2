@@ -80,11 +80,27 @@ class Match {
         void setPlayer(int type);
 
         /**
+         * @brief Get the Player object
+         * @details Retorna o atributo _player de Match, que é um ponteiro para o personagem  do jogador
+         * 
+         * @return Pc* 
+         */
+        Pc* getPlayer();
+
+        /**
          * @brief Preenche a pilha de prédios
          * @details As informações sobre os prédios para compor a pilha são lidas do arquivo 
          * 
          */
         void setBuildingStack ();
+
+        /**
+         * @brief Get the Building Stack object
+         * @details Retorna um ponteiro para a pilha de prédios
+         * 
+         * @return std::stack* 
+         */
+        std::stack<Building*>* getBuildingStack();
 
         /**
          * @brief 
