@@ -5,6 +5,13 @@
 #include "../third_party/doctest.h"
 #include <stack>
 
+
+TEST_CASE("Função getPlayerLifes"){
+    Match a;
+    CHECK(a.getPlayerLifes == 3);
+}
+
+
 // Há dois CHECK_EQ não preenchidos em SUBCASEs "Mestre de Armas" e "Druida" por que os files deles não estavam
 // prontos para pegar os dados
 TEST_CASE("Função setPlayer"){
@@ -48,16 +55,62 @@ TEST_CASE("Função setPlayer"){
     
 }
 
-TEST_CASE("Função getPlayerLifes"){
-    Match a;
-    CHECK(a.getPlayerLifes == 3);
-}
 
 TEST_CASE("Função setBuildingStack"){
     Match a;
     a.setBuildingStack();
     std::stack<Building*>* buildingStack = a.getBuildingStack();
     EXPECT_FALSE((*buildingStack).empty());
+}
+
+
+TEST_CASE("Função introducao"){
+    std::string txt = "PROCURA-SE ESPECIALISTA DE ANOMALIAS\n\n";
+    txt += "Nos últimos semestres um mal maior do que o corte de verbas tem assolado a UFMG:\no surgimento de anomalias nos mais diverios prédios da faculdade.\n\n";
+    txt += "Elas tâm atrapalhado a vida de todos os estudantes e funcionários, de modo que é\nimpossível se dedicar completamente à tarefas e projetos importantes.\n\n";
+    txt += "Temos sofrido com muitos casos reprovação, desaparecimento de pessoas e ataques de\npânico, a UFMG se encontra em crise.\n\n";
+    txt += "Por isso estamos contratando um Especialista de Anomalias para resolver o problema.\nO cargo não possui muitos pré-requisitos: desde que você não desista fácil e consiga\nse adaptar a diversas situações no campus, acreditamos que está apto para ele.\n\n";
+    txt += "O seu trabalho será encontrar e derrotar todas essas anomalias. Elas estão presentes\nnos 10 principais prédios da faculdade e algumas podem ser bem irritantes...\n\n";
+    txt += "Sabemos o quanto essa tarefa é desafiadora e exaustiva, por isso, como forma de\npagamento, iremos providenciar para você um diploma oficial de nossa faculdade no curso\nde sua preferência. Não é maravilhoso poder se formar sem precisar estudar por cinco anos?\n\n";
+    txt += "Precisamos muito de ajuda para conseguir resolver o problema. Por favor pense com\ncuidado sobre essa proposta.\n\n";
+    txt += "Atenciosamente,\n";
+    txt += "Membros desesperados da reitoria.\n\n";
+    CHECK_EQ(event, introducao(17));
+}
+
+
+TEST_CASE("Função introducao2"){
+    SUBCASE("Parametro recebido = s"){
+        CHECK_EQ("Texto em construção, volte depois\n\n", introducao2(s));  
+    }
+
+    SUBCASE("Parametro recebido = n"){
+        std::string txt = "De repende você sente alguém se aproximando por trás. Mas já é muito tarde,\na pessoa prende as suas mão atrás do corpo com uma corda aspera enquanto você se debate\nfreneticamente. Ela se afasta e logo em seguida vem a escuridão, ela colocou em saco\nde ... de pequi? no seu rosto.\n\n";
+        txt += "Você é tirado de seu lugar e levado para fora. Outra pessoa se aproxima e te\njoga violentamente dentro de um carro, mas a a parte de cima da sua cabeça ababa batendo\nna lataria do carro e você desmaia...\n\n";
+        txt += "'Nós avisamos para tomar cuidado com a resposta.' Você ouve uma voz falando\nrispidamente.\n\n";
+        txt += "Aparentemente as mesmas pessoas que enviaram aquela oferta de emprego duvidosa\nagora estão diante de tu após um sequestro.\n\n";
+        txt += "'Acontece que estamos realmente desesperados. Já pedimos para diversas pessoas\naceitarem o trabalho, mas a maioria descobriu o que aconteceu com os especialistas de\nanomalias anteriores e recusou a proposta... Não há mais tempo para procurar alguém\ne você era a pessoa mais fácil de sequestrar que achamos, caso recusasse a oferta.'\n\n";
+        txt += "'Ahh' (Suspiro) 'Odeio ter que fazer isso.'\n\n";
+        txt += "'Apesar das circunstâncias de nosso encontro não serem as ideias, ainda mantenho\na proposta de te dar um diploma ao derrotar todas as anomalias e...'\n\n";
+        txt += "'Você quer saber o que aconteceu com os outros? Bem, isso não é muito importante\nno momento. Desde que você não seja derrotada mais do que 2 vezes vai ficar tudo bem.'\n\n";
+        txt += "'Zeus! Olhe as horas, estou atrasado para uma reunião... Não precisa se preocupar,\nvocê tem cara se der inteligente. A UFMG precisa muito de você e cuidado com a reitoria...'\n\n";
+        txt += "'Ah última coisa, preciso depois das suas informações para poder registrar você\noficialmente como noss@ funcionário/aluno. Vou deixar aqui um documento pra você \ncolocar suas informações. Boa sorte com tudo!'\n\n";
+        
+        CHECK_EQ(txt, introducao2(n));  
+    }
+
+    SUBCASE("Parâmetro inválido"){
+        CHECK_THROWS(introducao2(a))
+    }
+    
+}
+
+
+TEST_CASE("Função end"){
+    Match a;
+    EXPECT_TRUE(a.end());
+    a.setBuildingStack();
+    EXPECT_FALSE((a.end());
 }
 
 
@@ -256,48 +309,4 @@ TEST_CASE("Função doEvent"){
     }
 
 }
-
-
-TEST_CASE("Função introducao"){
-    std::string txt = "PROCURA-SE ESPECIALISTA DE ANOMALIAS\n\n";
-    txt += "Nos últimos semestres um mal maior do que o corte de verbas tem assolado a UFMG:\no surgimento de anomalias nos mais diverios prédios da faculdade.\n\n";
-    txt += "Elas tâm atrapalhado a vida de todos os estudantes e funcionários, de modo que é\nimpossível se dedicar completamente à tarefas e projetos importantes.\n\n";
-    txt += "Temos sofrido com muitos casos reprovação, desaparecimento de pessoas e ataques de\npânico, a UFMG se encontra em crise.\n\n";
-    txt += "Por isso estamos contratando um Especialista de Anomalias para resolver o problema.\nO cargo não possui muitos pré-requisitos: desde que você não desista fácil e consiga\nse adaptar a diversas situações no campus, acreditamos que está apto para ele.\n\n";
-    txt += "O seu trabalho será encontrar e derrotar todas essas anomalias. Elas estão presentes\nnos 10 principais prédios da faculdade e algumas podem ser bem irritantes...\n\n";
-    txt += "Sabemos o quanto essa tarefa é desafiadora e exaustiva, por isso, como forma de\npagamento, iremos providenciar para você um diploma oficial de nossa faculdade no curso\nde sua preferência. Não é maravilhoso poder se formar sem precisar estudar por cinco anos?\n\n";
-    txt += "Precisamos muito de ajuda para conseguir resolver o problema. Por favor pense com\ncuidado sobre essa proposta.\n\n";
-    txt += "Atenciosamente,\n";
-    txt += "Membros desesperados da reitoria.\n\n";
-    CHECK_EQ(event, introducao(17));
-}
-
-
-TEST_CASE("Função introducao2"){
-    SUBCASE("Parametro recebido = s"){
-        CHECK_EQ("Texto em construção, volte depois\n\n", introducao2(s));  
-    }
-
-    SUBCASE("Parametro recebido = n"){
-        std::string txt = "De repende você sente alguém se aproximando por trás. Mas já é muito tarde,\na pessoa prende as suas mão atrás do corpo com uma corda aspera enquanto você se debate\nfreneticamente. Ela se afasta e logo em seguida vem a escuridão, ela colocou em saco\nde ... de pequi? no seu rosto.\n\n";
-        txt += "Você é tirado de seu lugar e levado para fora. Outra pessoa se aproxima e te\njoga violentamente dentro de um carro, mas a a parte de cima da sua cabeça ababa batendo\nna lataria do carro e você desmaia...\n\n";
-        txt += "'Nós avisamos para tomar cuidado com a resposta.' Você ouve uma voz falando\nrispidamente.\n\n";
-        txt += "Aparentemente as mesmas pessoas que enviaram aquela oferta de emprego duvidosa\nagora estão diante de tu após um sequestro.\n\n";
-        txt += "'Acontece que estamos realmente desesperados. Já pedimos para diversas pessoas\naceitarem o trabalho, mas a maioria descobriu o que aconteceu com os especialistas de\nanomalias anteriores e recusou a proposta... Não há mais tempo para procurar alguém\ne você era a pessoa mais fácil de sequestrar que achamos, caso recusasse a oferta.'\n\n";
-        txt += "'Ahh' (Suspiro) 'Odeio ter que fazer isso.'\n\n";
-        txt += "'Apesar das circunstâncias de nosso encontro não serem as ideias, ainda mantenho\na proposta de te dar um diploma ao derrotar todas as anomalias e...'\n\n";
-        txt += "'Você quer saber o que aconteceu com os outros? Bem, isso não é muito importante\nno momento. Desde que você não seja derrotada mais do que 2 vezes vai ficar tudo bem.'\n\n";
-        txt += "'Zeus! Olhe as horas, estou atrasado para uma reunião... Não precisa se preocupar,\nvocê tem cara se der inteligente. A UFMG precisa muito de você e cuidado com a reitoria...'\n\n";
-        txt += "'Ah última coisa, preciso depois das suas informações para poder registrar você\noficialmente como noss@ funcionário/aluno. Vou deixar aqui um documento pra você \ncolocar suas informações. Boa sorte com tudo!'\n\n";
-        
-        CHECK_EQ(txt, introducao2(n));  
-    }
-
-    SUBCASE("Parâmetro inválido"){
-        CHECK_THROWS(introducao2(a))
-    }
-    
-}
-
-
 
