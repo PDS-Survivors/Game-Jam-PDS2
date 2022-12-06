@@ -1,9 +1,9 @@
-#include "match.hpp"
-#include "building.hpp"
-#include "battle.hpp"
-#include "entities/pc.hpp"
-#include "entities/npc.hpp" 
-#include "namespaces/reader.hpp"
+#include "../include/match.hpp"
+#include "../include/building.hpp"
+#include "../include/battle.hpp"
+#include "../include/entities/pc.hpp"
+#include "../include/entities/npc.hpp" 
+#include "../include/namespaces/reader.hpp"
 
 #include <iostream>
 #include <vector>
