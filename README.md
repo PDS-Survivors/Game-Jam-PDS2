@@ -23,7 +23,13 @@ Para executar o jogo no terminal, clone esse repositório em sua máquina. Abra 
 make
 make start
 ```
-Agora, para eecutar a interface do jogo faça: ...
+Agora, para executar a interface do jogo faça, é necessário instalar a biblioteca gráfica raylib, como é ensinado no link a seguir
+https://github.com/raysan5/raylib/wiki/Working-on-GNU-Linux#build-raylib-using-cmake
+Uma vez feito, digite os comandos:
+```
+make gui
+./a.out
+```
 
 ## :brain: Colaboradores
 * Beatriz Siqueira Campagnaro;
