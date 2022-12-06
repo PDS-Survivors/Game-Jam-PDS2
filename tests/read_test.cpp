@@ -27,19 +27,19 @@ TEST_CASE("Teste de unidade - readint")
     {
         std::string::iterator it;
         std::string line = "01_";
-        CHECK(reader::readint(it, line) == 10);
+        CHECK_EQ(10, reader::readint(it, line));
     }
     SUBCASE("Caso especial numero negativo")
     {
         std::string::iterator it;
         std::string line = "01-_";
-        CHECK(reader::readint(it, line) == -10);
+        CHECK_EQ(-10, reader::readint(it, line));
     }
     SUBCASE("Caso formato errado")
     {
         std::string::iterator it;
         std::string line = "10_";
-        CHECK(reader::readint(it, line) == 1);
+        CHECK_EQ(1, reader::readint(it, line));
     }
 }
 
@@ -55,6 +55,6 @@ TEST_CASE("Teste de unidade - readstring")
     {
         std::string::iterator it;
         std::string line = "string de teste";
-        CHECK(reader::readint(it, line));
+        CHECK_NOTHROW("string de teste", reader::readint(it, line));
     }
 }
