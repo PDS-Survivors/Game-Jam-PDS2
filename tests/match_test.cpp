@@ -1,19 +1,19 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include "match.hpp"
-#include "pc.hpp"
-#include "building.hpp"
+#include "../include/match.hpp"
+#include "../include/entities/pc.hpp"
+#include "../include/building.hpp"
 #include "../third_party/doctest.h"
 #include <stack>
 
 
 TEST_CASE("Função getPlayerLifes"){
     Match a;
-    CHECK(a.getPlayerLifes == 3);
+    CHECK(a.getPlayerLifes() == 3);
 }
 
 
-// Há dois CHECK_EQ não preenchidos em SUBCASEs "Mestre de Armas" e "Druida" por que os files deles não estavam
-// prontos para pegar os dados
+// Vida e defesa de mestre de armas foram baseadas no arquivo 'Historia_completa", caso não passe nesse teste,
+// conferir  se os valores nos arquivos dos personagens são os mesmos
 TEST_CASE("Função setPlayer"){
 
     SUBCASE("Player Mago"){
@@ -22,7 +22,7 @@ TEST_CASE("Função setPlayer"){
         Pc* jogador;
         jogador = a.getPlayer();
         CHECK_EQ("Mago", jogador->getName());
-        CHECK_EQ(05, jogador->getLife());
+        CHECK_EQ(50, jogador->getLife());
         CHECK_EQ(8, jogador->getDefense());
     }
 
@@ -30,20 +30,20 @@ TEST_CASE("Função setPlayer"){
         Match b;
         CHECK_NOTHROW(b.setPlayer(1));
         Pc* jogador;
-        jogador = a.getPlayer();
+        jogador = b.getPlayer();
         CHECK_EQ("Mestre de Armas", jogador->getName());
-        CHECK_EQ(,);
-        CHECK_EQ(,);
+        CHECK_EQ(40,jogador->getLife());
+        CHECK_EQ(70,jogador->getDefense());
     }
     
     SUBCASE("Player Druida"){
         Match c;
         CHECK_NOTHROW(c.setPlayer(2));
         Pc* jogador;
-        jogador = a.getPlayer();
+        jogador = c.getPlayer();
         CHECK_EQ("Druida", jogador->getName());
-        CHECK_EQ(,);
-        CHECK_EQ(,);
+        CHECK_EQ(60,jogador->getLife());
+        CHECK_EQ(40,jogador->getDefense());
     }
     
     SUBCASE("Parametro inválido"){
@@ -60,11 +60,12 @@ TEST_CASE("Função setBuildingStack"){
     Match a;
     a.setBuildingStack();
     std::stack<Building*>* buildingStack = a.getBuildingStack();
-    EXPECT_FALSE((*buildingStack).empty());
+    CHECK_EQ(false, (*buildingStack).empty());
 }
 
 
 TEST_CASE("Função introducao"){
+    Match a;
     std::string txt = "PROCURA-SE ESPECIALISTA DE ANOMALIAS\n\n";
     txt += "Nos últimos semestres um mal maior do que o corte de verbas tem assolado a UFMG:\no surgimento de anomalias nos mais diverios prédios da faculdade.\n\n";
     txt += "Elas tâm atrapalhado a vida de todos os estudantes e funcionários, de modo que é\nimpossível se dedicar completamente à tarefas e projetos importantes.\n\n";
@@ -75,16 +76,21 @@ TEST_CASE("Função introducao"){
     txt += "Precisamos muito de ajuda para conseguir resolver o problema. Por favor pense com\ncuidado sobre essa proposta.\n\n";
     txt += "Atenciosamente,\n";
     txt += "Membros desesperados da reitoria.\n\n";
-    CHECK_EQ(event, introducao(17));
+    CHECK_EQ(txt, a.introducao());
 }
 
 
 TEST_CASE("Função introducao2"){
+    Match a;
+    char a = 'a';
+    char n = 'n';
+    char s = 's';
     SUBCASE("Parametro recebido = s"){
-        CHECK_EQ("Texto em construção, volte depois\n\n", introducao2(s));  
+        CHECK_EQ("Texto em construção, volte depois\n\n", a.introducao2(s));  
     }
 
     SUBCASE("Parametro recebido = n"){
+        Match a;
         std::string txt = "De repende você sente alguém se aproximando por trás. Mas já é muito tarde,\na pessoa prende as suas mão atrás do corpo com uma corda aspera enquanto você se debate\nfreneticamente. Ela se afasta e logo em seguida vem a escuridão, ela colocou em saco\nde ... de pequi? no seu rosto.\n\n";
         txt += "Você é tirado de seu lugar e levado para fora. Outra pessoa se aproxima e te\njoga violentamente dentro de um carro, mas a a parte de cima da sua cabeça ababa batendo\nna lataria do carro e você desmaia...\n\n";
         txt += "'Nós avisamos para tomar cuidado com a resposta.' Você ouve uma voz falando\nrispidamente.\n\n";
@@ -96,11 +102,13 @@ TEST_CASE("Função introducao2"){
         txt += "'Zeus! Olhe as horas, estou atrasado para uma reunião... Não precisa se preocupar,\nvocê tem cara se der inteligente. A UFMG precisa muito de você e cuidado com a reitoria...'\n\n";
         txt += "'Ah última coisa, preciso depois das suas informações para poder registrar você\noficialmente como noss@ funcionário/aluno. Vou deixar aqui um documento pra você \ncolocar suas informações. Boa sorte com tudo!'\n\n";
         
-        CHECK_EQ(txt, introducao2(n));  
+        CHECK_EQ(txt, a.introducao2(n));  
     }
 
     SUBCASE("Parâmetro inválido"){
-        CHECK_THROWS(introducao2(a))
+        Match b;
+        char a = 'a';
+        CHECK_THROWS(b.introducao2(a));
     }
     
 }
@@ -108,15 +116,16 @@ TEST_CASE("Função introducao2"){
 
 TEST_CASE("Função end"){
     Match a;
-    EXPECT_TRUE(a.end());
+    CHECK_EQ(true, a.end());
     a.setBuildingStack();
-    EXPECT_FALSE((a.end());
+    CHECK_EQ(false, a.end());
 }
 
 
 TEST_CASE("Função chooseEvent"){
-    CHECK(chooseEvent() < 18);
-    CHECK(chooseEvent() >= 0);
+    Match a;
+    CHECK(a.chooseEvent() < 18);
+    CHECK(a.chooseEvent() >= 0);
 }
 
 

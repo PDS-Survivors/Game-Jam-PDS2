@@ -15,7 +15,7 @@
 #define MATCH_HPP
 
 
-#include "building.hpp"
+#include "../include/building.hpp"
 #include "effects/effect.hpp"
 #include "entities/pc.hpp"
 #include "namespaces/reader.hpp"
