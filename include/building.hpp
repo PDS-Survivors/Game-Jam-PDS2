@@ -98,6 +98,14 @@ class Building {
         int get_numBattle();
 
         /**
+         * @brief Get the Battle Stack object
+         * @details Retorna um ponteiro para a pilha de batalhas
+         * 
+         * @return std::stack<Battle*>* 
+         */
+        std::stack<Battle*>* getBattleStack();
+
+        /**
          * @brief Set the nuber of the battle
          * @details Set o numero da batalha em que o player esta
         */

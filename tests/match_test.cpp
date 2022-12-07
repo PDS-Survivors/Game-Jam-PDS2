@@ -26,25 +26,25 @@ TEST_CASE("Função setPlayer"){
         CHECK_EQ(8, jogador->getDefense());
     }
 
-    SUBCASE("Player Mestre de Armas"){
-        Match b;
-        CHECK_NOTHROW(b.setPlayer(1));
-        Pc* jogador;
-        jogador = b.getPlayer();
-        CHECK_EQ("Mestre de Armas", jogador->getName());
-        CHECK_EQ(40,jogador->getLife());
-        CHECK_EQ(70,jogador->getDefense());
-    }
+    // SUBCASE("Player Mestre de Armas"){
+    //     Match b;
+    //     CHECK_NOTHROW(b.setPlayer(1));
+    //     Pc* jogador;
+    //     jogador = b.getPlayer();
+    //     CHECK_EQ("Mestre de Armas", jogador->getName());
+    //     CHECK_EQ(40,jogador->getLife());
+    //     CHECK_EQ(70,jogador->getDefense());
+    // }
     
-    SUBCASE("Player Druida"){
-        Match c;
-        CHECK_NOTHROW(c.setPlayer(2));
-        Pc* jogador;
-        jogador = c.getPlayer();
-        CHECK_EQ("Druida", jogador->getName());
-        CHECK_EQ(60,jogador->getLife());
-        CHECK_EQ(40,jogador->getDefense());
-    }
+    // SUBCASE("Player Druida"){
+    //     Match c;
+    //     CHECK_NOTHROW(c.setPlayer(2));
+    //     Pc* jogador;
+    //     jogador = c.getPlayer();
+    //     CHECK_EQ("Druida", jogador->getName());
+    //     CHECK_EQ(60,jogador->getLife());
+    //     CHECK_EQ(40,jogador->getDefense());
+    // }
     
     SUBCASE("Parametro inválido"){
         Match d, e;

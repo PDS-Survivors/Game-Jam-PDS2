@@ -1,6 +1,6 @@
-#include "building.hpp"
-#include "battle.hpp"
-#include "entities/npc.hpp"
+#include "../include/building.hpp"
+#include "../include/battle.hpp"
+#include "../include/entities/npc.hpp"
 
 #include <iostream>
 #include <vector>
@@ -62,6 +62,10 @@ int Building::get_number(){
 
 int Building::get_numBattle(){
     return _numBattle;
+}
+
+std::stack<Battle*>* Building::getBattleStack(){
+    return &_battles;
 }
 
 void Building::set_numBattle(int num){

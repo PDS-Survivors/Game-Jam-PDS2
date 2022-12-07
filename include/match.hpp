@@ -98,7 +98,7 @@ class Match {
          * @brief Get the Building Stack object
          * @details Retorna um ponteiro para a pilha de prédios
          * 
-         * @return std::stack* 
+         * @return std::stack<Building*>* 
          */
         std::stack<Building*>* getBuildingStack();
 
