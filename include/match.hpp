@@ -160,7 +160,7 @@ class Match {
          * Os eventos podem alterar diversas caracteristicas do player como defesa
          * ataque, dano, vida etc.  
         */
-        int chooseEvent();
+        //int chooseEvent();
 
         /**
          * @brief Executa o evento escolhido pela função choseEvent().
@@ -168,7 +168,7 @@ class Match {
          * o proximo evento da lista, dessa forma garantido que o mesmo evento não ocorra duas vezes na mesma gameplay.
          * E retorna uma string (bem grande alias) no formato "Titulo do evento" - "Desrição do evento" - "descrição dos eveitos do evento" 
         */
-        std::string doEvent (int n);
+        //std::string doEvent (int n);
 };
 
 
